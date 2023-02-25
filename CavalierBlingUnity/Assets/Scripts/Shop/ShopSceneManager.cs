@@ -14,7 +14,11 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     private Transform _mShopPositionPivot = null;
 
     [SerializeField]
+    private bool _mPlayOnStart = false;
+    [SerializeField]
     private float _mMoveToShopTime = 2f;
+    [SerializeField]
+    private Vector2 _mNumberOfObjectToLookAt = new Vector2(2, 5);
     [SerializeField]
     private Vector2 _mHesitationTimePerObject = new Vector2(0.25f, 0.5f);
     [SerializeField]
@@ -24,10 +28,21 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     [SerializeField]
     private float _mNoSpendingMoveToStartTime = 4f;
 
+    private void Start()
+    {
+        if (_mPlayOnStart)
+        {
+            Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
+            rotation.y = 180f;
+            _mKnightTransform.rotation = Quaternion.Euler(rotation);
+            StartCoroutine(ShoppingLoop());
+        }
+    }
+
     public void StartShoppingLoop()
     {
         Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
-        rotation.y = 0f;
+        rotation.y = 180f;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
         StartCoroutine(ShoppingLoop());
     }
@@ -63,36 +78,37 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     {
         int objectCount = buyableObjects.Count;
         bool objectIsChosen = objectCount > 0 ? false : true;
+        Vector3 rotation = Vector3.zero;
 
         yield return new WaitForSeconds(Random.Range(_mHesitationTimePerObject.x, _mHesitationTimePerObject.y));
 
-        BuyableItem selectedItem = null;
-        int index = 0;
-        int numberOfTry = 0;
-        Vector3 rotation;
-
-        while (!objectIsChosen)
+        if (objectCount > 0)
         {
-            selectedItem = buyableObjects[index];
-            Vector3 direction = (_mKnightTransform.position - selectedItem.transform.position).normalized;
-            _mKnightTransform.rotation = Quaternion.LookRotation(direction);
+            int index = 0, numberOfTry = 0;
+            BuyableItem selectedItem = null;
+            List<int> indexes = GenerateIndexToLookAt(objectCount);
 
-            //C'est dégueux mais on corrige le X pour rester flat.
-            rotation = _mKnightTransform.rotation.eulerAngles;
-            rotation.x = -90f;
-            _mKnightTransform.rotation = Quaternion.Euler(rotation);
+            for (int i = 0; i < indexes.Count; i++)
+            {
+                selectedItem = buyableObjects[index];
+                Vector3 direction = (_mKnightTransform.position - selectedItem.transform.position).normalized;
+                _mKnightTransform.rotation = Quaternion.LookRotation(direction);
 
-            yield return new WaitForSeconds(Random.Range(_mHesitationTimePerObject.x, _mHesitationTimePerObject.y));
+                //C'est dégueux mais on corrige le X pour rester flat.
+                rotation = _mKnightTransform.rotation.eulerAngles;
+                rotation.x = 0f;
+                _mKnightTransform.rotation = Quaternion.Euler(rotation);
 
-            index = (index + 1) % objectCount;
-            numberOfTry++;
+                yield return new WaitForSeconds(Random.Range(_mHesitationTimePerObject.x, _mHesitationTimePerObject.y));
 
-            objectIsChosen = Random.Range(0, 101) <= _mPercentChanceChoseItem * numberOfTry;
+                index = (index + 1) % objectCount;
+                numberOfTry++;
+            }
         }
 
 
         rotation = _mKnightTransform.rotation.eulerAngles;
-        rotation.y = 180f;
+        rotation.y = 0;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
 
         if (selectedItem != null)
@@ -106,5 +122,22 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         }
 
         yield break;
+    }
+
+    private List<int> GenerateIndexToLookAt(int objectCount)
+    {
+        List<int> toReturn = new List<int>();
+        int numberOfObjectToLookAt = objectCount > 1 ? Mathf.RoundToInt(Random.Range(_mNumberOfObjectToLookAt.x, _mNumberOfObjectToLookAt.y)) : 1;
+        int selectIndex = Random.Range(0, objectCount);
+
+        for (int i = 0; i < numberOfObjectToLookAt; i++)
+        {
+            toReturn.Add(selectIndex);
+
+            int valueToAdd = Random.Range(0, 2) > 0 ? 1 : -1;
+            selectIndex = (selectIndex + valueToAdd) % objectCount;
+        }
+
+        return toReturn;
     }
 }
