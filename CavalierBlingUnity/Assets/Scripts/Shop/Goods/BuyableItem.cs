@@ -37,7 +37,7 @@ public struct ObjectData
     public bool CanBeBoughtMultipleTime;
 }
 
-public class BaseObject : MonoBehaviour
+public class BuyableItem : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer _mObjectRenderer = null;
