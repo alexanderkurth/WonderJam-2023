@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Blingvalier",
+			"Path": "C:\\Users\\Alexa\\Documents\\Unreal Projects\\Playgrouds\\WonderJam-2023\\Blingvalier\\Source\\Blingvalier.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "BlingvalierEditor",
+			"Path": "C:\\Users\\Alexa\\Documents\\Unreal Projects\\Playgrouds\\WonderJam-2023\\Blingvalier\\Source\\BlingvalierEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

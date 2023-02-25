@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\unrealeditor\\inc\\blingvalier\\blingvalier.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\blingvaliereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\unrealeditor\\development\\blingvalier\\definitions.blingvalier.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

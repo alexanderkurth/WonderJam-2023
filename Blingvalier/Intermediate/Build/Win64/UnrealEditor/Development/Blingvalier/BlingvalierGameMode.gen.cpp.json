@@ -1,0 +1,19 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\unrealeditor\\inc\\blingvalier\\blingvaliergamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\blingvaliereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\unrealeditor\\development\\blingvalier\\definitions.blingvalier.h",
+            "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\source\\blingvalier\\blingvaliergamemode.h",
+            "d:\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "d:\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "d:\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "d:\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "c:\\users\\alexa\\documents\\unreal projects\\playgrouds\\wonderjam-2023\\blingvalier\\intermediate\\build\\win64\\unrealeditor\\inc\\blingvalier\\blingvaliergamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
