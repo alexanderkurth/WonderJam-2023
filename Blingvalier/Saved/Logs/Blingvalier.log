@@ -744,3 +744,198 @@ LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
 [2023.02.25-03.06.36:101][535]LogHttp: Warning: 00000B1A0B262300: libcurl info message cache 5 (Failed to connect to 172.18.107.60 port 50443: Timed out)
 [2023.02.25-03.06.36:101][535]LogHttp: Warning: 00000B1A0B262300: libcurl info message cache 6 (Closing connection 1)
 [2023.02.25-03.06.36:101][535]LogHoloLensTargetPlatform: Warning: HoloLens device automatic connect attempt failed without http response. Previous log lines may contain more information about the failed request (often bad ip/port). You may be able to use 'add unlisted device' to connect
+[2023.02.25-03.07.58:463][ 34]LogDerivedDataCache: C:/Users/Alexa/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:13.942 and deleted 0 file(s) with total size 0 MiB.
+[2023.02.25-03.09.18:399][578]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Display: GenerateStreaming started...
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Display: GetPartitionedActors started...
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Display: ValidateSingleActorReferer started...
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Display: ValidateSingleActorReferer took 0 us
+[2023.02.25-03.09.18:422][578]LogWorldPartition: Display: GetPartitionedActors took 393 us
+[2023.02.25-03.09.18:423][578]LogWorldPartition: Display: GenerateStreaming took 1 ms
+[2023.02.25-03.09.18:427][578]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.02.25-03.09.18:432][578]PIE: New page: PIE session: ThirdPersonMap (24 févr. 2023 à 17:09:18)
+[2023.02.25-03.09.18:441][578]LogOnline: OSS: Created online subsystem instance for: NULL
+[2023.02.25-03.09.18:441][578]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2023.02.25-03.09.18:443][578]LogPlayLevel: Creating play world package: /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2023.02.25-03.09.18:457][578]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2023.02.25-03.09.18:458][578]LogPlayLevel: PIE: StaticDuplicateObject took: (0.015591s)
+[2023.02.25-03.09.18:458][578]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap to /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap (0.015930s)
+[2023.02.25-03.09.18:459][578]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.02.25-03.09.18:460][578]LogAIModule: Creating AISystem for world ThirdPersonMap
+[2023.02.25-03.09.18:461][578]LogWorldPartition: Display: WorldPartition initialize started...
+[2023.02.25-03.09.18:461][578]LogWorldPartition: UWorldPartition::Initialize(IsEditor=0, IsGame=0, IsCooking=0)
+[2023.02.25-03.09.18:463][578]LogWorldPartition: Display: WorldPartition initialize took 2 ms
+[2023.02.25-03.09.18:463][578]LogPlayLevel: PIE: World Init took: (0.004449s)
+[2023.02.25-03.09.18:476][578]LogUObjectHash: Compacting FUObjectHashTables data took   0.71ms
+[2023.02.25-03.09.18:479][578]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2023.02.25-03.09.18:479][578]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.02.25-03.09.18:479][578]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.02.25-03.09.18:479][578]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.02.25-03.09.18:479][578]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.02.25-03.09.18:479][578]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.02.25-03.09.18:536][578]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2023.02.25-03.09.18:699][578]LogAudioMixer: Display: Using Audio Hardware Device Haut-parleurs (Realtek(R) Audio)
+[2023.02.25-03.09.18:699][578]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.02.25-03.09.18:699][578]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.02.25-03.09.18:699][578]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.02.25-03.09.18:701][578]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=2
+[2023.02.25-03.09.18:701][578]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=2
+[2023.02.25-03.09.18:703][578]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=2
+[2023.02.25-03.09.18:703][578]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=2
+[2023.02.25-03.09.18:703][578]LogInit: FAudioDevice initialized.
+[2023.02.25-03.09.18:703][578]LogAudio: Display: Audio Device (ID: 2) registered with world 'ThirdPersonMap'.
+[2023.02.25-03.09.18:729][578]LogLoad: Game class is 'BlingvalierGameMode'
+[2023.02.25-03.09.18:731][578]LogWorld: Bringing World /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap up for play (max tick rate 0) at 2023.02.24-22.09.18
+[2023.02.25-03.09.18:733][578]LogWorld: Bringing up level for play took: 0.004609
+[2023.02.25-03.09.18:736][578]LogOnline: OSS: Created online subsystem instance for: :Context_3
+[2023.02.25-03.09.18:905][578]LogWorldPartition: New Streaming Source: PlayerController_0 -> Position: X=900.000 Y=1110.000 Z=92.013
+[2023.02.25-03.09.18:905][578]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2023.02.25-03.09.18:908][578]PIE: Server logged in
+[2023.02.25-03.09.18:910][578]PIE: Play in editor total start time 0,494 seconds.
+[2023.02.25-03.09.26:362][917]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.02.25-03.09.26:362][917]LogWorld: BeginTearingDown for /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2023.02.25-03.09.26:363][917]LogWorld: UWorld::CleanupWorld for ThirdPersonMap, bSessionEnded=true, bCleanupResources=true
+[2023.02.25-03.09.26:368][917]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.02.25-03.09.26:397][917]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.02.25-03.09.26:402][917]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.02.25-03.09.26:416][917]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.02.25-03.09.26:419][917]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2023.02.25-03.09.26:422][917]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2023.02.25-03.09.26:441][917]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2023.02.25-03.09.26:494][918]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2023.02.25-03.09.36:982][400]LogEditorClassViewer: Warning: Class /Engine/Tutorial/InWorldBlueprintEditing/TutorialAssets/IWBE_Blutility.IWBE_Blutility_C has parent /Script/Blutility.PlacedEditorUtilityBase, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.02.25-03.09.37:067][400]LogSlate: Took 0.007311 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2023.02.25-03.14.00:136][266]Running D:/Epic Games/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -projectfiles -project="C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Blingvalier.uproject" -game -rocket -progress
+[2023.02.25-03.14.01:826][266]Log file: C:\Users\Alexa\AppData\Local\UnrealBuildTool\Log_GPF.txt
+[2023.02.25-03.14.01:927][266]Discovering modules, targets and source code for project...
+[2023.02.25-03.14.09:473][266]Binding IntelliSense data...
+[2023.02.25-03.14.23:264][266]Binding IntelliSense data... 50%
+[2023.02.25-03.14.23:265][266]Binding IntelliSense data... 100%
+[2023.02.25-03.14.23:265][266]Writing project files...
+[2023.02.25-03.14.29:406][266]Writing project files... 100%
+[2023.02.25-03.14.29:526][266]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.02.25-03.14.29:972][266]LogSlate: Window 'Add C++ Class' being destroyed
+[2023.02.25-03.15.08:018][381]LogLiveCoding: Display:    Création de la bibliothèque C:\Users\Alexa\Documents\Unreal Projects\Playgrouds\WonderJam-2023\Blingvalier\Binaries\Win64\UnrealEditor-Blingvalier.patch_0.lib et de l'objet C:\Users\Alexa\Documents\Unreal Projects\Playgrouds\WonderJam-2023\Blingvalier\Binaries\Win64\UnrealEditor-Blingvalier.patch_0.exp
+[2023.02.25-03.15.08:286][381]LogClass: /Script/Blingvalier Reload.
+[2023.02.25-03.15.08:291][381]LogClass: Could not find existing class MadnessComponent in package /Script/Blingvalier for reload, assuming new or modified class
+[2023.02.25-03.15.08:521][381]LogUObjectHash: Compacting FUObjectHashTables data took   0.94ms
+[2023.02.25-03.15.08:589][382]Display: Reload/Re-instancing Complete: 1 package changed, 1 class new, 2 classes unchanged
+[2023.02.25-03.15.08:589][382]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: invalid HTTP response code received. URL: https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BE8E6E230-4FC3-8676-3576-CCBF72AD4D92%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.0.3-20979098%2B%2B%2BUE5%2BRelease-5.0&UserID=ccab0b8b4ff7edf4d7df539594dfb85f%7Ce2460d65b86f4c3a9666dcfa3010b05c%7Caf0da5ae-66d0-4502-95c2-8e825d5f1718&AppEnvironment=datacollector-binary&UploadType=eteventstream, HTTP code: 0, content length: 0, actual payload size: 0
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: request failed, libcurl error: 56 (Failure when receiving data from the peer)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 0 (Found bundle for host datarouter.ol.epicgames.com: 0xb19be080210 [can pipeline])
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 1 (Re-using existing connection! (#4) with host datarouter.ol.epicgames.com)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 2 (Connected to datarouter.ol.epicgames.com (54.157.237.243) port 443 (#4))
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 3 (We are completely uploaded and fine)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 4 (OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 5 (Connection died, retrying a fresh connect)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 6 (necessary data rewind wasn't possible)
+[2023.02.25-03.18.24:611][256]LogHttp: Warning: 00000B19ED19F000: libcurl info message cache 7 (Closing connection 4)
+[2023.02.25-03.18.24:612][256]LogHttp: Warning: Retry exhausted on https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BE8E6E230-4FC3-8676-3576-CCBF72AD4D92%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.0.3-20979098%2B%2B%2BUE5%2BRelease-5.0&UserID=ccab0b8b4ff7edf4d7df539594dfb85f%7Ce2460d65b86f4c3a9666dcfa3010b05c%7Caf0da5ae-66d0-4502-95c2-8e825d5f1718&AppEnvironment=datacollector-binary&UploadType=eteventstream
+[2023.02.25-03.18.28:524][423]LogEditorClassViewer: Warning: Class /Engine/Tutorial/InWorldBlueprintEditing/TutorialAssets/IWBE_Blutility.IWBE_Blutility_C has parent /Script/Blutility.PlacedEditorUtilityBase, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.02.25-03.23.51:656][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/Layers/ML_ShinyPlastic_Beige_Logo.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/Layers/ML_SoftMetal.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/M_MannequinUE4_ChestLogo.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/Layers/ML_Latex_Black.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Animations/Jog_Fwd.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Meshes/SK_Mannequin.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/M_MannequinUE4_Body.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Materials/Layers/ML_ShinyPlastic_Beige.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Meshes/SK_Mannequin_PhysicsAsset.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Meshes/SK_Mannequin_Skeleton.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Rigs/IK_UE4_Mannequin.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_ML_Aluminum01_N.uasset has malformed tag
+[2023.02.25-03.23.51:668][102]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Rigs/RTG_UE5Manny_UE4Manny.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Rigs/RTG_UE4Manny_UE5Manny.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_ML_Rubber_Blue_01_D.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_ML_Aluminum01.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_ML_Rubber_Blue_01_N.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_UE4_Mannequin_MAT_MASKA.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_UE4_Mannequin__normals.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_UELogo_N_TGA.uasset has malformed tag
+[2023.02.25-03.23.51:695][103]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequin_UE4/Textures/T_UELogo_Mask.uasset has malformed tag
+[2023.02.25-03.23.53:659][108]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Materials/Instances/Manny/MI_Manny_01.uasset has malformed tag
+[2023.02.25-03.23.53:668][109]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Materials/Instances/Manny/MI_Manny_02.uasset has malformed tag
+[2023.02.25-03.23.53:995][109]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Meshes/SKM_Quinn.uasset has malformed tag
+[2023.02.25-03.23.53:995][109]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Meshes/SKM_Manny.uasset has malformed tag
+[2023.02.25-03.23.53:996][109]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Meshes/Mannequin_LODSettings.uasset has malformed tag
+[2023.02.25-03.23.54:003][110]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Meshes/SKM_Manny_Simple.uasset has malformed tag
+[2023.02.25-03.23.54:330][110]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/ABP_Manny_PostProcess.uasset has malformed tag
+[2023.02.25-03.23.54:367][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/IK_Mannequin.uasset has malformed tag
+[2023.02.25-03.23.54:367][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/CR_Mannequin_Procedural.uasset has malformed tag
+[2023.02.25-03.23.54:367][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/ABP_Quinn_PostProcess.uasset has malformed tag
+[2023.02.25-03.23.54:367][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/CR_Mannequin_Body.uasset has malformed tag
+[2023.02.25-03.23.54:692][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_foot_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:692][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_clavicle_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:692][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_calf_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_clavicle_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_clavicle_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_clavicle_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_calf_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_calf_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:693][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_calf_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_foot_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_hand_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_foot_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_hand_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_hand_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_hand_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_lowerarm_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:705][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_lowerarm_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_foot_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_thigh_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_lowerarm_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_lowerarm_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_thigh_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_thigh_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_thigh_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:717][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_upperarm_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_upperarm_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_upperarm_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Manny/Manny_upperarm_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_calf_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_calf_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_foot_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_clavicle_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_calf_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:734][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_calf_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:747][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_clavicle_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:747][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_foot_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:747][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_clavicle_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_clavicle_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_foot_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_hand_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_foot_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_lowerarm_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:748][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_hand_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_hand_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_lowerarm_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_lowerarm_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_hand_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_lowerarm_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_thigh_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_thigh_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_thigh_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:759][111]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_thigh_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:777][112]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_upperarm_l_pose.uasset has malformed tag
+[2023.02.25-03.23.54:777][112]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_upperarm_l_anim.uasset has malformed tag
+[2023.02.25-03.23.54:777][112]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_upperarm_r_anim.uasset has malformed tag
+[2023.02.25-03.23.54:778][112]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/Poses/Quinn/Quinn_upperarm_r_pose.uasset has malformed tag
+[2023.02.25-03.23.54:778][112]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Rigs/RTG_Mannequin.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_N.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_MSR_MSK.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_CCRCCPlastic_MSK.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_Tan.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_BN.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_D.uasset has malformed tag
+[2023.02.25-03.23.55:343][113]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/Characters/Mannequins/Textures/Manny/T_Manny_02_ASAOPMASK_MSK.uasset has malformed tag
+[2023.02.25-03.23.57:348][119]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/LevelPrototyping/Materials/MI_PrototypeGrid_Gray_02.uasset has malformed tag
+[2023.02.25-03.23.57:688][120]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/LevelPrototyping/Meshes/SM_Cylinder.uasset has malformed tag
+[2023.02.25-03.24.02:377][134]LogAssetRegistry: Error: Package C:/Users/Alexa/Documents/Unreal Projects/Playgrouds/WonderJam-2023/Blingvalier/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/SY/Z4CTQ4LG3YV10EKPD0UE8Q.uasset has malformed tag
