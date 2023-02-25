@@ -51,18 +51,16 @@ public class BuyableItem : MonoBehaviour
 
     private int _mObjectPrice = 1;
     public int ObjectPrice { get => _mObjectPrice; }
-    private ObjectType _mObjectType = ObjectType.Miscellaneous;
-    private AvailableObject _mAvailableObject = AvailableObject.ArmorArm;
+    private ObjectData _objectData; 
 
     public void IntializeObject(ObjectData objectData)
     {
+        _objectData = objectData;
         _mObjectPrice = SetObjectPrice(objectData.ObjectPrices);
         _mTmpPrice.text = _mObjectPrice.ToString();
         _mTmpPrice.color = IsBuyable() ? Color.green : Color.red;
         _mObjectRenderer.sprite = objectData.ObjectSprite;
-        _mObjectType = objectData.ObjectType;
-        _mAvailableObject = objectData.ObjectName;
-
+    
         ToggleVisual(true);
     }
 
@@ -93,7 +91,7 @@ public class BuyableItem : MonoBehaviour
     public virtual void BuyItem()
     {
         Inventory.Instance.ChangeCurrencyValue(-_mObjectPrice);
-        Inventory.Instance.AddToInventory(_mObjectType, _mAvailableObject);
+        Inventory.Instance.AddToInventory(_objectData);
         _mObjectBuyPS.Play(true);
         _mObjectBuySound.Play();
         ToggleVisual(false);

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory : AbstractSingleton<Inventory>
 {
@@ -14,6 +15,8 @@ public class Inventory : AbstractSingleton<Inventory>
     private Dictionary<ObjectType, List<AvailableObject>> _inventory = new Dictionary<ObjectType, List<AvailableObject>>();
     private const int MAX_ARMOR_COUNT = 3;
 
+    public static UnityEvent<ObjectData> itemAddedToInventory;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -39,17 +42,19 @@ public class Inventory : AbstractSingleton<Inventory>
         return _currentCurrency;
     }
 
-    public void AddToInventory(ObjectType objectType, AvailableObject availableObject)
+    public void AddToInventory(ObjectData objectData)
     {
-        if (_inventory.ContainsKey(objectType))
+        if (_inventory.ContainsKey(objectData.ObjectType))
         {
-            _inventory[objectType].Add(availableObject);
+            _inventory[objectData.ObjectType].Add(objectData.ObjectName);
         }
         else
         {
-            List<AvailableObject> availableObjects = new List<AvailableObject> { availableObject };
-            _inventory.Add(objectType, availableObjects);
+            List<AvailableObject> availableObjects = new List<AvailableObject> { objectData.ObjectName };
+            _inventory.Add(objectData.ObjectType, availableObjects);
         }
+        
+        itemAddedToInventory?.Invoke(objectData);
 
         if (IsFullArmor())
         {
