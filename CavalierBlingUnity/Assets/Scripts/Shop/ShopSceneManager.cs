@@ -79,13 +79,13 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         int objectCount = buyableObjects.Count;
         bool objectIsChosen = objectCount > 0 ? false : true;
         Vector3 rotation = Vector3.zero;
+        BuyableItem selectedItem = null;
 
         yield return new WaitForSeconds(Random.Range(_mHesitationTimePerObject.x, _mHesitationTimePerObject.y));
 
         if (objectCount > 0)
         {
             int index = 0, numberOfTry = 0;
-            BuyableItem selectedItem = null;
             List<int> indexes = GenerateIndexToLookAt(objectCount);
 
             for (int i = 0; i < indexes.Count; i++)
