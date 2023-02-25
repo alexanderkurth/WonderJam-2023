@@ -7,4 +7,9 @@ public class ObjectsDefinition : ScriptableObject
 {
     [SerializeField]
     private List<ObjectData> ObjectsDatas = new List<ObjectData>();    
+
+    public List<ObjectData> GetObjectsFromType(ObjectType objectType)
+    {
+        return ObjectsDatas.FindAll(x => x.ObjectType == objectType);
+    }
 }
