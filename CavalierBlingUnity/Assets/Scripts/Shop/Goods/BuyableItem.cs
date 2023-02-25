@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public enum AvailableObject
 {
-    ArmorBoots = 0,
+    ArmorArm = 0,
     ArmorLegs = 1,
     ArmorChest = 2,
     ArmorHead = 3,
@@ -45,24 +46,34 @@ public class BuyableItem : MonoBehaviour
     private ParticleSystem _mObjectBuyPS = null;
     [SerializeField]
     private AudioSource _mObjectBuySound = null;
+    [SerializeField]
+    private TextMeshPro _mTmpPrice = null;
 
     private int _mObjectPrice = 1;
     private ObjectType _mObjectType = ObjectType.Miscellaneous;
+    private AvailableObject _mAvailableObject = AvailableObject.ArmorArm;
 
     public void IntializeObject(ObjectData objectData)
     {
         _mObjectPrice = SetObjectPrice(objectData.ObjectPrices);
+        _mTmpPrice.text = _mObjectPrice.ToString();
+        _mTmpPrice.color = IsBuyable() ? Color.green : Color.red;
         _mObjectRenderer.sprite = objectData.ObjectSprite;
         _mObjectType = objectData.ObjectType;
+        _mAvailableObject = objectData.ObjectName;
 
         ToggleVisual(true);
+    }
+
+    public bool IsBuyable()
+    {
+        return Inventory.Instance.GetCurrentCurrency() >= _mObjectPrice;
     }
     
     private int SetObjectPrice(List<int> price)
     {
         int priceCount = price.Count;
-
-        int randomPriceIndex = Random.Range(0, priceCount + 1);
+        int randomPriceIndex = Random.Range(0, priceCount);
 
         return price[randomPriceIndex];
     }
@@ -70,6 +81,7 @@ public class BuyableItem : MonoBehaviour
     private void ToggleVisual(bool toEnable)
     {
         _mObjectRenderer.enabled = toEnable;
+        _mTmpPrice.enabled = toEnable;
     }
 
     public int GetObjectPrice()
@@ -79,7 +91,8 @@ public class BuyableItem : MonoBehaviour
 
     public virtual void BuyItem()
     {
-        //TODO : Call code to remove currency for the value _mObjectPrice and warn the Player with the object type;
+        Inventory.Instance.ChangeCurrencyValue(-_mObjectPrice);
+        Inventory.Instance.AddToInventory(_mObjectType, _mAvailableObject);
         _mObjectBuyPS.Play(true);
         _mObjectBuySound.Play();
         ToggleVisual(false);
