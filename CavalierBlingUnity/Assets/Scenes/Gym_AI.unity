@@ -195,6 +195,11 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8231682986648972497, guid: e24908a20db07a24593397f97937bdad,
+        type: 3}
+      propertyPath: _ennemyCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e24908a20db07a24593397f97937bdad, type: 3}
 --- !u!1 &116663601
@@ -534,10 +539,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1800492160, guid: fa10d1d1891c91c4482bf09337885c3c, type: 3}
-      propertyPath: m_Speed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7980639918192652433, guid: fa10d1d1891c91c4482bf09337885c3c,
         type: 3}
       propertyPath: m_RootOrder
