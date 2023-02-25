@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
+    public static CurrencyManager Instance; 
+    
     [SerializeField] 
     private TextMeshProUGUI _currentCurrencyText;
 
     [SerializeField] 
-    private int _baseValue;
+    private float _baseValue;
     
-    private int _currentCurrency;
+    private float _currentCurrency;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -18,7 +25,7 @@ public class CurrencyManager : MonoBehaviour
         ChangeCurrencyValue(0);
     }
 
-    public void ChangeCurrencyValue(int value)
+    public void ChangeCurrencyValue(float value)
     {
         _currentCurrency += value;
         _currentCurrencyText.text = _currentCurrency.ToString();
@@ -28,8 +35,8 @@ public class CurrencyManager : MonoBehaviour
             // Game Over
         }
     }
-
-    public int GetCurrentCurrency()
+    
+    public float GetCurrentCurrency()
     {
         return _currentCurrency;
     }
