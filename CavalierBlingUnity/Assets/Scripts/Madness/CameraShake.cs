@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 m_OriginalPosition = default;
+    private Camera m_Camera;
 
     [SerializeField]
     [Range(0, 10)]
@@ -14,14 +14,21 @@ public class CameraShake : MonoBehaviour
     [SerializeField]
     private bool m_CanShake = true;
 
+    private bool m_HasFinishedShaking = true;
+
+    private Vector3 m_OriginalPosition;
+
     private void Start()
     {
-        m_OriginalPosition = transform.localPosition;
+        if(m_Camera == null){
+            m_Camera = Camera.main;
+        }
+        m_OriginalPosition = m_Camera.transform.localPosition;
     }
 
     public void ResetPosition()
     {
-        transform.localPosition = m_OriginalPosition;
+        m_Camera.transform.localPosition = m_OriginalPosition;
     }
 
     private void ShakeCamera()
@@ -32,14 +39,25 @@ public class CameraShake : MonoBehaviour
 
         Vector3 pos = new Vector3(x, y, z);
 
-        transform.localPosition = pos;
+        // Set m_Camera gameobject position to the new position
+        m_Camera.transform.localPosition = pos;
+    }
+
+    public void SetShakeFrequency(float frequency)
+    {
+        m_ShakeFrequency = frequency;
     }
 
     private void Update()
     {
-        if (m_CanShake  || m_ShakeFrequency != 0)
+        if (m_CanShake  && m_ShakeFrequency != 0)
         {
             ShakeCamera();
+        } 
+        else if(m_HasFinishedShaking)
+        {
+            ResetPosition();
+            m_HasFinishedShaking = false;
         }
     }
 }

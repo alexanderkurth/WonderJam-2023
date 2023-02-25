@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class SimpleCameraFollow : MonoBehaviour
 {
-    public Camera m_Camera;
+    public GameObject m_CameraParent;
     public Transform m_Target;
     public float m_VerticalOffset = 10.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (m_Camera == null || m_Target == null)
-              Debug.LogError("Camera or Target not set");
+        if (m_CameraParent == null){
+            m_CameraParent = this.gameObject;
+        }
+        
+        if(m_Target == null){
+            Debug.LogError("Target not set");
+        }
 
         Vector3 targetPos = m_Target.position;
         targetPos.y += m_VerticalOffset;
-        m_Camera.transform.position = targetPos;
+        m_CameraParent.transform.position = targetPos;
     }
 
     // Update is called once per frame
@@ -24,6 +29,6 @@ public class SimpleCameraFollow : MonoBehaviour
     {
         Vector3 targetPos = m_Target.position;
         targetPos.y += m_VerticalOffset;
-        m_Camera.transform.position = targetPos;
+        m_CameraParent.transform.position = targetPos;
     }
 }

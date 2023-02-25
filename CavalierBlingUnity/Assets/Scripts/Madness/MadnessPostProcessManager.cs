@@ -23,9 +23,17 @@ public class MadnessPostProcessManager : MonoBehaviour
 
     public Transform m_Target;
 
+    [SerializeField]
+    private Camera m_Camera;
+
 
     void Start()
     {
+        if(m_Camera == null)
+        {
+            m_Camera = Camera.main;
+        }
+
         m_Volume.profile.TryGet<Vignette>(out m_Vignette);
         m_Volume.profile.TryGet<ColorAdjustments>(out m_ColorAdjustement);
         m_Volume.profile.TryGet<FilmGrain>(out m_FilmGrain);
@@ -33,19 +41,23 @@ public class MadnessPostProcessManager : MonoBehaviour
 
     private void Update()
     {
-        m_Vignette.center.value = new Vector2(m_Target.position.x, m_Target.position.y);
+        Vector3 objectToScreenPos = m_Camera.WorldToScreenPoint(m_Target.position);
+        Debug.Log(objectToScreenPos);
+        m_Vignette.center.value = new Vector2(objectToScreenPos.x, objectToScreenPos.z);
     }
 
-    void UpdateVignette(float intensity)
+    public void UpdateVignette(float intensity)
     {
         m_Vignette.intensity.value = intensity;
     }
-    void UpdateColor(float intensity)
+
+    public void UpdateColor(float intensity)
     {
         float scaledValue = (intensity - min) / (max - min);
         m_ColorAdjustement.postExposure.value = intensity * scaledValue ;
     }
-    void UpdateFilmGrain(float intensity)
+
+    public void UpdateFilmGrain(float intensity)
     {
         m_FilmGrain.intensity.value = intensity;
     }

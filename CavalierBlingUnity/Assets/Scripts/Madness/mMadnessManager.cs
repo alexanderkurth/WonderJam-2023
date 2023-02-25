@@ -72,11 +72,22 @@ class mMadnessManager : MonoBehaviour
 
     private void Update()
     {
+        MadnessPostProcessManager madnessPostProcessManager = GetComponent<MadnessPostProcessManager>();
+        madnessPostProcessManager.UpdateVignette((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
+        madnessPostProcessManager.UpdateColor((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
+        madnessPostProcessManager.UpdateFilmGrain((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
+
         if (m_MadnessCurrentLevel > m_StartShakingLevel)
         {
             // Should be between 0 and m_MaxShakingIntensity
-            int cameraShakingIntensity = ((m_MadnessCurrentLevel - m_StartShakingLevel) / (m_MadnessMaxLevel - m_StartShakingLevel)) * m_MaxShakingIntensity;
-            // TODO : Camera.Shake(cameraShakingIntensity);
+            float cameraShakingIntensity = ((float)(m_MadnessCurrentLevel - m_StartShakingLevel) / (float)(m_MadnessMaxLevel - m_StartShakingLevel)) * (float)m_MaxShakingIntensity;
+            CameraShake cameraShake = GetComponent<CameraShake>();
+            cameraShake.SetShakeFrequency(cameraShakingIntensity);
+
+            
+        }else{
+            CameraShake cameraShake = GetComponent<CameraShake>();
+            cameraShake.SetShakeFrequency(0);
         }
 
         if (m_MadnessCurrentLevel > m_MadnessAudio.m_StartHeartBeatLevel)
