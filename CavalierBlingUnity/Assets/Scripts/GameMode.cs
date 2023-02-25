@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMode : AbstractSingleton<GameMode>
@@ -19,8 +16,8 @@ public class GameMode : AbstractSingleton<GameMode>
     [SerializeField] 
     private GameObject _winScreen;
     [SerializeField] 
-    private GameObject _ennemy;
-    
+    private int _ennemyCount = 10;
+  
     public int dayCount = 0;
 
     private void Start()
@@ -57,8 +54,8 @@ public class GameMode : AbstractSingleton<GameMode>
         }
     }
 
-    public void SpawnEnnemy()
+    public void SpawnEnnemies()
     {
-        
+        EnemySpawner.Instance.StartSpawn(_ennemyCount);
     }
 }
