@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Speed: 1
   m_ParticleSystem: {fileID: 291889791}
   m_Interactable: {fileID: 5262411185371899328}
+  m_EnemySpriteBody: {fileID: 2904790290336492041}
   m_IsOnGround: 0
 --- !u!198 &291889791
 ParticleSystem:
@@ -5034,6 +5035,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312792, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_MaxTimeBewteenMash
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3001617783661312806, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
       propertyPath: m_RootOrder
@@ -5052,7 +5063,7 @@ PrefabInstance:
     - target: {fileID: 3001617783661312806, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3001617783661312806, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
@@ -5088,6 +5099,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312807, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.69246745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312807, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.030393839
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46665b4b650c39145892ae1bcd0aa131, type: 3}
