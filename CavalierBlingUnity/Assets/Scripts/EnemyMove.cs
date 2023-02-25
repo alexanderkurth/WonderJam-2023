@@ -29,7 +29,7 @@ public class EnemyMove : MonoBehaviour
     {
         if(m_Target != null)
         {
-            m_Direction = m_Target.transform.position;
+            m_Direction = m_Target.transform.position - transform.position;
         }
 
         transform.Translate(m_Direction * m_Delta);

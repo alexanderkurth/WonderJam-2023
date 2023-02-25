@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e1c5211f567d640b67045b2a4faf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Direction: {x: 0, y: 0, z: 0}
-  m_Delta: 0
+  m_Target: {fileID: 1800492155}
+  m_Delta: 0.001
 --- !u!1 &588519583
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Direction: {x: 0, y: 0, z: 0}
-  m_Delta: 0
+  m_Delta: 0.01
 --- !u!135 &1800492161
 SphereCollider:
   m_ObjectHideFlags: 0
