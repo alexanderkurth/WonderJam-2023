@@ -24,12 +24,21 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     [SerializeField]
     private float _mNoSpendingMoveToStartTime = 4f;
 
-    private void Start()
+    public void StartShoppingLoop()
     {
         Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
         rotation.y = 0f;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
-        StartCoroutine(MoveKnightToPointCoroutine(_mShopPositionPivot.position, _mMoveToShopTime));
+        StartCoroutine(ShoppingLoop());
+    }
+
+    private IEnumerator ShoppingLoop()
+    {
+        yield return MoveKnightToPointCoroutine(_mShopPositionPivot.position, _mMoveToShopTime);
+
+        List<BuyableItem> buyableObjects = Shop.Instance.GetBuyableObjects();
+
+        StartCoroutine(HesitationFlow(buyableObjects));
     }
 
     private IEnumerator MoveKnightToPointCoroutine(Vector3 point, float duration)
@@ -47,15 +56,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
             yield return null;
         }
 
-        ChoseShopFlow();
         yield break;
-    }
-
-    private void ChoseShopFlow()
-    {
-        List<BuyableItem> buyableObjects = Shop.Instance.GetBuyableObjects();
-         
-        StartCoroutine(HesitationFlow(buyableObjects));
     }
 
     private IEnumerator HesitationFlow(List<BuyableItem> buyableObjects)
