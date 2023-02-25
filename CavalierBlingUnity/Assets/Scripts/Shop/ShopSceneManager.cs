@@ -91,7 +91,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
             for (int i = 0; i < indexes.Count; i++)
             {
                 selectedItem = buyableObjects[index];
-                Vector3 direction = (_mKnightTransform.position - selectedItem.transform.position).normalized;
+                Vector3 direction = (selectedItem.transform.position - _mKnightTransform.position).normalized;
                 _mKnightTransform.rotation = Quaternion.LookRotation(direction);
 
                 //C'est dégueux mais on corrige le X pour rester flat.

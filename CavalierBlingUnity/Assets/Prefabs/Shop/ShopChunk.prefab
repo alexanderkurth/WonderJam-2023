@@ -84,11 +84,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duplicationHandling: 1
-  DoNotDestroyOnLoad: 1
+  DoNotDestroyOnLoad: 0
   _mKnightTransform: {fileID: 5135254168599552688}
   _mKnightStartPivot: {fileID: 8064519190654731713}
   _mShopPositionPivot: {fileID: 8064519190135718775}
+  _mPlayOnStart: 0
   _mMoveToShopTime: 2
+  _mNumberOfObjectToLookAt: {x: 2, y: 5}
   _mHesitationTimePerObject: {x: 1, y: 2}
   _mPercentChanceChoseItem: 20
   _mSpendingMoveToStartTime: 2
