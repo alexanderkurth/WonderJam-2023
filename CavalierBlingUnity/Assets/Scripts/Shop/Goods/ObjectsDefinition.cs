@@ -6,5 +6,5 @@ using UnityEngine;
 public class ObjectsDefinition : ScriptableObject
 {
     [SerializeField]
-    private List<ObjectData> ObjectsDatas = new List<ObjectData>();
+    private List<ObjectData> ObjectsDatas = new List<ObjectData>();    
 }

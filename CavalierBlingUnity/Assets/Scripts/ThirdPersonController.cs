@@ -51,6 +51,7 @@ namespace StarterAssets
         private float _speed;
         private float _animationBlend;
         private float _verticalVelocity;
+        private Vector2 _moveInputValue;
 
         // animation IDs
         private int _animIDSpeed;
@@ -145,7 +146,7 @@ namespace StarterAssets
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
-            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            if (_moveInputValue == Vector2.zero) targetSpeed = 0.0f;
 
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -174,7 +175,7 @@ namespace StarterAssets
             if (_animationBlend < 0.01f) _animationBlend = 0f;
 
             // normalise input direction
-            Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+            Vector3 inputDirection = new Vector3(_moveInputValue.x, 0.0f, _moveInputValue.y).normalized;
 
             Vector3 targetDirection = inputDirection.normalized;
             //Vector3.RotateTowards(transform.forward, targetDirection, 1.0f, 0.0f);
@@ -212,6 +213,11 @@ namespace StarterAssets
             Gizmos.DrawSphere(
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
+        }
+
+        public void OnMoveInputChanged(InputAction.CallbackContext context)
+        {
+            _moveInputValue = context.ReadValue<Vector2>();
         }
 
         private void OnFootstep(AnimationEvent animationEvent)
