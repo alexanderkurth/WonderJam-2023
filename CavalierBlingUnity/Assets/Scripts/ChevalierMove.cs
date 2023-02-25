@@ -8,6 +8,10 @@ public class ChevalierMove : MonoBehaviour
     private Vector3 m_Direction;
     [SerializeField, Range(0, 10)]
     private float m_Speed = 1.0f;
+    [SerializeField]
+    private float m_xMin = -10.0f;
+    [SerializeField]
+    private float m_xMax = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,10 @@ public class ChevalierMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+
+
         transform.Translate(m_Direction * Time.fixedDeltaTime * m_Speed);
     }
 
@@ -31,7 +39,7 @@ public class ChevalierMove : MonoBehaviour
             Debug.Log("Trigger Enemy!");
             EnemyMove enemy = other.GetComponent<EnemyMove>();
             enemy.m_IsOnGround = true;
-            enemy.Die();
+            enemy.FallToGround();
         }
     }
 }
