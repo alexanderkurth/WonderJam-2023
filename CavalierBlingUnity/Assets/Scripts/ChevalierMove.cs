@@ -6,17 +6,12 @@ public class ChevalierMove : MonoBehaviour
 {
     [SerializeField]
     private Vector3 m_Direction;
-    [SerializeField]
-    private float m_Delta;
+    [SerializeField, Range(0, 10)]
+    private float m_Speed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(m_Delta == 0.0f)
-        {
-            m_Delta = Time.deltaTime;
-        }
-
         if(m_Direction == Vector3.zero)
         {
             m_Direction = Vector3.forward;
@@ -24,8 +19,19 @@ public class ChevalierMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(m_Direction * m_Delta);
+        transform.Translate(m_Direction * Time.fixedDeltaTime * m_Speed);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            Debug.Log("Trigger Enemy!");
+            EnemyMove enemy = other.GetComponent<EnemyMove>();
+            enemy.m_IsOnGround = true;
+            enemy.Die();
+        }
     }
 }

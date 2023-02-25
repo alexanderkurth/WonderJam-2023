@@ -5,19 +5,19 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_Target;
+    public GameObject m_Target;
+    [SerializeField, Range(0, 10)]
+    private float m_Speed = 1.0f;
     [SerializeField]
-    private float m_Delta;
+    private ParticleSystem m_ParticleSystem;
+
     private Vector3 m_Direction;
+
+    public bool m_IsOnGround = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (m_Delta == 0.0f)
-        {
-            m_Delta = Time.deltaTime;
-        }
-
         if (m_Target == null)
         {
             m_Direction = Vector3.forward;
@@ -25,13 +25,21 @@ public class EnemyMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(m_Target != null)
+        if (!m_IsOnGround)
         {
-            m_Direction = m_Target.transform.position - transform.position;
-        }
+            if (m_Target != null)
+            {
+                m_Direction = (m_Target.transform.position - transform.position).normalized;
+            }
 
-        transform.Translate(m_Direction * m_Delta);
+            transform.Translate(m_Direction * Time.fixedDeltaTime * m_Speed);
+        }
+    }
+
+    public void Die()
+    {
+        m_ParticleSystem.Play();
     }
 }
