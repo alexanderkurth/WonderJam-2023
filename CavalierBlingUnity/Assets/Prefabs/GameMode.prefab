@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6574822813041149309}
   - component: {fileID: 8231682986648972497}
-  - component: {fileID: 118491309927039318}
   m_Layer: 0
   m_Name: GameMode
   m_TagString: Untagged
@@ -54,19 +53,3 @@ MonoBehaviour:
     type: 3}
   _ennemyCount: 10
   dayCount: 0
---- !u!114 &118491309927039318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420152229124155614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a68571e7a2d28549969025d6ffedde4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duplicationHandling: 1
-  DoNotDestroyOnLoad: 1
-  _currentCurrencyText: {fileID: 0}
-  _baseValue: 0
