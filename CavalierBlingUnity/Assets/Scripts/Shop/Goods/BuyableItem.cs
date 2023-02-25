@@ -50,6 +50,7 @@ public class BuyableItem : MonoBehaviour
     private TextMeshPro _mTmpPrice = null;
 
     private int _mObjectPrice = 1;
+    public int ObjectPrice { get => _mObjectPrice; }
     private ObjectType _mObjectType = ObjectType.Miscellaneous;
     private AvailableObject _mAvailableObject = AvailableObject.ArmorArm;
 

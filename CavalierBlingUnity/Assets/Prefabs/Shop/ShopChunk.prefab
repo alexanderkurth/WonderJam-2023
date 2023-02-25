@@ -92,7 +92,6 @@ MonoBehaviour:
   _mMoveToShopTime: 2
   _mNumberOfObjectToLookAt: {x: 2, y: 5}
   _mHesitationTimePerObject: {x: 1, y: 2}
-  _mPercentChanceChoseItem: 20
   _mSpendingMoveToStartTime: 2
   _mNoSpendingMoveToStartTime: 4
 --- !u!1 &8064519189431403329

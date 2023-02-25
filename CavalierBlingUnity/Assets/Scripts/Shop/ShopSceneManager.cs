@@ -138,4 +138,15 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
         return toReturn;
     }
+
+    private BuyableItem GetSelectedItem(List<BuyableItem> items)
+    {
+        int totalPrice = 0;
+        foreach (BuyableItem item in items)
+        {
+            totalPrice += item.ObjectPrice;
+        }
+
+        return null;
+    }
 }
