@@ -17,9 +17,6 @@ public class InteractableComponent : MonoBehaviour
     UnityEvent m_OnInteractionSucessEvent;
 
     [SerializeField]
-    Material tempSucessMaterial;
-
-    [SerializeField]
     public float m_LootableMoney = 0.0f;
 
     private bool m_IsInteractionStarted = false;
@@ -108,19 +105,6 @@ public class InteractableComponent : MonoBehaviour
             {
                 interactor.RemoveInteractable(this);
             }
-        }
-    }
-
-    /* To be removed */
-    public void ChangeInteractableColor()
-    {
-        Debug.Log("ChangeInteractableColor");
-        //var renderer = this.GetComponentInChildren<Renderer>();
-        var renderer = this.GetComponentInParent<Renderer>();
-        if(renderer)
-        {
-            Debug.Log("renderer");
-            renderer.material = tempSucessMaterial;
         }
     }
 }
