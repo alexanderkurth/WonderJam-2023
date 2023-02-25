@@ -4,23 +4,33 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] 
-    private TextMeshProUGUI _currentCurrencyText; 
+    private TextMeshProUGUI _currentCurrencyText;
+
+    [SerializeField] 
+    private int _baseValue;
     
-    private int currentCurrency = 0;
+    private int _currentCurrency;
 
     private void Start()
     {
-        UpdateCurrencyText();
+        // Init currenCurrency
+        _currentCurrency = _baseValue;
+        ChangeCurrencyValue(0);
     }
 
     public void ChangeCurrencyValue(int value)
     {
-        currentCurrency += Mathf.Max(0, value);
-        UpdateCurrencyText();
+        _currentCurrency += value;
+        _currentCurrencyText.text = _currentCurrency.ToString();
+
+        if (_currentCurrency < 0)
+        {
+            // Game Over
+        }
     }
 
-    private void UpdateCurrencyText()
+    public int GetCurrentCurrency()
     {
-        _currentCurrencyText.text = currentCurrency.ToString();
+        return _currentCurrency;
     }
 }
