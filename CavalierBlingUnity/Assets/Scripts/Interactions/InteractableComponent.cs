@@ -16,9 +16,6 @@ public class InteractableComponent : MonoBehaviour
     [SerializeField]
     UnityEvent m_OnInteractionSucessEvent;
 
-    [SerializeField]
-    Material tempSucessMaterial;
-
     private bool m_IsInteractionStarted = false;
     private float m_MashTimer = 0.0f;
     private bool m_InteractionDone = false;
@@ -103,18 +100,6 @@ public class InteractableComponent : MonoBehaviour
             {
                 interactor.RemoveInteractable(this);
             }
-        }
-    }
-
-    /* To be removed */
-    public void ChangeInteractableColor()
-    {
-        Debug.Log("ChangeInteractableColor");
-        var renderer = this.GetComponentInChildren<Renderer>();
-        if(renderer)
-        {
-            Debug.Log("renderer");
-            renderer.material = tempSucessMaterial;
         }
     }
 }
