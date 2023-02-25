@@ -45,7 +45,8 @@ public class InteractorComponent : MonoBehaviour
 
     public void TriggerInteraction()
     {
-        if(m_Target != null)
+        Debug.Log("INTERACTION ADDED");
+        if (m_Target != null)
         {
             m_Target.TriggerInteraction();
         }

@@ -164,10 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_Speed: 1
+  m_Speed: 5.81
   m_ParticleSystem: {fileID: 291889791}
   m_Interactable: {fileID: 5262411185371899328}
   m_EnemySpriteBody: {fileID: 2904790290336492041}
+  m_AliveCollider: {fileID: 6229843769982724495}
   m_IsOnGround: 0
 --- !u!198 &291889791
 ParticleSystem:
