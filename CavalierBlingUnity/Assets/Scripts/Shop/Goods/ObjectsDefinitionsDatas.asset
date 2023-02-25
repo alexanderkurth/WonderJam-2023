@@ -15,17 +15,61 @@ MonoBehaviour:
   ObjectsDatas:
   - ObjectName: 0
     ObjectType: 0
-    ObjectPrice: 200
+    ObjectPrices: c8000000
     ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
   - ObjectName: 1
     ObjectType: 0
-    ObjectPrice: 200
+    ObjectPrices: c8000000
     ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
   - ObjectName: 2
     ObjectType: 0
-    ObjectPrice: 200
+    ObjectPrices: c8000000
     ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
   - ObjectName: 3
     ObjectType: 0
-    ObjectPrice: 200
+    ObjectPrices: c8000000
     ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
+  - ObjectName: 50
+    ObjectType: 1
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
+  - ObjectName: 51
+    ObjectType: 1
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
+  - ObjectName: 52
+    ObjectType: 1
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 0
+  - ObjectName: 100
+    ObjectType: 2
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 1
+  - ObjectName: 101
+    ObjectType: 2
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 1
+  - ObjectName: 102
+    ObjectType: 2
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 1
+  - ObjectName: 103
+    ObjectType: 2
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 1
+  - ObjectName: 104
+    ObjectType: 2
+    ObjectPrices: 0a0000003200000064000000
+    ObjectSprite: {fileID: 0}
+    CanBeBoughtMultipleTime: 1
