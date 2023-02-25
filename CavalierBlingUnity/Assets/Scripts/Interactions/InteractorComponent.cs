@@ -9,6 +9,9 @@ public class InteractorComponent : MonoBehaviour
 
     private InteractableComponent m_Target;
     public InteractableComponent Target { get { return m_Target; } }
+    public float offScreenCooldown = 1f;
+
+    private Coroutine _isOffScreenCo = null; 
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +20,10 @@ public class InteractorComponent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (GameMode.Instance.isGameOver) return; 
+       CheckOffScreen();
     }
 
     public void RegisterInteractable(InteractableComponent target)
@@ -41,7 +45,8 @@ public class InteractorComponent : MonoBehaviour
 
     public void TriggerInteraction()
     {
-        if(m_Target != null)
+        Debug.Log("INTERACTION ADDED");
+        if (m_Target != null)
         {
             m_Target.TriggerInteraction();
         }
@@ -56,5 +61,32 @@ public class InteractorComponent : MonoBehaviour
                 TriggerInteraction();
             }
         }
+    }
+
+    public void CheckOffScreen()
+    {
+        Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+        bool isOffScreen = !Screen.safeArea.Contains(pos);
+        if (isOffScreen)
+        {
+            if (_isOffScreenCo == null)
+            {
+                _isOffScreenCo = StartCoroutine(CheckOffScreenCo());
+            }
+        }
+        else 
+        {
+            if (_isOffScreenCo != null)
+            {
+                StopCoroutine(_isOffScreenCo);
+                _isOffScreenCo = null;
+            }
+        }
+    }
+
+    private IEnumerator CheckOffScreenCo()
+    {
+        yield return new WaitForSeconds(offScreenCooldown);
+        GameMode.Instance.GameOver(GameMode.GameOverCondition.OutOfScreen);
     }
 }

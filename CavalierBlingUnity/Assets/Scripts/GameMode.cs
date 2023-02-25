@@ -19,6 +19,7 @@ public class GameMode : AbstractSingleton<GameMode>
     private int _ennemyCount = 10;
   
     public int dayCount = 0;
+    public bool isGameOver = false; 
 
     private void Start()
     {
@@ -43,7 +44,7 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         Time.timeScale = 0f;
         Instantiate(_gameOverScreen, _canvas.transform);
-        
+        isGameOver = true;
         switch (gameOverCondition)
         {
             case GameOverCondition.OutOfScreen:

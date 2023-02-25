@@ -18,14 +18,15 @@ public class Shop : AbstractSingleton<Shop>
     private List<ShopItemSelection> _mShopItemSelection = new List<ShopItemSelection>();
 
     [SerializeField]
-    private Dictionary<BuyableItem, ObjectType> _mBuyableItems = null;
+    private Dictionary<BuyableItem, ShopItemSelection> _mBuyableItems = new Dictionary<BuyableItem, ShopItemSelection>();
 
     [SerializeField]
     private ObjectsDefinition _mObjectsDefinition = null;
 
     private void Start()
     {
-        //Link self to GameMode.    
+        CreateShopItems(); 
+        InitializeShopOfTheDay();
     }
 
     private void CreateShopItems()
@@ -35,15 +36,15 @@ public class Shop : AbstractSingleton<Shop>
             GameObject newGO = Instantiate(_mBuyableItemPrefab, item.ItemParentRoot);
             BuyableItem buyableItem = newGO.GetComponent<BuyableItem>();
 
-            _mBuyableItems.Add(buyableItem, item.ItemObjectType);
+            _mBuyableItems.Add(buyableItem, item);
         }
     }
 
     public void InitializeShopOfTheDay()
     {
-        foreach (KeyValuePair<BuyableItem, ObjectType> item in _mBuyableItems)
+        foreach (KeyValuePair<BuyableItem, ShopItemSelection> item in _mBuyableItems)
         {
-            item.Key.IntializeObject(SelectBuyableItem(item.Value));
+            item.Key.IntializeObject(SelectBuyableItem(item.Value.ItemObjectType));
         }
     }
 
@@ -55,7 +56,7 @@ public class Shop : AbstractSingleton<Shop>
         for (int i = selectionCount; i >= 0; i--)
         {
             ObjectData objectData = objectSelection[i];
-            if (objectSelection[i].CanBeBoughtMultipleTime == true || !Inventory.Instance.IsInInventory(objectSelection[i].ObjectType,objectSelection[i].ObjectName))
+            if (objectData.CanBeBoughtMultipleTime == true || !Inventory.Instance.IsInInventory(objectData.ObjectType, objectData.ObjectName))
             {
                 continue;   
             }
@@ -66,5 +67,20 @@ public class Shop : AbstractSingleton<Shop>
         selectionCount = objectSelection.Count;
 
         return objectSelection[Random.Range(0, selectionCount)];
+    }
+
+    public List<BuyableItem> GetBuyableObjects()
+    {
+        List<BuyableItem> buyableItemToReturn = new List<BuyableItem>();
+
+        foreach (KeyValuePair<BuyableItem, ShopItemSelection> item in _mBuyableItems)
+        {
+            if(item.Key.IsBuyable())
+            {
+                buyableItemToReturn.Add(item.Key);
+            }
+        }
+
+        return buyableItemToReturn;
     }
 }
