@@ -23,6 +23,7 @@ public class GameMode : AbstractSingleton<GameMode>
     private void Start()
     {
         Time.timeScale = 1f;
+        SpawnEnnemies();
     }
 
     public void DayEnd()
