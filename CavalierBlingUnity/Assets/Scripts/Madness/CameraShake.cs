@@ -33,9 +33,9 @@ public class CameraShake : MonoBehaviour
 
     private void ShakeCamera()
     {
-        float x = m_OriginalPosition.x + Random.insideUnitSphere.x * Time.deltaTime * m_ShakeFrequency;
-        float y = m_OriginalPosition.y + Random.insideUnitSphere.y * Time.deltaTime * m_ShakeFrequency;
-        float z = m_OriginalPosition.z + Random.insideUnitSphere.z * Time.deltaTime * 1 / m_ShakeFrequency;
+        float x = m_OriginalPosition.x + Random.insideUnitSphere.x * Time.deltaTime * Mathf.Pow(2,m_ShakeFrequency);
+        float y = m_OriginalPosition.y + Random.insideUnitSphere.y * Time.deltaTime * Mathf.Pow(2, m_ShakeFrequency);
+        float z = m_OriginalPosition.z + Random.insideUnitSphere.z * Time.deltaTime * 1 / Mathf.Pow(2, m_ShakeFrequency);
 
         Vector3 pos = new Vector3(x, y, z);
 
