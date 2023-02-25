@@ -22,8 +22,6 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     [SerializeField]
     private Vector2 _mHesitationTimePerObject = new Vector2(0.25f, 0.5f);
     [SerializeField]
-    private int _mPercentChanceChoseItem = 20;
-    [SerializeField]
     private float _mSpendingMoveToStartTime = 2f;
     [SerializeField]
     private float _mNoSpendingMoveToStartTime = 4f;
