@@ -14,8 +14,10 @@ public class Inventory : AbstractSingleton<Inventory>
     private Dictionary<ObjectType, List<AvailableObject>> _inventory = new Dictionary<ObjectType, List<AvailableObject>>();
     private const int MAX_ARMOR_COUNT = 3;
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+        
         // Init currenCurrency
         _currentCurrency = _baseValue;
         ChangeCurrencyValue(0);
