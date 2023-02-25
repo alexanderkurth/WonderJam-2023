@@ -16,60 +16,60 @@ MonoBehaviour:
   - ObjectName: 0
     ObjectType: 0
     ObjectPrices: c8000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: a62b835b5a624384495b9d4ae155140d, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 1
     ObjectType: 0
     ObjectPrices: c8000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: f3e09e7784ed35c4dbb608fab7f3a43c, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 2
     ObjectType: 0
     ObjectPrices: c8000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 27ba8c2b5aecc1c43bcee182ec20713e, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 3
     ObjectType: 0
     ObjectPrices: c8000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 37b19b7a833bf5a49bee2b01f642eb41, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 50
     ObjectType: 1
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: ed41b986ac1bf9b41bd9434a4d0182ac, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 51
     ObjectType: 1
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: ed41b986ac1bf9b41bd9434a4d0182ac, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 52
     ObjectType: 1
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: ed41b986ac1bf9b41bd9434a4d0182ac, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 100
     ObjectType: 2
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 6cda5a3ef73dff0448de4e7e311e1709, type: 3}
     CanBeBoughtMultipleTime: 1
   - ObjectName: 101
     ObjectType: 2
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 6cda5a3ef73dff0448de4e7e311e1709, type: 3}
     CanBeBoughtMultipleTime: 1
   - ObjectName: 102
     ObjectType: 2
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 6cda5a3ef73dff0448de4e7e311e1709, type: 3}
     CanBeBoughtMultipleTime: 1
   - ObjectName: 103
     ObjectType: 2
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 6cda5a3ef73dff0448de4e7e311e1709, type: 3}
     CanBeBoughtMultipleTime: 1
   - ObjectName: 104
     ObjectType: 2
     ObjectPrices: 0a0000003200000064000000
-    ObjectSprite: {fileID: 0}
+    ObjectSprite: {fileID: 21300000, guid: 6cda5a3ef73dff0448de4e7e311e1709, type: 3}
     CanBeBoughtMultipleTime: 1

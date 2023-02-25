@@ -12,6 +12,8 @@ public class EnemyMove : MonoBehaviour
     private ParticleSystem m_ParticleSystem;
     [SerializeField]
     public GameObject m_Interactable;
+    [SerializeField]
+    public GameObject m_EnemySpriteBody;
 
     private Vector3 m_Direction;
 
@@ -43,7 +45,7 @@ public class EnemyMove : MonoBehaviour
     public void FallToGround()
     {
         m_ParticleSystem.Play();
-
+        m_EnemySpriteBody.SetActive(false);
         m_Interactable.SetActive(true);
     }
 }
