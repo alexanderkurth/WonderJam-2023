@@ -19,6 +19,9 @@ public class InteractableComponent : MonoBehaviour
     [SerializeField]
     Material tempSucessMaterial;
 
+    [SerializeField]
+    public float m_LootableMoney = 0.0f;
+
     private bool m_IsInteractionStarted = false;
     private float m_MashTimer = 0.0f;
     private bool m_InteractionDone = false;
@@ -78,6 +81,8 @@ public class InteractableComponent : MonoBehaviour
         Debug.Log("OnInteractionSucessfull");
         m_InteractionDone = true;
         m_OnInteractionSucessEvent.Invoke();
+
+        Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,7 +115,8 @@ public class InteractableComponent : MonoBehaviour
     public void ChangeInteractableColor()
     {
         Debug.Log("ChangeInteractableColor");
-        var renderer = this.GetComponentInChildren<Renderer>();
+        //var renderer = this.GetComponentInChildren<Renderer>();
+        var renderer = this.GetComponentInParent<Renderer>();
         if(renderer)
         {
             Debug.Log("renderer");

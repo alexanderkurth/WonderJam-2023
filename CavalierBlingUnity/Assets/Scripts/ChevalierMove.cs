@@ -31,7 +31,7 @@ public class ChevalierMove : MonoBehaviour
             Debug.Log("Trigger Enemy!");
             EnemyMove enemy = other.GetComponent<EnemyMove>();
             enemy.m_IsOnGround = true;
-            enemy.Die();
+            enemy.FallToGround();
         }
     }
 }

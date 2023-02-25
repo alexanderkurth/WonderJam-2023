@@ -10,6 +10,8 @@ public class EnemyMove : MonoBehaviour
     private float m_Speed = 1.0f;
     [SerializeField]
     private ParticleSystem m_ParticleSystem;
+    [SerializeField]
+    public GameObject m_Interactable;
 
     private Vector3 m_Direction;
 
@@ -38,8 +40,10 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void FallToGround()
     {
         m_ParticleSystem.Play();
+
+        m_Interactable.SetActive(true);
     }
 }

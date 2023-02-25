@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Target: {fileID: 0}
   m_Speed: 1
   m_ParticleSystem: {fileID: 291889791}
+  m_Interactable: {fileID: 295538563556573190}
   m_IsOnGround: 0
 --- !u!198 &291889791
 ParticleSystem:
@@ -4932,13 +4933,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
+      propertyPath: m_LootableMoney
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
       propertyPath: tempSucessMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 7ab977a21c92388468ee65ad1c0e5a78, type: 2}
     - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
       propertyPath: m_MaxTimeBewteenMash
-      value: 0.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
@@ -5030,8 +5036,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312807, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.4281714
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312807, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.052710056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001617783661312807, guid: 46665b4b650c39145892ae1bcd0aa131,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.14102125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46665b4b650c39145892ae1bcd0aa131, type: 3}
+--- !u!1 &295538563556573190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3001617783661312792, guid: 46665b4b650c39145892ae1bcd0aa131,
+    type: 3}
+  m_PrefabInstance: {fileID: 3296095863349754654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &295538563556573240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3001617783661312806, guid: 46665b4b650c39145892ae1bcd0aa131,
@@ -5044,7 +5071,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3296095863349754654}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 295538563556573190}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d0376060b21b9f4d826a6cd6378b95a, type: 3}
