@@ -5,71 +5,41 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField]
-    private Camera m_Camera;
+    private Vector3 m_OriginalPosition = default;
 
     [SerializeField]
-    private Transform m_CameraTransform;
+    [Range(0, 10)]
+    private float m_ShakeFrequency = 0;
 
     [SerializeField]
-    private Vector3 m_OriginalCameraPosition;
+    private bool m_CanShake = true;
 
-    // Shake Parameters
-    [SerializeField]
-    private float m_shakeTimer;
-
-    [SerializeField]
-    public float m_ShakeDuration = 2.0f;
-    [SerializeField]
-    public float m_ShakeIntensity = 0.7f;
-    [SerializeField]
-    public bool canShake = false;
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        if (m_Camera == null)
-        {
-            m_Camera = GetComponent<Camera>();
-
-            m_CameraTransform = m_Camera.transform;
-            m_OriginalCameraPosition = m_CameraTransform.localPosition;
-        }
+        m_OriginalPosition = transform.localPosition;
     }
 
-    void Update()
+    public void ResetPosition()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ShakeCamera(1.0f, 5.0f);
-        }
-
-        if (canShake)
-        {
-            StartCameraShakeEffect();
-        }
+        transform.localPosition = m_OriginalPosition;
     }
 
-    public void ShakeCamera(float duration, float intensity)
+    private void ShakeCamera()
     {
-        m_shakeTimer = duration;
-        m_ShakeIntensity = intensity;
+        float x = m_OriginalPosition.x + Random.insideUnitSphere.x * Time.deltaTime * m_ShakeFrequency;
+        float y = m_OriginalPosition.y + Random.insideUnitSphere.y * Time.deltaTime * m_ShakeFrequency;
+        float z = m_OriginalPosition.z + Random.insideUnitSphere.z * Time.deltaTime * 1 / m_ShakeFrequency;
 
-        canShake = true;
+        Vector3 pos = new Vector3(x, y, z);
+
+        transform.localPosition = pos;
     }
 
-    void StartCameraShakeEffect()
+    private void Update()
     {
-        if (m_shakeTimer > 0)
+        if (m_CanShake  || m_ShakeFrequency != 0)
         {
-            m_CameraTransform.localPosition = m_OriginalCameraPosition + Random.insideUnitSphere * m_ShakeIntensity;
-            m_shakeTimer -= Time.deltaTime;  
-        }
-        else
-        {
-            m_shakeTimer = 0f;
-            m_CameraTransform.position = m_OriginalCameraPosition;
-            canShake = false;
+            ShakeCamera();
         }
     }
 }
