@@ -15,6 +15,6 @@ public class DailyTax : AbstractSingleton<DailyTax>
     public void DeductTax()
     {
         float currentTax = GetDailyTax();
-        CurrencyManager.Instance.ChangeCurrencyValue(currentTax);
+        Inventory.Instance.ChangeCurrencyValue(currentTax);
     }
 }

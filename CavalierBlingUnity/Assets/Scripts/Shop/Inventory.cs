@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : AbstractSingleton<Inventory>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] 
+    private TextMeshProUGUI _currentCurrencyText;
+
+    [SerializeField] 
+    private float _baseValue;
+    
+    private float _currentCurrency;
+
+    private void Start()
     {
-        
+        // Init currenCurrency
+        _currentCurrency = _baseValue;
+        ChangeCurrencyValue(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeCurrencyValue(float value)
     {
-        
+        _currentCurrency += value;
+        _currentCurrencyText.text = _currentCurrency.ToString();
+
+        if (_currentCurrency < 0)
+        {
+            GameMode.Instance.GameOver(GameMode.GameOverCondition.NotEnoughMoney);
+        }
+    }
+    
+    public float GetCurrentCurrency()
+    {
+        return _currentCurrency;
     }
 }
