@@ -77,19 +77,19 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         int objectCount = buyableObjects.Count;
         bool objectIsChosen = objectCount > 0 ? false : true;
         Vector3 rotation = Vector3.zero;
-        BuyableItem selectedItem = null;
+        BuyableItem selectedItem = GetSelectedItem(buyableObjects);
 
         yield return new WaitForSeconds(Random.Range(_mHesitationTimePerObject.x, _mHesitationTimePerObject.y));
 
         if (objectCount > 0)
         {
             int index = 0, numberOfTry = 0;
-            List<int> indexes = GenerateIndexToLookAt(objectCount);
+            List<int> indexes = GenerateIndexToLookAt(objectCount, buyableObjects.IndexOf(selectedItem));
 
             for (int i = 0; i < indexes.Count; i++)
             {
-                selectedItem = buyableObjects[index];
-                Vector3 direction = (selectedItem.transform.position - _mKnightTransform.position).normalized;
+                BuyableItem lookedAtItem = buyableObjects[indexes[i]];
+                Vector3 direction = (lookedAtItem.transform.position - _mKnightTransform.position).normalized;
                 _mKnightTransform.rotation = Quaternion.LookRotation(direction);
 
                 //C'est dégueux mais on corrige le X pour rester flat.
@@ -122,7 +122,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         yield break;
     }
 
-    private List<int> GenerateIndexToLookAt(int objectCount)
+    private List<int> GenerateIndexToLookAt(int objectCount, int selectedItemIndex)
     {
         List<int> toReturn = new List<int>();
         int numberOfObjectToLookAt = objectCount > 1 ? Mathf.RoundToInt(Random.Range(_mNumberOfObjectToLookAt.x, _mNumberOfObjectToLookAt.y)) : 1;
@@ -136,15 +136,38 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
             selectIndex = (selectIndex + valueToAdd) % objectCount;
         }
 
+        if(toReturn[toReturn.Count-1] != selectedItemIndex)
+        {
+            toReturn.Add(selectedItemIndex);
+        }
+
         return toReturn;
     }
 
     private BuyableItem GetSelectedItem(List<BuyableItem> items)
     {
         int totalPrice = 0;
+
         foreach (BuyableItem item in items)
         {
             totalPrice += item.ObjectPrice;
+        }
+
+        List<float> percents = new List<float>();
+        foreach (BuyableItem item in items)
+        {
+            float percent = percents.Count > 0 ? percents[percents.Count-1] + (item.ObjectPrice / (float)totalPrice) : (item.ObjectPrice / (float)totalPrice);
+            percents.Add(percent);
+        }
+
+        float chosenPercent = Random.Range(0f, 1f);
+
+        for (int i = 0; i < percents.Count; i++)
+        {
+            if(percents[i] > chosenPercent || i+1 == percents.Count)
+            {
+                return items[i];
+            }
         }
 
         return null;
