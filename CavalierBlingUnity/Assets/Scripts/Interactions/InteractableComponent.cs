@@ -80,6 +80,7 @@ public class InteractableComponent : MonoBehaviour
         m_OnInteractionSucessEvent.Invoke();
 
         Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
+
     }
 
     private void OnTriggerEnter(Collider other)
