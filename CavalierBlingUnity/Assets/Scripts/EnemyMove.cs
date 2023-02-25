@@ -14,6 +14,8 @@ public class EnemyMove : MonoBehaviour
     public GameObject m_Interactable;
     [SerializeField]
     public GameObject m_EnemySpriteBody;
+    [SerializeField]
+    private Collider m_AliveCollider;
 
     private Vector3 m_Direction;
 
@@ -47,5 +49,6 @@ public class EnemyMove : MonoBehaviour
         m_ParticleSystem.Play();
         m_EnemySpriteBody.SetActive(false);
         m_Interactable.SetActive(true);
+        m_AliveCollider.enabled = false;
     }
 }

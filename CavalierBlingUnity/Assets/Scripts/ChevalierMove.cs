@@ -36,7 +36,6 @@ public class ChevalierMove : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            Debug.Log("Trigger Enemy!");
             EnemyMove enemy = other.GetComponent<EnemyMove>();
             enemy.m_IsOnGround = true;
             enemy.FallToGround();
