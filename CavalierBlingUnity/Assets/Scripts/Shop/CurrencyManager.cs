@@ -1,10 +1,8 @@
 using TMPro;
 using UnityEngine;
 
-public class CurrencyManager : MonoBehaviour
+public class CurrencyManager : AbstractSingleton<CurrencyManager>
 {
-    public static CurrencyManager Instance; 
-    
     [SerializeField] 
     private TextMeshProUGUI _currentCurrencyText;
 
@@ -12,11 +10,6 @@ public class CurrencyManager : MonoBehaviour
     private float _baseValue;
     
     private float _currentCurrency;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     private void Start()
     {
@@ -32,7 +25,7 @@ public class CurrencyManager : MonoBehaviour
 
         if (_currentCurrency < 0)
         {
-            // Game Over
+            GameMode.Instance.GameOver(GameMode.GameOverCondition.NotEnoughMoney);
         }
     }
     

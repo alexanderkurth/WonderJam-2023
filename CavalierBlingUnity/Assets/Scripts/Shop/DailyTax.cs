@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DailyTax : MonoBehaviour
+public class DailyTax : AbstractSingleton<DailyTax>
 {
     private const float DAILY_TAX = 100f;
     private const float TAX_MULTIPLIER = 0.05f;
@@ -8,7 +8,7 @@ public class DailyTax : MonoBehaviour
     
     private float GetDailyTax()
     {
-        _currentTax = DAILY_TAX * TAX_MULTIPLIER; // * Day number from game mode
+        _currentTax = DAILY_TAX * TAX_MULTIPLIER * GameMode.Instance.dayCount;
         return _currentTax;
     }
 
