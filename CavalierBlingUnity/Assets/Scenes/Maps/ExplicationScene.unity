@@ -758,10 +758,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Recherche d'\xE9cuyer\nObjectif de job : tuer les ennemis attaqu\xE9 par
-    le chevalier et relever ses alli\xE9s\nComment tuer : soyer perceverant, les
-    ennemies ont la cuirrasse epaisse, il faut plusieurs coup acc\xE9l\xE9r\xE9 pour
-    les achever\r\nComment reveiller les allier : les seccouer plusieurs fois !\r"
+  m_text: "Recherche esclave... \xE9cuyer d\xE9vou\xE9 et admiratif de ma personne.\r\n\nTon
+    r\xF4le dans ma qu\xEAte: \r\nAchever les ennemis que j'aurai \xE9pargn\xE9,
+    et relever mes nombreux fans tomb\xE9s \xE0 mes c\xF4t\xE9s.\r\n\nComment vas-tu
+    faire?!\r\nD\xE9j\xE0 utilises ta t\xEAte, ils sont solides les bougres. Donnes
+    leurs plusieurs coups pour les achever, comme \xE7a ils pourront m'admirer du
+    Paradis.\r\nPour mes fans, secoues les plusieurs fois en annon\xE7ant mon arriv\xE9e.
+    Tu vas voir, ils seront si excit\xE9s qu'ils vont courir dans tous les sens."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 991dc54d7d7b08a489cd1414be70d48b, type: 2}
   m_sharedMaterial: {fileID: -4660556014395725334, guid: 991dc54d7d7b08a489cd1414be70d48b,
@@ -789,8 +792,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -897,10 +900,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Recherche d'\xE9cuyer\nObjectif de job : tuer les ennemis attaqu\xE9 par
-    le chevalier et relever ses alli\xE9s\nComment tuer : soyer perceverant, les
-    ennemies ont la cuirrasse epaisse, il faut plusieurs coup acc\xE9l\xE9r\xE9 pour
-    les achever\r\nComment reveiller les allier : les seccouer plusieurs fois !\r\n"
+  m_text: "Recherche esclave... \xE9cuyer d\xE9vou\xE9 et admiratif de ma personne.\r\nTon
+    r\xF4le dans ma qu\xEAte: \r\nAchever les ennemis que j'aurai \xE9pargn\xE9,
+    et relever mes nombreux fans tomb\xE9s \xE0 mes c\xF4t\xE9s.\r\nComment vas-tu
+    faire?!\r\nD\xE9j\xE0 utilises ta t\xEAte, ils sont solides les bougres. Donnes
+    leurs plusieurs coups pour les achever, comme \xE7a ils pourront m'admirer du
+    Paradis.\r\nPour mes fans, secoues les plusieurs fois en annon\xE7ant mon arriv\xE9e.
+    Tu vas voir, ils seront si excit\xE9s qu'ils vont courir dans tous les sens."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 991dc54d7d7b08a489cd1414be70d48b, type: 2}
   m_sharedMaterial: {fileID: -4660556014395725334, guid: 991dc54d7d7b08a489cd1414be70d48b,
@@ -928,8 +934,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
