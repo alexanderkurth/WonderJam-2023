@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static GameMode;
 
 public enum MessageEnum
 {
     DelayStartGame,
     RandomSentenceInGame,
     FinishingAnEnemy,
-    Warnings,
     BuyRandomPiece,
     BuyArmorPiece,
     BuyAnInstrument,
+    OutOfScreenWarning,
+    OutOfScreenLose,
+    MadnessWarning,
+    MadnessLose,
+    NotEnoughMoneyLose,
 }
 
 [System.Serializable]
@@ -60,6 +65,38 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         }
     }
 
+    public void SendGameOverMessage(GameOverCondition gameOverCondition)
+    {
+        if (_mMessageCoroutine != null)
+        {
+            StopCoroutine(_mMessageCoroutine);
+        }
+
+        MessageEnum messageEnum = MessageEnum.OutOfScreenLose;
+        switch (gameOverCondition)
+        {
+            case GameOverCondition.OutOfScreen:
+                {
+                    messageEnum = MessageEnum.OutOfScreenLose;
+                }
+                break;
+            case GameOverCondition.Madness:
+                {
+                    messageEnum = MessageEnum.MadnessLose;
+                }
+                break;
+            case GameOverCondition.NotEnoughMoney:
+                {
+                    messageEnum = MessageEnum.NotEnoughMoneyLose;
+                }
+                break;
+            default:
+                break;
+        }
+
+        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum), 0f));
+    }
+
     private IEnumerator DisplayMessageCoroutine(string text, float delayBeforeDisplay)
     {
         if(text == string.Empty)
@@ -67,7 +104,7 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
             yield break;
         }
 
-        yield return new WaitForSeconds(delayBeforeDisplay);
+        yield return new WaitForSecondsRealtime(delayBeforeDisplay);
 
         float lerp = 0f;
 
@@ -75,14 +112,14 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         
         while (lerp < 1f)
         {
-            lerp += Time.deltaTime / 0.75f;
+            lerp += Time.unscaledDeltaTime / 0.5f;
 
             _mMessageText.text = text.Substring(0, Mathf.FloorToInt(Mathf.Lerp(0, text.Length, lerp)));
 
             yield return null;
         }
 
-        yield return new WaitForSeconds(Mathf.Lerp(_mMinMaxDisplayTimeValue.x, _mMinMaxDisplayTimeValue.y, Mathf.InverseLerp(_mMinMaxStringSizeForMaxDisplayTime.x, _mMinMaxStringSizeForMaxDisplayTime.y, text.Length)));
+        yield return new WaitForSecondsRealtime(Mathf.Lerp(_mMinMaxDisplayTimeValue.x, _mMinMaxDisplayTimeValue.y, Mathf.InverseLerp(_mMinMaxStringSizeForMaxDisplayTime.x, _mMinMaxStringSizeForMaxDisplayTime.y, text.Length)));
 
         _mMessageObject.SetActive(false);
 

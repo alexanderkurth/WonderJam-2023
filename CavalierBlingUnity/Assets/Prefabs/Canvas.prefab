@@ -242,7 +242,7 @@ RectTransform:
   m_Children:
   - {fileID: 1924034315659416327}
   m_Father: {fileID: 8150045846527554038}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -283,8 +283,8 @@ RectTransform:
   m_Children:
   - {fileID: 5376387964898494184}
   - {fileID: 1040227293813181083}
-  - {fileID: 5757035004360247943}
   - {fileID: 2640592359723004499}
+  - {fileID: 5757035004360247943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -403,27 +403,40 @@ MonoBehaviour:
     - Requiescat in Pace
   - MessageName: 3
     Messages:
-    - "Attention \xE0 toi Billy, tu es tout p\xE2le. Tu ne me sers \xE0 rien mort
-      !"
-  - MessageName: 4
-    Messages:
     - "Ah ! Une bonne bi\xE8re ! Rien de tel pour se rafraichir !"
     - Du jambon... Le Gras ! C'est la Vie !
     - Du jambon... Le Gras ! C'est la Vie !
     - Du jambon... Le Gras ! C'est la Vie !
     - Du jambon... Le Gras ! C'est la Vie !
-  - MessageName: 5
+  - MessageName: 4
     Messages:
     - "Un bouclier, vu comme tu m'es utile il me faudra bien \xE7a..."
     - "Que ces jambi\xE8res me vont bien! Regarde comment elles me moulent p.a.r.f.a.i.t.e.m.e.n.t!"
     - "Ah ! Un beau plastron pour prot\xE9ger mon beau torse velu !"
     - "Le probl\xE8me de ces heaumes, c'est qu'ils applatissent mon brushing !"
-  - MessageName: 6
+  - MessageName: 5
     Messages:
     - "Tu sais jouer de la trompette Billy ? Regarde celle l\xE0 comme elle est belle
       !"
     - "Fl\xFBte !.. Oui, une fl\xFBte !"
     - "Fl\xFBte !.. Oui, une fl\xFBte !"
+  - MessageName: 6
+    Messages: []
+  - MessageName: 7
+    Messages:
+    - "Hmmm... je croyais qu'il y avait quelqu'un autour de moi... \xE7a devait \xEAtre
+      le vent."
+    - "Qui a \xE9teint la lumi\xE8re?"
+  - MessageName: 8
+    Messages: []
+  - MessageName: 9
+    Messages:
+    - "Ah bah bravo Billy, \xE0 quoi vas-tu me servir mainteant que tu es devenu
+      fou..."
+  - MessageName: 10
+    Messages:
+    - "Vu que tu ne m'as pas ramen\xE9 d'argent, je vais te vendre pour payer la
+      taxe. Au revoir Billy!"
 --- !u!1001 &4942666316936053020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,10 +444,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8150045846527554038}
     m_Modifications:
+    - target: {fileID: 534700201863777706, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 534700201863777706, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 534700201863777706, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 534700201863777706, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321895653659686720, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321895653659686720, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321895653659686720, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321895653659686720, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5736175465308853428, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_Name
       value: ArmorUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793044736781691728, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793044736781691728, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793044736781691728, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793044736781691728, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
@@ -449,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
@@ -483,6 +556,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -504,17 +592,17 @@ PrefabInstance:
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
@@ -539,6 +627,26 @@ PrefabInstance:
     - target: {fileID: 6931783170700702543, guid: 3f73e0feb58ff2a409a180381d85d3e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929958713102165696, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929958713102165696, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929958713102165696, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929958713102165696, guid: 3f73e0feb58ff2a409a180381d85d3e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

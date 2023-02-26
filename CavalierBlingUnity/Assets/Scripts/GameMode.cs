@@ -131,13 +131,17 @@ public class GameMode : AbstractSingleton<GameMode>
     public void GameOver(GameOverCondition gameOverCondition)
     {
         Time.timeScale = 0f;
+
+        HUDCanvas.Instance.SendGameOverMessage(gameOverCondition);
+        Transform lastChild = _canvas.transform.GetChild(_canvas.transform.childCount - 1);
         GameObject gameOver = Instantiate(_gameOverScreen, _canvas.transform);
         gameOver.GetComponent<GameOver>().UpdateGameOverText(gameOverCondition);
         
         // Select "Go to main menu" button
         Button firstButton = gameOver.GetComponentInChildren<Button>();
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
-        
+
+        lastChild.SetAsLastSibling();
         isGameOver = true;
         _mGameState = GameState.Ending;
         
