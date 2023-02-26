@@ -246,7 +246,12 @@ PrefabInstance:
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
       propertyPath: m_MaxShakingIntensity
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
+        type: 3}
+      propertyPath: mCurrentShakingIntensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
