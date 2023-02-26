@@ -56,6 +56,8 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         _chevalier.GetComponent<ChevalierMove>().SetStartTimer(_TimeBeforeStart);
         _chevalier.GetComponentInChildren<EnemySpawner>().SetStartTimer(_TimeBeforeStart);
+
+        HUDCanvas.Instance.DisplayMessage(MessageEnum.DelayStartGame, 0.5f);
     }
 
 
