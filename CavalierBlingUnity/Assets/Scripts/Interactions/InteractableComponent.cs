@@ -64,9 +64,7 @@ public class InteractableComponent : MonoBehaviour
         m_IsInteractionStarted = true;
         m_TimeSinceLastInput = 0.0f;
 
-        //pressed
         mMadnessManager.Instance.IncreaseMadnessLevel(1);
-//        Debug.Log(mMadnessManager.Instance.GetCurrentMadnessLevel());
     }
 
     private void OnInteractionFailed()

@@ -57,6 +57,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         if (m_MadnessCurrentLevel > m_MadnessMaxLevel)
         {
             // TODO : ADD GAME OVER
+            GameMode.Instance.GameOver(GameMode.GameOverCondition.Madness);
             Debug.Log("GAME OVER");
         }
     }
@@ -138,7 +139,9 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             }
 
             if(active)
+            {
                 mCurrentShakingIntensity += 1;
+            }
             else
             {
                 mCurrentShakingIntensity += 1;
