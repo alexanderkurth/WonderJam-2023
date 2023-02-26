@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duplicationHandling: 1
-  DoNotDestroyOnLoad: 1
+  DoNotDestroyOnLoad: 0
   _mBuyableItemPrefab: {fileID: 8014855735733286678, guid: 702307de03036ad40b237ebf8474cf6a,
     type: 3}
   _mShopItemSelection:

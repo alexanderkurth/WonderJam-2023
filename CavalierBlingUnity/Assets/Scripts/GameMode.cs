@@ -111,8 +111,8 @@ public class GameMode : AbstractSingleton<GameMode>
 
     public void StartNewDay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         IncreaseDifficulty(dayCount);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     public void WinGame()
