@@ -63,8 +63,6 @@ public class InteractableComponent : MonoBehaviour
 
         m_IsInteractionStarted = true;
         m_TimeSinceLastInput = 0.0f;
-
-        mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
     }
 
     private void OnInteractionFailed()
@@ -83,6 +81,8 @@ public class InteractableComponent : MonoBehaviour
         IEnumerator coroutine;
         coroutine = mMadnessManager.Instance.PeakMadness();
         mMadnessManager.Instance.StartCoroutine(coroutine);
+
+        mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
 
         Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
     }
