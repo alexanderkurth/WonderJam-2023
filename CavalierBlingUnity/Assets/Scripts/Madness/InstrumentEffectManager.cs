@@ -5,17 +5,16 @@ using UnityEngine;
 public class InstrumentEffectManager : MonoBehaviour
 {
     private float m_NextActionTime = 0.0f;
-    [SerializeField]
-    private float m_MusicEffectTickSeconds = 0.1f;
+    private mMadnessManager m_MadnessManager;
 
     [SerializeField]
-    private mMadnessManager m_MadnessManager;
+    private float m_MusicEffectTickSeconds = 1.0f;
 
     [SerializeField]
     private int m_MadnessMaxAmountPerSecond = 1;
 
     [SerializeField]
-    private float m_MaxDistanceToTrigger = 5.0f;
+    private float m_MaxDistanceToTrigger = 170.0f;
 
     [SerializeField]
     private GameObject m_Chevalier;
@@ -32,7 +31,7 @@ public class InstrumentEffectManager : MonoBehaviour
             m_MadnessManager = mMadnessManager.Instance;
 
         if (m_Chevalier == null)
-            m_Chevalier = GameObject.Find("Chevalier");
+            m_Chevalier = FindObjectOfType<ChevalierMove>().gameObject;
 
         if (m_Ecuyer == null)
             m_Ecuyer = GameObject.Find("PlayerArmature");
@@ -77,11 +76,20 @@ public class InstrumentEffectManager : MonoBehaviour
         if (Time.time > m_NextActionTime)
         {
             m_NextActionTime += m_MusicEffectTickSeconds;
-            // Take the distance between the player and the chevalier
-            float distance = Vector3.Distance(m_Chevalier.transform.position, m_Ecuyer.transform.position);
-            float scalar = (float)distance / (float)m_MaxDistanceToTrigger;
-            Debug.Log("Scalar: " + scalar);
-            m_MadnessManager.IncreaseMadnessLevel(Mathf.RoundToInt(m_MadnessMaxAmountPerSecond * scalar));
+            // Take the distance between the player and the chevalier world to screen
+            Vector3 chevalierPosScreen = Camera.main.WorldToScreenPoint(m_Chevalier.transform.position);
+            Vector3 ecuyerPosScreen = Camera.main.WorldToScreenPoint(m_Ecuyer.transform.position);
+            float distance = Vector3.Distance(chevalierPosScreen, ecuyerPosScreen);
+            if (distance < m_MaxDistanceToTrigger)
+            {
+                float scalar = Mathf.Round((1.0f - (distance / m_MaxDistanceToTrigger)) * 100.0f) / 100.0f;
+                int madnessAmount = Mathf.RoundToInt(Mathf.Abs(m_MadnessMaxAmountPerSecond * scalar));
+                if (m_MadnessMaxAmountPerSecond < 0)
+                    m_MadnessManager.ReduceMadnessLevel(Mathf.RoundToInt(madnessAmount));
+                else
+                    m_MadnessManager.IncreaseMadnessLevel(Mathf.RoundToInt(madnessAmount));
+            }
+
         }
     }
 }
