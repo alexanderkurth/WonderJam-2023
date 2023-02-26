@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Speed: 3
   m_LearpMin: -10
   m_LearpMax: 10
-  m_LerpDuration: 10
+  m_LerpDuration: 5
   m_TargetPivot: {fileID: 8296375036879350384}
   m_VisualizeRoot: {fileID: 3011819734582009845}
   m_Animator: {fileID: 2339257118163984200}
