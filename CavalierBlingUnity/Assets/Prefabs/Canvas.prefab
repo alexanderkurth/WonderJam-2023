@@ -475,7 +475,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -550,7 +550,11 @@ MonoBehaviour:
       \xE9cuyer."
     - Billy, tu sens aussi mauvais que les cadavres sur notre chemin.
     - "Comment tu t'appelles d\xE9j\xE0?"
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: fc22755788f88334790b1457995cf668, type: 3}
+    - {fileID: 8300000, guid: 297299d293154c445b5cbbaf1a27e528, type: 3}
+    - {fileID: 8300000, guid: bb06fe3daf37fb844a61a85b945827c9, type: 3}
+    - {fileID: 8300000, guid: 46a66c09144c05443b1d550a05a8ff58, type: 3}
   - MessageName: 1
     Messages:
     - "La c\xE9l\xE9brit\xE9 ne peut donner que ce qu\u2019elle a Billy. N\u2019oublie
@@ -566,29 +570,52 @@ MonoBehaviour:
       moi."
     - "Tu as cass\xE9 mon groove, Billy."
     - "Rappelle-toi Billy, tu n'es pas le h\xE9ros de cette histoire. C'est moi haha."
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: 22491be62e8e0ae47866c0ddf6c254f8, type: 3}
+    - {fileID: 8300000, guid: 0406631f5848ede4d87b9bddc6b2e75a, type: 3}
+    - {fileID: 8300000, guid: 5874b39fdb54c9744a11511626746d4b, type: 3}
+    - {fileID: 8300000, guid: 140f9527303285740b46d47f27ddd8bb, type: 3}
+    - {fileID: 8300000, guid: 2a61776efb7b78747a6cee0c34b9cc81, type: 3}
+    - {fileID: 8300000, guid: 12260b7a744663e4e858d881ead22269, type: 3}
+    - {fileID: 8300000, guid: 47aaf77ebbf8e67448e939f920a80162, type: 3}
+    - {fileID: 8300000, guid: 940de3b8976fe834a9f304d719036292, type: 3}
+    - {fileID: 8300000, guid: 8259477c226cc0a41ac677037c8af033, type: 3}
   - MessageName: 2
     Messages:
     - "Bravo Billy, tu auras r\xE9ussi \xE0 te rendre utile.. pour une fois."
     - "Tu les ach\xE8veras plus rapidement Billy, tu es d'une lenteeeeeeeur."
     - "Tu te balades comme un petit rat en qu\xEAte de fromage."
     - Requiescat in Pace
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: 5af93e4591c4a044dbd72421349f8f80, type: 3}
+    - {fileID: 8300000, guid: 8080f1b1ea809ce4f9ce2b9b6a65a99b, type: 3}
+    - {fileID: 8300000, guid: 1983de9eb0b66f848ab4ef80166480a5, type: 3}
+    - {fileID: 8300000, guid: d001a86a78827b6428358a9ada0a6b31, type: 3}
   - MessageName: 3
     Messages:
     - "Ah ! Une bonne bi\xE8re ! Rien de tel pour se rafraichir !"
     - Du jambon... Le Gras ! C'est la Vie !
-    - Du jambon... Le Gras ! C'est la Vie !
-    - Du jambon... Le Gras ! C'est la Vie !
-    - Du jambon... Le Gras ! C'est la Vie !
-    AudioClip: []
+    - Ah un baton de bois, aussi utile que toi Billy. Tu es un plot.
+    - "Je serais plus utile que toi, m\xEAme avec ce couteau \xE0 beurre !"
+    - "Avec ces vieilles chaussettes Billy, je pourrais au moins m'habituer \xE0
+      ton odeur."
+    AudioClip:
+    - {fileID: 8300000, guid: a19b9203a9e29d04a97a197992bb4e96, type: 3}
+    - {fileID: 8300000, guid: 6dfbccd01cdc3084c8dfdb8c1fd79fd2, type: 3}
+    - {fileID: 8300000, guid: d4f846d2aaa2bc14b98220cc49ef1258, type: 3}
+    - {fileID: 8300000, guid: e0d8e237f2c133c45862389b40ddd3ae, type: 3}
+    - {fileID: 8300000, guid: 8a3adf04bc0a6c649863ed747ed4493b, type: 3}
   - MessageName: 4
     Messages:
     - "Un bouclier, vu comme tu m'es utile il me faudra bien \xE7a..."
     - "Que ces jambi\xE8res me vont bien! Regarde comment elles me moulent p.a.r.f.a.i.t.e.m.e.n.t!"
     - "Ah ! Un beau plastron pour prot\xE9ger mon beau torse velu !"
     - "Le probl\xE8me de ces heaumes, c'est qu'ils applatissent mon brushing !"
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: b8ae1017f4981ac45b8c0da30e8769eb, type: 3}
+    - {fileID: 8300000, guid: cc6d0a9a4d68d884584213c743bc54d3, type: 3}
+    - {fileID: 8300000, guid: 4524cf4f4c2ea894d8481e4f33091999, type: 3}
+    - {fileID: 8300000, guid: 48df7d84663e1814cbfd846d80ce5854, type: 3}
   - MessageName: 5
     Messages:
     - "Tu sais jouer de la trompette Billy ? Regarde celle l\xE0 comme elle est belle
@@ -598,14 +625,18 @@ MonoBehaviour:
     - "Fl\xFBte !.. Oui, une fl\xFBte !"
     AudioClip: []
   - MessageName: 6
-    Messages: []
-    AudioClip: []
+    Messages:
+    - Tu vas trop loin Billy, je vais te mettre une laisse !
+    AudioClip:
+    - {fileID: 8300000, guid: dbf630c9bd9e7bb45b9d00a3baa7d497, type: 3}
   - MessageName: 7
     Messages:
     - "Hmmm... je croyais qu'il y avait quelqu'un autour de moi... \xE7a devait \xEAtre
       le vent."
     - "Qui a \xE9teint la lumi\xE8re?"
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: 41687e0ef97530d47aa6d84b1d62c585, type: 3}
+    - {fileID: 8300000, guid: 75ba7f3c18144734d8743b8393c34aa0, type: 3}
   - MessageName: 8
     Messages: []
     AudioClip: []
@@ -613,18 +644,23 @@ MonoBehaviour:
     Messages:
     - "Ah bah bravo Billy, \xE0 quoi vas-tu me servir mainteant que tu es devenu
       fou..."
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: 812509502bc20084b9ba8263ba7f323b, type: 3}
   - MessageName: 10
     Messages:
     - "Vu que tu ne m'as pas ramen\xE9 d'argent, je vais te vendre pour payer la
       taxe. Au revoir Billy!"
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: dfcdf2ade300a804e8fb0234d2b87a8a, type: 3}
   - MessageName: 11
     Messages:
     - "Sois heureux Billy! Tu auras particip\xE9 \xE0 mon succ\xE8s."
     - Je suis bon prince Billy, je parlerai de toi quand je rencontrerai mes fans!
     - "Victoire! Enfin, un peu plus et je t'aurai mis ma lance dans la t\xEAte Billy. "
-    AudioClip: []
+    AudioClip:
+    - {fileID: 8300000, guid: e0f237752eb24464c95a1bcaa4de7296, type: 3}
+    - {fileID: 8300000, guid: 1edbd1b86d8138643b50b4d648a9df5e, type: 3}
+    - {fileID: 8300000, guid: c3201ae6881d12b43b249472bd58f02d, type: 3}
   _mVocalAudioSource: {fileID: 6590261866084573399}
   _mShopPreview: {fileID: 7082141707469583473}
 --- !u!82 &6590261866084573399
