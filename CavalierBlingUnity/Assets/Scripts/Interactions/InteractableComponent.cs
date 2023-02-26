@@ -112,6 +112,8 @@ public class InteractableComponent : MonoBehaviour
 
     private void OnInteractionSucessfull()
     {
+        RemoveInteractable();
+
         m_BloodFX.SetActive(false);
 
         m_InteractionDone = true;
@@ -139,7 +141,6 @@ public class InteractableComponent : MonoBehaviour
             ForceRemoveInteractable();
         }
 
-        RemoveInteractable();
     }
 
     private void OnTriggerEnter(Collider other)
