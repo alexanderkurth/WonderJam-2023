@@ -6,27 +6,27 @@ using UnityEngine.UI;
 public class ChangeChevalierVisual : MonoBehaviour
 {
     [Header("Sprite Renderer")]
-    [SerializeField] 
+    [SerializeField]
     private SpriteRenderer _torsoSprite;
-    [SerializeField] 
+    [SerializeField]
     private SpriteRenderer _headSprite;
-    [SerializeField] 
+    [SerializeField]
     private SpriteRenderer _armSprite;
-    [SerializeField] 
+    [SerializeField]
     private SpriteRenderer _legRightSprite;
-    [SerializeField] 
+    [SerializeField]
     private SpriteRenderer _legLeftSprite;
-    
+
     [Header("Images")]
-    [SerializeField] 
+    [SerializeField]
     private Image _torsoUImage;
-    [SerializeField] 
+    [SerializeField]
     private Image _headUImage;
-    [SerializeField] 
+    [SerializeField]
     private Image _armUImage;
-    [SerializeField] 
+    [SerializeField]
     private Image _legUImage;
-    
+
     private void Start()
     {
         if (Inventory.itemAddedToInventory == null)
@@ -53,10 +53,10 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _armUImage.color;
                     tempColor.a = 1f;
                     _armUImage.color = tempColor;
-                    _armUImage.sprite =  item.ObjectSprite;
+                    _armUImage.sprite = item.ObjectSprite;
                 }
                 break;
-            
+
             case AvailableObject.ArmorLegs:
                 _legRightSprite.sprite = item.ObjectSprite;
                 _legLeftSprite.sprite = item.ObjectSprite;
@@ -65,10 +65,10 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _legUImage.color;
                     tempColor.a = 1f;
                     _legUImage.color = tempColor;
-                    _legUImage.sprite =  item.ObjectSprite;
+                    _legUImage.sprite = item.ObjectSprite;
                 }
                 break;
-            
+
             case AvailableObject.ArmorChest:
                 _torsoSprite.sprite = item.ObjectSprite;
                 if (_torsoUImage)
@@ -79,7 +79,7 @@ public class ChangeChevalierVisual : MonoBehaviour
                     _torsoUImage.sprite = item.ObjectSprite;
                 }
                 break;
-            
+
             case AvailableObject.ArmorHead:
                 _headSprite.sprite = item.ObjectSprite;
                 if (_headUImage)
@@ -90,12 +90,14 @@ public class ChangeChevalierVisual : MonoBehaviour
                     _headUImage.sprite = item.ObjectSprite;
                 }
                 break;
-            
+
             case AvailableObject.Flute:
+                break;
+            case AvailableObject.Violin:
                 break;
             case AvailableObject.Trumpet:
                 break;
-            case AvailableObject.Luth:
+            case AvailableObject.Cornemuse:
                 break;
             case AvailableObject.Wine:
                 break;

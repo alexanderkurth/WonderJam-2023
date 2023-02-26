@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2532349213747222618}
   - component: {fileID: -4880967447204752795}
   - component: {fileID: -8812952631220862760}
+  - component: {fileID: 2213438723142854866}
   m_Layer: 0
   m_Name: mMadnessManager
   m_TagString: Untagged
@@ -306,3 +307,21 @@ MonoBehaviour:
   m_Camera: {fileID: 0}
   m_ShakeFrequency: 0
   m_CanShake: 1
+--- !u!114 &2213438723142854866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532349213747222613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af04b3215521643a5e874374465767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MusicEffectTickSeconds: 0.1
+  m_MadnessMaxAmountPerSecond: 3
+  m_MaxDistanceToTrigger: 170
+  m_Chevalier: {fileID: 0}
+  m_Ecuyer: {fileID: 0}
+  currentInstrument: 105

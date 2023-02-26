@@ -12,13 +12,15 @@ public enum AvailableObject
     ArmorChest = 2,
     ArmorHead = 3,
     Flute = 50,
+    Violin,
     Trumpet,
-    Luth,
+    Cornemuse,
     Wine = 100,
     Cheese,
     Wood,
     ButterKnife,
     OldSocks,
+    None,
 }
 
 public enum ObjectType

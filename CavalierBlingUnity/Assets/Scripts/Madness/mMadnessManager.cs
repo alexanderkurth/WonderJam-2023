@@ -12,14 +12,14 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
 
     [SerializeField]
     private int m_MadnessCurrentLevel = 0;
-    
+
     [SerializeField]
     private int m_MadnessMaxLevel = 100;
 
     [SerializeField]
     private int m_StartShakingLevel = 50;
 
-    [Range(0, 10)] 
+    [Range(0, 10)]
     [SerializeField]
     private int m_MaxShakingIntensity = 10;
 
@@ -30,7 +30,8 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     public int GetIncrease() { return increaseMadnessLevel; }
 
     [System.Serializable]
-    public class MadnessAudio{
+    public class MadnessAudio
+    {
         [Header("HeartBeat")]
         public int m_StartHeartBeatLevel = 50;
         public AudioSource m_HeartBeatAudioSource;
@@ -65,7 +66,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         }
     }
 
-    public void ReduceCurrentLevel(int amount = 1)
+    public void ReduceMadnessLevel(int amount = 1)
     {
         m_MadnessCurrentLevel -= amount;
         if (m_MadnessCurrentLevel < 0)
@@ -74,12 +75,15 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         }
     }
 
-    private void Start() {
-        if(m_MadnessAudio.m_HeartBeatAudioSource == null){
+    private void Start()
+    {
+        if (m_MadnessAudio.m_HeartBeatAudioSource == null)
+        {
             m_MadnessAudio.m_HeartBeatAudioSource = GetComponents<AudioSource>()[0];
         }
 
-        if(m_MadnessAudio.m_BreathAudioSource == null){
+        if (m_MadnessAudio.m_BreathAudioSource == null)
+        {
             // Get first audio source in game object
             m_MadnessAudio.m_BreathAudioSource = GetComponents<AudioSource>()[1];
         }
@@ -88,9 +92,9 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     private void Update()
     {
         MadnessPostProcessManager madnessPostProcessManager = GetComponent<MadnessPostProcessManager>();
-        madnessPostProcessManager.UpdateVignette((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
-        madnessPostProcessManager.UpdateColor((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
-        madnessPostProcessManager.UpdateFilmGrain((float)m_MadnessCurrentLevel/(float)m_MadnessMaxLevel);
+        madnessPostProcessManager.UpdateVignette((float)m_MadnessCurrentLevel / (float)m_MadnessMaxLevel);
+        madnessPostProcessManager.UpdateColor((float)m_MadnessCurrentLevel / (float)m_MadnessMaxLevel);
+        madnessPostProcessManager.UpdateFilmGrain((float)m_MadnessCurrentLevel / (float)m_MadnessMaxLevel);
 
         if (m_MadnessCurrentLevel > m_StartShakingLevel)
         {
@@ -99,8 +103,10 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             CameraShake cameraShake = GetComponent<CameraShake>();
             cameraShake.SetShakeFrequency(cameraShakingIntensity);
 
-            
-        }else{
+
+        }
+        else
+        {
             CameraShake cameraShake = GetComponent<CameraShake>();
             cameraShake.SetShakeFrequency(0);
         }
@@ -116,7 +122,8 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             // Plays a random breath sound effect with a exponentially increase chance of playing
             if (Random.Range(0, 100) < (heartBeatScale * 100))
             {
-                if(m_MadnessAudio.m_BreathAudioSource.isPlaying == false){
+                if (m_MadnessAudio.m_BreathAudioSource.isPlaying == false)
+                {
                     m_MadnessAudio.m_BreathAudioSource.PlayOneShot(m_MadnessAudio.m_BreathAudioClips[Random.Range(0, m_MadnessAudio.m_BreathAudioClips.Length)]);
                 }
             }
@@ -133,7 +140,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
 
         while (active)
         {
-            if(mCurrentShakingIntensity >= targetIntensity)
+            if (mCurrentShakingIntensity >= targetIntensity)
             {
                 mCurrentShakingIntensity = baseIntensity;
 
@@ -141,7 +148,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
                 yield return null;
             }
 
-            if(active)
+            if (active)
             {
                 mCurrentShakingIntensity += 1;
             }

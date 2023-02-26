@@ -11,7 +11,7 @@ public class InteractorComponent : MonoBehaviour
     public InteractableComponent Target { get { return m_Target; } }
     public float offScreenCooldown = 1f;
 
-    private Coroutine _isOffScreenCo = null; 
+    private Coroutine _isOffScreenCo = null;
 
     [SerializeField]
     KeyPessPrompt m_KeyPressPrompt;
@@ -19,7 +19,7 @@ public class InteractorComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(m_KeyPressPrompt == null)
+        if (m_KeyPressPrompt == null)
         {
             m_KeyPressPrompt = FindObjectOfType<KeyPessPrompt>();
         }
@@ -28,13 +28,13 @@ public class InteractorComponent : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameMode.Instance.isGameOver) return; 
-       CheckOffScreen();
+        if (GameMode.Instance.isGameOver) return;
+        CheckOffScreen();
     }
 
     public void RegisterInteractable(InteractableComponent target)
     {
-        if(m_Target != null)
+        if (m_Target != null)
         {
             RemoveInteractable(target);
         }
@@ -50,7 +50,7 @@ public class InteractorComponent : MonoBehaviour
 
     public Vector3 GetTargetPosition()
     {
-        if(m_Target != null)
+        if (m_Target != null)
         {
             return m_Target.transform.position;
         }
@@ -66,20 +66,20 @@ public class InteractorComponent : MonoBehaviour
 
     public void TriggerInteraction()
     {
-        Debug.Log("INTERACTION ADDED");
+        //Debug.Log("INTERACTION ADDED");
         if (m_Target != null)
         {
             m_Target.TriggerInteraction();
         }
-        
+
         //m_KeyPressPrompt.PressButtonEffect();
     }
 
     public void OnInteractionChanged(InputAction.CallbackContext context)
     {
-        if (context.started) 
+        if (context.started)
         {
-            if(m_Target != null)
+            if (m_Target != null)
             {
                 TriggerInteraction();
                 //Pressed
@@ -89,7 +89,7 @@ public class InteractorComponent : MonoBehaviour
 
     public void CheckOffScreen()
     {
-        if(GameMode.Instance.GameState != GameState.InProgress)
+        if (GameMode.Instance.GameState != GameState.InProgress)
         {
             return;
         }
@@ -103,7 +103,7 @@ public class InteractorComponent : MonoBehaviour
                 _isOffScreenCo = StartCoroutine(CheckOffScreenCo());
             }
         }
-        else 
+        else
         {
             if (_isOffScreenCo != null)
             {
