@@ -93,4 +93,14 @@ public class Inventory : AbstractSingleton<Inventory>
 
         return false; 
     }
+
+    public AvailableObject GetCurrentInstruments()
+    {
+        ObjectType objectType = ObjectType.MusicalInstrument;
+        if (_inventory.ContainsKey(objectType))
+        {
+            return _inventory[objectType][0];
+        }
+        return AvailableObject.None;
+    }
 }

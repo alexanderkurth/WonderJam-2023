@@ -95,7 +95,9 @@ public class ChangeChevalierVisual : MonoBehaviour
                 break;
             case AvailableObject.Trumpet:
                 break;
-            case AvailableObject.Luth:
+            case AvailableObject.Trumpet:
+                break;
+            case AvailableObject.Cornemuse:
                 break;
             case AvailableObject.Wine:
                 break;
