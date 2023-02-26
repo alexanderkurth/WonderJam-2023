@@ -1,10 +1,14 @@
+using TMPro;
 using UnityEngine;
 
 public class DailyTax : AbstractSingleton<DailyTax>
 {
     private const float DAILY_TAX = 100f;
     private const float TAX_MULTIPLIER = 0.05f;
-    private float _currentTax = 0f; 
+    private float _currentTax = 0f;
+
+    [SerializeField] 
+    private TextMeshProUGUI _currentTaxText;
     
     private float GetDailyTax()
     {
@@ -16,5 +20,10 @@ public class DailyTax : AbstractSingleton<DailyTax>
     {
         float currentTax = GetDailyTax();
         Inventory.Instance.ChangeCurrencyValue(-currentTax);
+    }
+
+    public void DisplayTax()
+    {
+        _currentTaxText.text = GetDailyTax().ToString();
     }
 }
