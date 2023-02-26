@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverExplanationText: {fileID: 4457729282969084554}
-  _gameOverOutofScreen: "Vous vous etes trop eloign\xE9 du h\xE9ro"
+  _gameOverOutofScreen: "Vous vous etes trop eloign\xE9 du h\xE9ros"
   _gameOverMoney: Vous n'avez pas pu payer la taxe
   _gameOverMadness: Vous etes devenu fou
 --- !u!1 &4289119930766449980
