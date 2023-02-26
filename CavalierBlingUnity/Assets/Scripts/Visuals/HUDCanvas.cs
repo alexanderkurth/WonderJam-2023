@@ -38,13 +38,27 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     [SerializeField]
     private List<MessageDatas> _mMessageDatas = new List<MessageDatas>();
 
-    public void DisplayMessage(MessageEnum messageToDisplay, float delayBeforeDisplay = 0f)
+    private Coroutine _mMessageCoroutine = null;
+
+    public bool DisplayMessage(MessageEnum messageToDisplay, float delayBeforeDisplay = 0f)
     {
-        StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageToDisplay), delayBeforeDisplay));
+        if (_mMessageCoroutine == null)
+        {
+            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageToDisplay), delayBeforeDisplay));
+            
+            return true;
+        }
+
+        return false;
     }
 
     private IEnumerator DisplayMessageCoroutine(string text, float delayBeforeDisplay)
     {
+        if(text == string.Empty)
+        {
+            yield break;
+        }
+
         yield return new WaitForSeconds(delayBeforeDisplay);
 
         float lerp = 0f;
@@ -64,6 +78,8 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
 
         _mMessageObject.SetActive(false);
 
+        _mMessageCoroutine = null;
+
         yield break;
     }
 
@@ -71,7 +87,10 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     {
         foreach (MessageDatas item in _mMessageDatas)
         {
-            return item.Messages[Random.Range(0, item.Messages.Count)];
+            if (item.MessageName == messageToDisplay)
+            {
+                return item.Messages[Random.Range(0, item.Messages.Count)];
+            }
         }
 
         return string.Empty;

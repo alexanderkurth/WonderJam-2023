@@ -106,6 +106,8 @@ public class InteractableComponent : MonoBehaviour
 
             mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
             Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
+
+            GameMode.Instance.OnEnemyKilled();
         }
         else
         {

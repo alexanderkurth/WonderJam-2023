@@ -38,7 +38,11 @@ public class GameMode : AbstractSingleton<GameMode>
     private GameObject _chevalier;
 
     public int dayCount { get => GlobalDataHolder.Instance.CurrentDay; }
-    public bool isGameOver = false; 
+    public bool isGameOver = false;
+
+    [SerializeField]
+    private Vector2 _mTimeBetweenPlayerMessages = new Vector2(10f, 20f);
+    private float _mTimeSinceLastMessageDisplayed = 0f;
 
     private void Start()
     {
@@ -52,14 +56,43 @@ public class GameMode : AbstractSingleton<GameMode>
 
     }
 
-    void StartChevalierAndEnemies()
+    private void Update()
+    {
+        if (_mGameState == GameState.InProgress)
+        {
+            if (Time.timeSinceLevelLoad - _mTimeSinceLastMessageDisplayed >= Random.Range(_mTimeBetweenPlayerMessages.x, _mTimeBetweenPlayerMessages.y))
+            {
+                DisplayMessage(MessageEnum.RandomSentenceInGame);
+            }
+        }
+    }
+
+    private void StartChevalierAndEnemies()
     {
         _chevalier.GetComponent<ChevalierMove>().SetStartTimer(_TimeBeforeStart);
         _chevalier.GetComponentInChildren<EnemySpawner>().SetStartTimer(_TimeBeforeStart);
 
-        HUDCanvas.Instance.DisplayMessage(MessageEnum.DelayStartGame, 0.5f);
+        DisplayMessage(MessageEnum.DelayStartGame, 0.5f, true);
     }
 
+    public void OnEnemyKilled()
+    {
+        if (Random.Range(0, 2) > 0)
+        {
+            DisplayMessage(MessageEnum.FinishingAnEnemy, 0f, true);
+        }
+    }
+
+    private void DisplayMessage(MessageEnum messageEnum, float delayStartTime = 0f, bool forceMessage = false)
+    {
+        if (Time.timeSinceLevelLoad - _mTimeSinceLastMessageDisplayed >= Random.Range(_mTimeBetweenPlayerMessages.x, _mTimeBetweenPlayerMessages.y) || forceMessage)
+        {
+            if(HUDCanvas.Instance.DisplayMessage(messageEnum, delayStartTime))
+            {
+                _mTimeSinceLastMessageDisplayed = Time.timeSinceLevelLoad;
+            }
+        }
+    }
 
     public void DayEnd()
     {

@@ -370,6 +370,8 @@ MonoBehaviour:
   DoNotDestroyOnLoad: 0
   _mMessageObject: {fileID: 5295314128442969348}
   _mMessageText: {fileID: 1544148697644233439}
+  _mMinMaxDisplayTimeValue: {x: 2, y: 5}
+  _mMinMaxStringSizeForMaxDisplayTime: {x: 20, y: 200}
   _mMessageDatas:
   - MessageName: 0
     Messages:
@@ -378,6 +380,27 @@ MonoBehaviour:
       \xE9cuyer."
     - Billy, tu sens aussi mauvais que les cadavres sur notre chemin.
     - "Comment tu t'appelles d\xE9j\xE0?"
+  - MessageName: 1
+    Messages:
+    - "La c\xE9l\xE9brit\xE9 ne peut donner que ce qu\u2019elle a Billy. N\u2019oublie
+      jamais \xE7a !"
+    - Tu as encore du chemin avant de me ressembler Billy!
+    - "J'arr\xEAterai de combattre quand j'aurai pris une fl\xE8che dans le genoux.."
+    - "Je devrais \xE9crire mon auto-biographie.. je ne sais pas si je t'incluerai
+      dedans."
+    - "Je demanderai au forgeron d'affuter mon \xE9p\xE9e, pour que je puisse me
+      regarder dans son reflet"
+    - Le plus fort c'est Gaston, le plus beau c'est Gaston!
+    - "As-tu vu le journal Billy? Devines qui fait encore la une?! Bien jou\xE9,
+      moi."
+    - "Tu as cass\xE9 mon groove, Billy."
+    - "Rappelle-toi Billy, tu n'es pas le h\xE9ros de cette histoire. C'est moi haha."
+  - MessageName: 2
+    Messages:
+    - "Bravo Billy, tu auras r\xE9ussi \xE0 te rendre utile.. pour une fois."
+    - "Tu les ach\xE8veras plus rapidement Billy, tu es d'une lenteeeeeeeur."
+    - "Tu te balades comme un petit rat en qu\xEAte de fromage."
+    - Requiescat in Pace
 --- !u!1001 &4942666316936053020
 PrefabInstance:
   m_ObjectHideFlags: 0
