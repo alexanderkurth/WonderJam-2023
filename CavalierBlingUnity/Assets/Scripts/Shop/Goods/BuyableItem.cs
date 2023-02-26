@@ -92,6 +92,9 @@ public class BuyableItem : MonoBehaviour
         _mObjectBuySound.Play();
         ToggleVisual(false);
         SendMessageFromType();
+
+        //Et le quick fix de prod dégueux
+        transform.parent.gameObject.SetActive(false);
     }
 
     private void SendMessageFromType()
