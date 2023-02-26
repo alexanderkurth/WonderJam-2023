@@ -99,7 +99,7 @@ public class Inventory : AbstractSingleton<Inventory>
         ObjectType objectType = ObjectType.MusicalInstrument;
         if (_inventory.ContainsKey(objectType))
         {
-            return _inventory[objectType][0].ObjectName;
+            return _inventory[objectType][Random.Range(0, _inventory[objectType].Count)].ObjectName;
         }
         return AvailableObject.None;
     }
