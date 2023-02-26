@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameState
 {
@@ -33,22 +35,24 @@ public class GameMode : AbstractSingleton<GameMode>
     [SerializeField]
     private GameObject _chevalier;
 
-    public int dayCount = 0;
+    public int dayCount { get => GlobalDataHolder.Instance.CurrentDay; }
     public bool isGameOver = false; 
 
     private void Start()
     {
         Time.timeScale = 1f;
-        SpawnEnnemies();
-        _mGameState = GameState.InProgress;
         DailyTax.Instance.DisplayTax();
+
+        SpawnEnnemies();
+        Inventory.Instance.ChangeCurrencyValue(0);
+        _mGameState = GameState.InProgress;
     }
 
     public void DayEnd()
     {
-        dayCount++;
         DailyTax.Instance.DeductTax();
-		
+        GlobalDataHolder.Instance.IncreaseDayCount();
+
         if (_mGameState != GameState.Ending)
         {
             Shop.Instance.InitializeShopOfTheDay();
@@ -68,14 +72,19 @@ public class GameMode : AbstractSingleton<GameMode>
     public void WinGame()
     {
         Time.timeScale = 0f;
-        Instantiate(_winScreen, _canvas.transform);
+        GameObject winScreen = Instantiate(_winScreen, _canvas.transform);
+        Button firstButton = winScreen.GetComponentInChildren<Button>();
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         _mGameState = GameState.Ending;
     }
     
     public void GameOver(GameOverCondition gameOverCondition)
     {
         Time.timeScale = 0f;
-        Instantiate(_gameOverScreen, _canvas.transform);
+        GameObject gameOver = Instantiate(_gameOverScreen, _canvas.transform);
+        Button firstButton = gameOver.GetComponentInChildren<Button>();
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+        
         isGameOver = true;
         switch (gameOverCondition)
         {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DailyTax : AbstractSingleton<DailyTax>
 {
-    private const float DAILY_TAX = 100f;
+    private const float DAILY_TAX = 20f;
     private const float TAX_MULTIPLIER = 0.05f;
     private float _currentTax = 0f;
 
@@ -24,7 +24,6 @@ public class DailyTax : AbstractSingleton<DailyTax>
 
     public void DisplayTax()
     {
-        float tax = GetDailyTax() * -1f;
-        _currentTaxText.text = tax.ToString();
+        _currentTaxText.text = GetDailyTax().ToString();
     }
 }

@@ -41,8 +41,6 @@ public struct ObjectData
 public class BuyableItem : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer _mObjectRenderer = null;
-    [SerializeField]
     private ParticleSystem _mObjectBuyPS = null;
     [SerializeField]
     private AudioSource _mObjectBuySound = null;
@@ -59,7 +57,6 @@ public class BuyableItem : MonoBehaviour
         _mObjectPrice = SetObjectPrice(objectData.ObjectPrices);
         _mTmpPrice.text = _mObjectPrice.ToString();
         _mTmpPrice.color = IsBuyable() ? Color.green : Color.red;
-        _mObjectRenderer.sprite = objectData.ObjectSprite;
     
         ToggleVisual(true);
     }
@@ -79,7 +76,6 @@ public class BuyableItem : MonoBehaviour
 
     private void ToggleVisual(bool toEnable)
     {
-        _mObjectRenderer.enabled = toEnable;
         _mTmpPrice.enabled = toEnable;
     }
 

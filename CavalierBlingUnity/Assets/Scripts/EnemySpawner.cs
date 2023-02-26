@@ -11,7 +11,7 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
     [SerializeField]
     private Transform m_PivotTransform;
     [SerializeField]
-    public float m_DeltaTime;
+    public Vector2 m_DeltaTime;
     [SerializeField]
     private float m_SpawnAngle = 45.0f;
     [SerializeField]
@@ -28,7 +28,7 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(m_DeltaTime);
+        yield return new WaitForSeconds(Random.Range(m_DeltaTime.x, m_DeltaTime.y));
 
         float AngleStep = m_SpawnAngle * 2.0f / (float)m_nbSpawnedPosition;
 
@@ -44,7 +44,7 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
             EnemyMove enemy = newSurrounderObject.GetComponent<EnemyMove>();
             enemy.m_Target = m_TargetPrefab;
 
-            yield return new WaitForSeconds(m_DeltaTime);
+            yield return new WaitForSeconds(Random.Range(m_DeltaTime.x, m_DeltaTime.y));
         }
     }
 }

@@ -50,8 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duplicationHandling: 3
-  DoNotDestroyOnLoad: 1
+  DoNotDestroyOnLoad: 0
   increaseAmount: 4
+  increaseMadnessLevel: 2
   m_MadnessCurrentLevel: 0
   m_MadnessMaxLevel: 100
   m_StartShakingLevel: 50

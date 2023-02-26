@@ -305,24 +305,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
         type: 3}
-      propertyPath: m_DeltaTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
-      propertyPath: m_SpawnAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
       propertyPath: m_TargetPrefab
       value: 
       objectReference: {fileID: 7980639918192652437}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
-      propertyPath: m_nbSpawnedPosition
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5489147544579930428, guid: 05a194682bf746d41992f22d68b9c1ba,
         type: 3}
       propertyPath: m_Name
