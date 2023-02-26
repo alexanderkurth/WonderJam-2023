@@ -89,6 +89,13 @@ public class GameMode : AbstractSingleton<GameMode>
         }
 
         _mGameState = GameState.Ending;
+        
+        // Stop All Audio
+        AudioListener[] allAudioListeners = FindObjectsOfType<AudioListener>();
+        foreach (AudioListener listener in allAudioListeners)
+        {
+            listener.enabled = false;
+        }
     }
 
     public void SpawnEnnemies()
