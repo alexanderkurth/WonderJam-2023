@@ -41,6 +41,7 @@ public class GameMode : AbstractSingleton<GameMode>
         Time.timeScale = 1f;
         SpawnEnnemies();
         _mGameState = GameState.InProgress;
+        DailyTax.Instance.DisplayTax();
     }
 
     public void DayEnd()
