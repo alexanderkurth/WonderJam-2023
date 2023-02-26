@@ -64,6 +64,8 @@ public class MadnessPostProcessManager : MonoBehaviour
         float B = (255 - (255 - DeisredB) * intensity) / 255; 
 
         m_ColorAdjustement.colorFilter.value = new Color(R,G,B, intensity);
+
+        m_ColorAdjustement.saturation.value = -1 * (intensity * 80);
     }
 
     public void UpdateFilmGrain(float intensity)

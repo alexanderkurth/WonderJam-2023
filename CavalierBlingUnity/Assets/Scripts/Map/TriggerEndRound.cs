@@ -15,6 +15,7 @@ public class TriggerEndRound : MonoBehaviour
         if(chevalier != null)
         {
             isTriggered = true;
+            mMadnessManager.Instance.Reset();
             GameMode.Instance.DayEnd();
         }
     }

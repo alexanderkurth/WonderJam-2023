@@ -152,4 +152,9 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+    public void Reset()
+    {
+        m_MadnessCurrentLevel = m_StartShakingLevel / 2;
+    }
 }
