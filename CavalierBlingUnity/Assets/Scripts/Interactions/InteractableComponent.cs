@@ -124,6 +124,7 @@ public class InteractableComponent : MonoBehaviour
             mMadnessManager.Instance.StartPeakMadness();
 
             mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
+
             Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
 
             GameMode.Instance.OnEnemyKilled();
@@ -131,7 +132,9 @@ public class InteractableComponent : MonoBehaviour
         else
         {
             mMadnessManager.Instance.ReduceMadnessLevel(mMadnessManager.Instance.GetIncrease() / 2);
-            if(AllyCompIfAlly != null)
+            mMadnessManager.Instance.ReduceShakingIntentisy();
+
+            if (AllyCompIfAlly != null)
             {
                 AllyCompIfAlly.ChangeState();
             }

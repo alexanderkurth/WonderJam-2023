@@ -93,6 +93,11 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         }
     }
 
+    public void ReduceShakingIntentisy(int amount = 1)
+    {
+        mCurrentShakingIntensity -= amount;
+    }
+
     private void Start()
     {
         if (m_MadnessAudio.m_HeartBeatAudioSource == null)
@@ -181,7 +186,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         while (lerp > 0f)
         {
@@ -190,7 +195,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
             mCurrentShakingIntensity = Mathf.Lerp(baseIntensity, targetIntensity, lerp); ;
             yield return null;
         }
-        mCurrentShakingIntensity += 1;
+        mCurrentShakingIntensity += 1.0f;
         coroutine2 = null;
 
         yield break;
