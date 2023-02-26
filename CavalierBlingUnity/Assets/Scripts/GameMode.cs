@@ -53,6 +53,7 @@ public class GameMode : AbstractSingleton<GameMode>
         SpawnEnnemies();
         Inventory.Instance.ChangeCurrencyValue(0);
         _mGameState = GameState.InProgress;
+        HUDCanvas.Instance.SetDayText(dayCount);
 
     }
 

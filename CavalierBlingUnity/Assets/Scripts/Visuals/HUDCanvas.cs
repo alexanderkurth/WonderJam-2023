@@ -50,6 +50,10 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
 
     [SerializeField]
     private ShopItemVisual _mShopPreview = null;
+
+    [SerializeField]
+    private TextMeshProUGUI _mDayCount = null;
+
     public ShopItemVisual ShopItemVisual { get => _mShopPreview; }
 
     private Coroutine _mMessageCoroutine = null;
@@ -229,5 +233,10 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     public bool IsListValid(List<string> list)
     {
         return list != null && list.Count > 0;
+    }
+
+    public void SetDayText(int dayCount)
+    {
+        _mDayCount.text = (dayCount+1).ToString();
     }
 }
