@@ -36,6 +36,8 @@ public class KeyPessPrompt : MonoBehaviour
     [SerializeField]
     private Vector3 m_DisplayOffset;
 
+    private Vector3 m_Distortion;
+
     private void Start() {
         if(m_InputImageDisplayer == null)
         {
@@ -54,12 +56,14 @@ public class KeyPessPrompt : MonoBehaviour
         {
             m_InteractorComponent = FindObjectOfType<InteractorComponent>();
         }
+
+        m_Distortion = new Vector3(0.8f, 0.8f, 0.8f);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(m_KeyboardInputSprite == null && m_ControllerInputSprite == null)
+        if (m_KeyboardInputSprite == null && m_ControllerInputSprite == null)
         {
             Debug.LogError("Keyboard or Controller Input Sprite not set");
             return;
@@ -82,25 +86,33 @@ public class KeyPessPrompt : MonoBehaviour
             {
                 m_InputImageDisplayer.sprite = m_ControllerInputSprite;
             }
-            AnimateButton();
+            AnimateButton(m_Distortion);
         }
         else
         {
             m_InputImageDisplayer.enabled = false;
+            ResetPressButtonEffect();
         }
     }
 
-    private void AnimateButton()
+    private void AnimateButton(Vector3 distortion)
     {
         float scale = Mathf.PingPong(Time.time, m_AnimationIntensity);
-        m_InputImageDisplayer.transform.localScale = new Vector3(1.0f-scale, 1.0f-scale, 1.0f-scale);
+        m_InputImageDisplayer.transform.localScale = new Vector3(distortion.x - scale, distortion.y - scale, distortion.z - scale);
     }
 
     public void PressButtonEffect()
     {
-        m_InputImageDisplayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        //Change image color for red
-        m_InputImageDisplayer.color = Color.red;
+        //m_InputImageDisplayer.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        //Change image color for green
+        m_InputImageDisplayer.color = Color.green;
         Debug.Log("Button Pressed");
+        m_Distortion = new Vector3(1.0f, 1.0f, 1.0f);
+    }
+
+    public void ResetPressButtonEffect()
+    {
+        m_Distortion = new Vector3(0.8f, 0.8f, 0.8f);
+        m_InputImageDisplayer.color = Color.white;
     }
 }

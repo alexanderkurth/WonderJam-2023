@@ -41,6 +41,8 @@ public class InteractableComponent : MonoBehaviour
 
     public AllyBehavior AllyCompIfAlly;
 
+    private InteractorComponent m_tempInteractor;
+
     public void Start()
     {
         foreach (var sprite in m_Sprites)
@@ -101,6 +103,11 @@ public class InteractableComponent : MonoBehaviour
         m_TimeSinceLastInput = 0.0f;
 
         m_IsInteractionStarted = false;
+
+        if(m_tempInteractor != null)
+        {
+            m_tempInteractor.m_KeyPressPrompt.ResetPressButtonEffect();
+        }
     }
 
     private void OnInteractionSucessfull()
@@ -129,6 +136,8 @@ public class InteractableComponent : MonoBehaviour
                 AllyCompIfAlly.ChangeState();
             }
         }
+
+        RemoveInteractable();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -136,23 +145,27 @@ public class InteractableComponent : MonoBehaviour
         if (m_InteractionDone)
             return;
 
-        InteractorComponent interactor = other.GetComponent<InteractorComponent>();
+        m_tempInteractor = other.GetComponent<InteractorComponent>();
 
-        if (interactor)
+        if (m_tempInteractor)
         {
-            interactor.RegisterInteractable(this);
+            m_tempInteractor.RegisterInteractable(this);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        InteractorComponent interactor = other.GetComponent<InteractorComponent>();
+        m_tempInteractor = other.GetComponent<InteractorComponent>();
+        RemoveInteractable();
+    }
 
-        if (interactor)
+    private void RemoveInteractable()
+    {
+        if (m_tempInteractor)
         {
-            if (interactor.Target == this)
+            if (m_tempInteractor.Target == this)
             {
-                interactor.RemoveInteractable(this);
+                m_tempInteractor.RemoveInteractable(this);
             }
         }
     }

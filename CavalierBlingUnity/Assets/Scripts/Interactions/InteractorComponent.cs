@@ -14,7 +14,7 @@ public class InteractorComponent : MonoBehaviour
     private Coroutine _isOffScreenCo = null;
 
     [SerializeField]
-    KeyPessPrompt m_KeyPressPrompt;
+    public KeyPessPrompt m_KeyPressPrompt;
 
     // Start is called before the first frame update
     void Start()
@@ -70,9 +70,8 @@ public class InteractorComponent : MonoBehaviour
         if (m_Target != null)
         {
             m_Target.TriggerInteraction();
+            m_KeyPressPrompt.PressButtonEffect();
         }
-
-        //m_KeyPressPrompt.PressButtonEffect();
     }
 
     public void OnInteractionChanged(InputAction.CallbackContext context)

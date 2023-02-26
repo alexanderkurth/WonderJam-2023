@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 234470d4ac9a172448a89e88ebbd278a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9caeaed024d0494ea1b5f4a2817ee63, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InputImageDisplayer: {fileID: 526970962278746399}
-  m_KeyboardInputSprite: {fileID: 21300000, guid: 234470d4ac9a172448a89e88ebbd278a,
+  m_KeyboardInputSprite: {fileID: 21300000, guid: f9caeaed024d0494ea1b5f4a2817ee63,
     type: 3}
   m_ControllerInputSprite: {fileID: 0}
   m_InputDeviceManager: {fileID: 526970962278746401}
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Camera: {fileID: 0}
   m_AnimationIntensity: 0.1
   m_shouldDisplayKeyboardInputImage: 0
-  m_DisplayPosition: {x: 0, y: 0, z: 0}
+  m_DisplayPosition: {fileID: 0}
+  m_DisplayOffset: {x: 0, y: 65, z: 0}
 --- !u!114 &526970962278746401
 MonoBehaviour:
   m_ObjectHideFlags: 0
