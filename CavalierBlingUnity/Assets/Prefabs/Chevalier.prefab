@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44ffc6ea8e933e4288cb31f05933cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 3
+  m_Speed: 2
   m_LearpMin: -50
   m_LearpMax: 50
   m_LerpDuration: 3
@@ -301,6 +301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
+        type: 3}
+      propertyPath: m_DeltaTime
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
         type: 3}
