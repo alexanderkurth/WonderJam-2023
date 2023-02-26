@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duplicationHandling: 3
   DoNotDestroyOnLoad: 1
-  _baseValue: 100
+  _baseValue: 40
