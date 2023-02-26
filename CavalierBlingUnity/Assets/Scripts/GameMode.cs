@@ -83,7 +83,7 @@ public class GameMode : AbstractSingleton<GameMode>
         }
     }
 
-    private void DisplayMessage(MessageEnum messageEnum, float delayStartTime = 0f, bool forceMessage = false)
+    public void DisplayMessage(MessageEnum messageEnum, float delayStartTime = 0f, bool forceMessage = false)
     {
         if (Time.timeSinceLevelLoad - _mTimeSinceLastMessageDisplayed >= Random.Range(_mTimeBetweenPlayerMessages.x, _mTimeBetweenPlayerMessages.y) || forceMessage)
         {

@@ -53,6 +53,8 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
         yield return StartCoroutine(HesitationFlow(buyableObjects));
 
+        yield return new WaitForSeconds(2f);
+
         GameMode.Instance.StartNewDay();
 
         yield break;

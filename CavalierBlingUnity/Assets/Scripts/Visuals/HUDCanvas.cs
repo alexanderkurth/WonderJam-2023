@@ -52,6 +52,14 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         return false;
     }
 
+    public void DisplayMessage(MessageEnum messageEnum, AvailableObject objectName)
+    {
+        if (_mMessageCoroutine == null)
+        {
+            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum, objectName), 0f));
+        }
+    }
+
     private IEnumerator DisplayMessageCoroutine(string text, float delayBeforeDisplay)
     {
         if(text == string.Empty)
@@ -94,5 +102,40 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         }
 
         return string.Empty;
+    }
+
+    private string GetMessageForEnum(MessageEnum messageEnum, AvailableObject objectName)
+    {
+        string stringToReturn = string.Empty;
+        List<string> messages = new List<string>();
+
+        foreach (MessageDatas item in _mMessageDatas)
+        {
+            if (item.MessageName == messageEnum)
+            {
+                messages = item.Messages;
+            }
+        }
+
+        switch (messageEnum)
+        {
+            case MessageEnum.BuyRandomPiece:
+                {
+                    stringToReturn = messages[(int)objectName - (int)AvailableObject.Wine];
+                }
+                break;
+            case MessageEnum.BuyArmorPiece:
+                {
+                    stringToReturn = messages[(int)objectName];
+                }
+                break;
+            case MessageEnum.BuyAnInstrument:
+                {
+                    stringToReturn = messages[(int)objectName - (int)AvailableObject.Flute];
+                }
+                break;
+        }
+
+        return stringToReturn;
     }
 }
