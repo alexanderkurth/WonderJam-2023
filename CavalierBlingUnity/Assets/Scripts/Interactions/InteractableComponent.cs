@@ -58,7 +58,7 @@ public class InteractableComponent : MonoBehaviour
 
     public void TriggerInteraction()
     {
-        if (m_InteractionDone)
+        if (m_InteractionDone || m_IsInteractionStarted)
             return;
 
         m_IsInteractionStarted = true;
