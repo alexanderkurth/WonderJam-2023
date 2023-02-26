@@ -119,9 +119,7 @@ public class InteractableComponent : MonoBehaviour
 
         if (!m_IsAlly)
         {
-            IEnumerator coroutine;
-            coroutine = mMadnessManager.Instance.PeakMadness();
-            mMadnessManager.Instance.StartCoroutine(coroutine);
+            mMadnessManager.Instance.StartPeakMadness();
 
             mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
             Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);

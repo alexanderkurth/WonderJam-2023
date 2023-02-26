@@ -25,7 +25,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
 
     [Range(0, 10)]
     [SerializeField]
-    private int mCurrentShakingIntensity = 1;
+    private float mCurrentShakingIntensity = 1;
 
     public int GetIncrease() { return increaseMadnessLevel; }
 
@@ -48,6 +48,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     private MadnessAudio m_MadnessAudio;
 
     private Coroutine coroutine;
+    private Coroutine coroutine2;
 
 
     public float GetCurrentMadnessLevel()
@@ -152,35 +153,47 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         }
     }
 
+    public void StartPeakMadness()
+    {
+        if(coroutine2 == null)
+        {
+            coroutine2 = StartCoroutine(PeakMadness());
+        }
+        else
+        {
+            StopCoroutine(coroutine2);
+        }
+    }
+
     public IEnumerator PeakMadness()
     {
         float lerp = 0f;
 
-        int targetIntensity = (mCurrentShakingIntensity + m_IncreaseShakingAmount < m_MaxShakingIntensity + 1) ? mCurrentShakingIntensity + m_IncreaseShakingAmount : m_MaxShakingIntensity;
-        int baseIntensity = mCurrentShakingIntensity;
+        float targetIntensity = (mCurrentShakingIntensity + m_IncreaseShakingAmount < m_MaxShakingIntensity + 1) ? mCurrentShakingIntensity + m_IncreaseShakingAmount : m_MaxShakingIntensity;
+        float baseIntensity = mCurrentShakingIntensity;
 
-        bool active = true;
-
-        while (active)
+        while (lerp < 1.0f)
         {
-            if (mCurrentShakingIntensity >= targetIntensity)
-            {
-                mCurrentShakingIntensity = baseIntensity;
+            lerp += Time.unscaledDeltaTime / 1.0f;
 
-                active = false;
-                yield return null;
-            }
-
-            if (active)
-            {
-                mCurrentShakingIntensity += 1;
-            }
-            else
-            {
-                mCurrentShakingIntensity += 1;
-            }
-            yield return new WaitForSeconds(0.5f);
+            mCurrentShakingIntensity = Mathf.Lerp(baseIntensity, targetIntensity, lerp); ;
+            yield return null;
         }
+
+        yield return new WaitForSeconds(0.5f);
+
+        while (lerp > 0f)
+        {
+            lerp -= Time.unscaledDeltaTime / 1.0f;
+
+            mCurrentShakingIntensity = Mathf.Lerp(baseIntensity, targetIntensity, lerp); ;
+            yield return null;
+        }
+        mCurrentShakingIntensity += 1;
+        coroutine2 = null;
+
+
+        yield break;
     }
 
     public void Reset()
