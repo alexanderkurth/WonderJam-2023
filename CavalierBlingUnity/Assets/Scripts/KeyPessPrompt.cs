@@ -104,7 +104,6 @@ public class KeyPessPrompt : MonoBehaviour
     public void PressButtonEffect()
     {
         m_InputImageDisplayer.color = Color.green;
-        Debug.Log("Button Pressed");
         m_Distortion = new Vector3(0.6f, 0.6f, 0.6f);
     }
 

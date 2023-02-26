@@ -41,7 +41,6 @@ public class InteractorComponent : MonoBehaviour
 
         m_Target = target;
         target.OnInteractionAdded();
-        Debug.Log("Adding INTERACTABLE");
     }
 
     public bool IsTargetFilled()
@@ -63,7 +62,6 @@ public class InteractorComponent : MonoBehaviour
     {
         m_Target = null;
         target.OnInteractionRemoved();
-        Debug.Log("REMOVE INTERACTABLE");
     }
 
     public void TriggerInteraction()
