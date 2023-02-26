@@ -17,6 +17,7 @@ public enum MessageEnum
     MadnessWarning,
     MadnessLose,
     NotEnoughMoneyLose,
+    Victory
 }
 
 [System.Serializable]
@@ -63,6 +64,15 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         {
             _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum, objectName), 0f));
         }
+    }
+
+    public void SendVictoryMessage()
+    {
+        if (_mMessageCoroutine != null)
+        {
+            StopCoroutine(_mMessageCoroutine);
+        }
+        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(MessageEnum.Victory), 0f));
     }
 
     public void SendGameOverMessage(GameOverCondition gameOverCondition)
