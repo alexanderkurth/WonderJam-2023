@@ -48,7 +48,16 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     [SerializeField]
     private AudioSource _mVocalAudioSource = new AudioSource();
 
+    [SerializeField]
+    private ShopItemVisual _mShopPreview = null;
+    public ShopItemVisual ShopItemVisual { get => _mShopPreview; }
+
     private Coroutine _mMessageCoroutine = null;
+
+    public void ToggleShopPreview(bool toEnable)
+    {
+        _mShopPreview.gameObject.SetActive(toEnable);
+    }
 
     public bool DisplayMessage(MessageEnum messageToDisplay, float delayBeforeDisplay = 0f)
     {

@@ -28,6 +28,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
     private void Start()
     {
+        HUDCanvas.Instance.ToggleShopPreview(false);
         if (_mPlayOnStart)
         {
             Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
@@ -89,12 +90,16 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
         if (objectCount > 0)
         {
+            HUDCanvas.Instance.ToggleShopPreview(true);
+
             int index = 0, numberOfTry = 0;
             List<int> indexes = GenerateIndexToLookAt(objectCount, buyableObjects.IndexOf(selectedItem));
 
             for (int i = 0; i < indexes.Count; i++)
             {
                 BuyableItem lookedAtItem = buyableObjects[indexes[i]];
+                HUDCanvas.Instance.ShopItemVisual.SetImageSprite(lookedAtItem.ObjectData.ObjectSpriteShop);
+
                 Vector3 direction = (lookedAtItem.transform.position - _mKnightTransform.position).normalized;
                 _mKnightTransform.rotation = Quaternion.LookRotation(direction);
 
@@ -114,6 +119,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         rotation = _mKnightTransform.rotation.eulerAngles;
         rotation.y = 0f;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
+        HUDCanvas.Instance.ToggleShopPreview(false);
 
         if (selectedItem != null)
         {

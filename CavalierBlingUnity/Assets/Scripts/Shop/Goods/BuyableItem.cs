@@ -37,6 +37,7 @@ public struct ObjectData
     public ObjectType ObjectType;
     public List<int> ObjectPrices;
     public Sprite ObjectSprite;
+    public Sprite ObjectSpriteShop;
     public bool CanBeBoughtMultipleTime;
 }
 
@@ -51,7 +52,8 @@ public class BuyableItem : MonoBehaviour
 
     private int _mObjectPrice = 1500000000;
     public int ObjectPrice { get => _mObjectPrice; }
-    private ObjectData _objectData; 
+    private ObjectData _objectData;
+    public ObjectData ObjectData { get => _objectData; }
 
     public void IntializeObject(ObjectData objectData)
     {
