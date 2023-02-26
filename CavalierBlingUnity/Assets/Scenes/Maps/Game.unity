@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Chevalier
       value: 
       objectReference: {fileID: 1153056034}
+    - target: {fileID: 2213438723142854866, guid: 1af847696353c6244a47a11e2f85cdf6,
+        type: 3}
+      propertyPath: m_MusicEffectTickSeconds
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2532349213747222613, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
       propertyPath: m_Name
