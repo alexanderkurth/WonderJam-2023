@@ -50,7 +50,9 @@ public class ChangeChevalierVisual : MonoBehaviour
                 _armSprite.sprite = item.ObjectSprite;
                 if (_armUImage)
                 {
-                    _armUImage.gameObject.SetActive(true);
+                    Color tempColor = _armUImage.color;
+                    tempColor.a = 1f;
+                    _armUImage.color = tempColor;
                     _armUImage.sprite =  item.ObjectSprite;
                 }
                 break;
@@ -60,7 +62,9 @@ public class ChangeChevalierVisual : MonoBehaviour
                 _legLeftSprite.sprite = item.ObjectSprite;
                 if (_legUImage)
                 {
-                    _legUImage.gameObject.SetActive(true);
+                    Color tempColor = _legUImage.color;
+                    tempColor.a = 1f;
+                    _legUImage.color = tempColor;
                     _legUImage.sprite =  item.ObjectSprite;
                 }
                 break;
@@ -69,7 +73,9 @@ public class ChangeChevalierVisual : MonoBehaviour
                 _torsoSprite.sprite = item.ObjectSprite;
                 if (_torsoUImage)
                 {
-                    _torsoUImage.gameObject.SetActive(true);
+                    Color tempColor = _torsoUImage.color;
+                    tempColor.a = 1f;
+                    _torsoUImage.color = tempColor;
                     _torsoUImage.sprite = item.ObjectSprite;
                 }
                 break;
@@ -78,7 +84,9 @@ public class ChangeChevalierVisual : MonoBehaviour
                 _headSprite.sprite = item.ObjectSprite;
                 if (_headUImage)
                 {
-                    _headUImage.gameObject.SetActive(true);
+                    Color tempColor = _headUImage.color;
+                    tempColor.a = 1f;
+                    _headUImage.color = tempColor;
                     _headUImage.sprite = item.ObjectSprite;
                 }
                 break;
