@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
       propertyPath: m_StartShakingLevel
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
