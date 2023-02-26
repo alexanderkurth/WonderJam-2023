@@ -17,6 +17,20 @@ public class ChangeChevalierVisual : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _legLeftSprite;
 
+    [Header("Instruments sprites")]
+
+    [SerializeField]
+    private SpriteRenderer _violineSprite;
+
+    [SerializeField]
+    private SpriteRenderer _fluteSprite;
+
+    [SerializeField]
+    private SpriteRenderer _trumpetSprite;
+
+    [SerializeField]
+    private SpriteRenderer _cornemuseSprite;
+
     [Header("Images")]
     [SerializeField]
     private Image _torsoUImage;
@@ -92,12 +106,16 @@ public class ChangeChevalierVisual : MonoBehaviour
                 break;
 
             case AvailableObject.Flute:
+                _fluteSprite.enabled = true;
                 break;
             case AvailableObject.Violin:
+                _violineSprite.enabled = true;
                 break;
             case AvailableObject.Trumpet:
+                _trumpetSprite.enabled = true;
                 break;
             case AvailableObject.Cornemuse:
+                _cornemuseSprite.enabled = true;
                 break;
             case AvailableObject.Wine:
                 break;
