@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AvailableChunks:
-  - {fileID: 1231657774234214943, guid: 9ed3c1503516a9c43a90a225fbf0357e, type: 3}
-  m_SartingMapChunk: {fileID: 0}
+  - {fileID: 1231657774234214943, guid: 9935b5cbacb0d2b468e8febc7e2fc7c1, type: 3}
+  m_SartingMapChunk: {fileID: 1231657774234214943, guid: 9935b5cbacb0d2b468e8febc7e2fc7c1,
+    type: 3}
   m_EndingMapChunk: {fileID: 1231657774234214943, guid: 98c2f1ed3b0778146981accaabb48277,
     type: 3}
   m_NbOfChunks: 4

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6710427994534072773}
+  - component: {fileID: 6141469671112665663}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -36,6 +37,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6141469671112665663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680691284043967389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663e400a2cca82a4f9dc7e12967daddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _torsoSprite: {fileID: 735207131214706145}
+  _headSprite: {fileID: 2248120533562314528}
+  _armSprite: {fileID: 7846700311264842898}
+  _legRightSprite: {fileID: 7950811344854748486}
+  _legLeftSprite: {fileID: 3943529015825763975}
 --- !u!1 &720640736431232028
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +351,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 647715643232076145}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &7846700311264842898 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 647715643232076145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5820963432595829134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,6 +543,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ff78af36f6288429883009221abdc2, type: 3}
+--- !u!212 &735207131214706145 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7938662327892467714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8495416078576311300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2003552877823441926, guid: d5ff78af36f6288429883009221abdc2,
@@ -615,6 +645,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ff78af36f6288429883009221abdc2, type: 3}
+--- !u!212 &2248120533562314528 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8875148014790040259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6981934720526476997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2003552877823441926, guid: d5ff78af36f6288429883009221abdc2,

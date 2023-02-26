@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MashTotalTime: 1
-  m_MaxTimeBewteenMash: 0.15
+  m_MaxTimeBewteenMash: 0.2
   m_OnInteractionSucessEvent:
     m_PersistentCalls:
       m_Calls:
@@ -121,6 +121,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  m_LootableMoney: 0
 --- !u!1001 &2148547044202094835
 PrefabInstance:
   m_ObjectHideFlags: 0

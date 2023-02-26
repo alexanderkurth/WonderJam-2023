@@ -1116,6 +1116,11 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 743315792}
+    - target: {fileID: 8231682986648972497, guid: e24908a20db07a24593397f97937bdad,
+        type: 3}
+      propertyPath: _ennemyCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e24908a20db07a24593397f97937bdad, type: 3}
 --- !u!1001 &1456178373
