@@ -389,6 +389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootstepEmit
       objectReference: {fileID: 0}
+    - target: {fileID: 8700871353040612726, guid: a15b1ee771542eb49add362b87a06692,
+        type: 3}
+      propertyPath: m_IsQuadriped
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15b1ee771542eb49add362b87a06692, type: 3}
 --- !u!4 &1651073361792311097 stripped
