@@ -118,7 +118,7 @@ public class InteractorComponent : MonoBehaviour
     {
         if (Random.Range(0, 2) > 0)
         {
-            GameMode.Instance.DisplayMessage(MessageEnum.OutOfScreenWarning);
+            GameMode.Instance.DisplayMessage(MessageEnum.OutOfScreenWarning, 0f, true);
         }
 
         yield return new WaitForSeconds(offScreenCooldown);
