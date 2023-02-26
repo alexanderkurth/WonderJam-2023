@@ -71,7 +71,9 @@ public class GameMode : AbstractSingleton<GameMode>
     public void WinGame()
     {
         Time.timeScale = 0f;
-        Instantiate(_winScreen, _canvas.transform);
+        GameObject winScreen = Instantiate(_winScreen, _canvas.transform);
+        Button firstButton = winScreen.GetComponentInChildren<Button>();
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         _mGameState = GameState.Ending;
     }
     
