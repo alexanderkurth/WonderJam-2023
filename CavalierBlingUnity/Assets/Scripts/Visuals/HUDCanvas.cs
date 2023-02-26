@@ -163,7 +163,7 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         audioClip = null;
         foreach (MessageDatas item in _mMessageDatas)
         {
-            if (item.MessageName == messageToDisplay)
+            if (item.MessageName == messageToDisplay && IsListValid(item.Messages))
             {
                 int random = Random.Range(0, item.Messages.Count);
 
@@ -193,32 +193,41 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
             }
         }
 
-        int index = 0;
-        switch (messageEnum)
+        if (IsListValid(messages.Messages))
         {
-            case MessageEnum.BuyRandomPiece:
-                {
-                    index = (int)objectName - (int)AvailableObject.Wine;
-                }
-                break;
-            case MessageEnum.BuyArmorPiece:
-                {
-                    index = (int)objectName;
-                }
-                break;
-            case MessageEnum.BuyAnInstrument:
-                {
-                    index = (int)objectName - (int)AvailableObject.Flute;
-                }
-                break;
-        }
+            int index = 0;
+            switch (messageEnum)
+            {
+                case MessageEnum.BuyRandomPiece:
+                    {
+                        index = (int)objectName - (int)AvailableObject.Wine;
+                    }
+                    break;
+                case MessageEnum.BuyArmorPiece:
+                    {
+                        index = (int)objectName;
+                    }
+                    break;
+                case MessageEnum.BuyAnInstrument:
+                    {
+                        index = (int)objectName - (int)AvailableObject.Flute;
+                    }
+                    break;
+            }
 
-        stringToReturn = messages.Messages[index];
-        if (messages.AudioClip.Count > index)
-        {
-            audioClip = messages.AudioClip[index];
+            stringToReturn = messages.Messages[index];
+            if (messages.AudioClip.Count > index)
+            {
+                audioClip = messages.AudioClip[index];
+            }
+
         }
 
         return stringToReturn;
+    }
+
+    public bool IsListValid(List<string> list)
+    {
+        return list != null && list.Count > 0;
     }
 }
