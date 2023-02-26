@@ -77,11 +77,12 @@ public class InteractorComponent : MonoBehaviour
 
     public void OnInteractionChanged(InputAction.CallbackContext context)
     {
-        if (context.started) //Pressed
+        if (context.started) 
         {
             if(m_Target != null)
             {
                 TriggerInteraction();
+                //Pressed
             }
         }
     }
