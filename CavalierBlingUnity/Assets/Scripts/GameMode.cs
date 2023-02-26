@@ -132,20 +132,13 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         Time.timeScale = 0f;
         GameObject gameOver = Instantiate(_gameOverScreen, _canvas.transform);
+        gameOver.GetComponent<GameOver>().UpdateGameOverText(gameOverCondition);
+        
+        // Select "Go to main menu" button
         Button firstButton = gameOver.GetComponentInChildren<Button>();
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         
         isGameOver = true;
-        switch (gameOverCondition)
-        {
-            case GameOverCondition.OutOfScreen:
-                break;
-            case GameOverCondition.Madness:
-                break;
-            case GameOverCondition.NotEnoughMoney:
-                break;
-        }
-
         _mGameState = GameState.Ending;
         
         // Stop All Audio
