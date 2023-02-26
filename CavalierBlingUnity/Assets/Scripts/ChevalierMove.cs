@@ -19,9 +19,11 @@ public class ChevalierMove : MonoBehaviour
 
     private Vector3 m_Direction;
     private float m_TimeElapsed;
-
+    private bool m_CanMove = false;
     [SerializeField]
     private Animator m_Animator;
+
+    private float m_TimeBeforeStart = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +32,29 @@ public class ChevalierMove : MonoBehaviour
         {
             m_Direction = Vector3.forward;
         }
+
+        StartCoroutine(StartMovement());
+    }
+
+    public void SetStartTimer(float time)
+    {
+        m_TimeBeforeStart = time;
+    }
+
+    IEnumerator StartMovement()
+    {
+        yield return new WaitForSeconds(m_TimeBeforeStart);
+        m_CanMove = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(!m_CanMove)
+        {
+            return;
+        }
+
         float lerpValue = 0.0f;
         if (m_TimeElapsed < m_LerpDuration)
         {

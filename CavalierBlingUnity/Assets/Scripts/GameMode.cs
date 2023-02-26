@@ -27,6 +27,8 @@ public class GameMode : AbstractSingleton<GameMode>
     private GameObject _winScreen;
     [SerializeField] 
     private int _ennemyCount = 10;
+    [SerializeField]
+    private float _TimeBeforeStart = 3.0f;
 
     [SerializeField]
     private GameState _mGameState = GameState.InProgress;
@@ -43,10 +45,19 @@ public class GameMode : AbstractSingleton<GameMode>
         Time.timeScale = 1f;
         DailyTax.Instance.DisplayTax();
 
+        StartChevalierAndEnemies();
         SpawnEnnemies();
         Inventory.Instance.ChangeCurrencyValue(0);
         _mGameState = GameState.InProgress;
+
     }
+
+    void StartChevalierAndEnemies()
+    {
+        _chevalier.GetComponent<ChevalierMove>().SetStartTimer(_TimeBeforeStart);
+        _chevalier.GetComponentInChildren<EnemySpawner>().SetStartTimer(_TimeBeforeStart);
+    }
+
 
     public void DayEnd()
     {
@@ -110,7 +121,6 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         EnemySpawner.Instance.StartSpawn(_ennemyCount);
     }
-
 
     public void IncreaseDifficulty(int level)
     {

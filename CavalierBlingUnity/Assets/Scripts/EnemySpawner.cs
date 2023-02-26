@@ -18,6 +18,7 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
     private int m_nbSpawnedPosition = 5;
 
     private int m_nbEnemy;
+    private float m_TimeBeforeStart = 3.0f;
 
     // To be called by GameMode
     public void StartSpawn(int nbSpawnedEntity)
@@ -26,8 +27,15 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
         StartCoroutine(Spawn());
     }
 
+    public void SetStartTimer(float time)
+    {
+        m_TimeBeforeStart = time;
+    }
+
     IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(m_TimeBeforeStart);
+
         yield return new WaitForSeconds(Random.Range(m_DeltaTime.x, m_DeltaTime.y));
 
         float AngleStep = m_SpawnAngle * 2.0f / (float)m_nbSpawnedPosition;
