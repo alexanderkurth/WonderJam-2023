@@ -55,7 +55,7 @@ public class Shop : AbstractSingleton<Shop>
         for (int i = selectionCount; i >= 0; i--)
         {
             ObjectData objectData = objectSelection[i];
-            if (objectData.CanBeBoughtMultipleTime == true || !Inventory.Instance.IsInInventory(objectData.ObjectType, objectData.ObjectName))
+            if (objectData.CanBeBoughtMultipleTime == true || !Inventory.Instance.IsInInventory(objectData))
             {
                 continue;   
             }
