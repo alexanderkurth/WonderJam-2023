@@ -72,7 +72,7 @@ public class InteractorComponent : MonoBehaviour
             m_Target.TriggerInteraction();
         }
         
-        m_KeyPressPrompt.PressButtonEffect();
+        //m_KeyPressPrompt.PressButtonEffect();
     }
 
     public void OnInteractionChanged(InputAction.CallbackContext context)
