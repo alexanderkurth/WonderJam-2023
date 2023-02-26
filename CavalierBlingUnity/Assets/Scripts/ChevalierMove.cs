@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChevalierMove : MonoBehaviour
 {
     [SerializeField, Range(0, 10)]
-    private float m_Speed = 1.0f;
+    public float m_Speed = 1.0f;
     [SerializeField]
     private float m_LearpMin = -50.0f;
     [SerializeField]
