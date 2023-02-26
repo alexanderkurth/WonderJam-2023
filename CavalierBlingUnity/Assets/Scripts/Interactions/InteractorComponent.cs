@@ -116,6 +116,11 @@ public class InteractorComponent : MonoBehaviour
 
     private IEnumerator CheckOffScreenCo()
     {
+        if (Random.Range(0, 2) > 0)
+        {
+            GameMode.Instance.DisplayMessage(MessageEnum.OutOfScreenWarning);
+        }
+
         yield return new WaitForSeconds(offScreenCooldown);
         GameMode.Instance.GameOver(GameMode.GameOverCondition.OutOfScreen);
     }
