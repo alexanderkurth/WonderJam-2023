@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4880967447204752795}
   - component: {fileID: -8812952631220862760}
   - component: {fileID: 2213438723142854866}
+  - component: {fileID: 6575329825922220631}
   m_Layer: 0
   m_Name: mMadnessManager
   m_TagString: Untagged
@@ -64,6 +65,7 @@ MonoBehaviour:
     m_HeartBeatAudioSource: {fileID: 2532349213747222619}
     m_HeartBeatMinPitch: 0.5
     m_HeartBeatMaxPitch: 3
+    m_StartBreathLevel: 50
     m_BreathAudioSource: {fileID: 2532349213747222622}
     m_BreathAudioClips:
     - {fileID: 8300000, guid: acbf9574d5687824081930ea3b7656e6, type: 3}
@@ -319,9 +321,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33af04b3215521643a5e874374465767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MusicEffectTickSeconds: 0.1
+  m_MusicEffectTickSeconds: 2
   m_MadnessMaxAmountPerSecond: 3
   m_MaxDistanceToTrigger: 170
   m_Chevalier: {fileID: 0}
   m_Ecuyer: {fileID: 0}
   currentInstrument: 105
+  m_InstrumentMusics:
+    m_MusicAudioSource: {fileID: 6575329825922220631}
+    m_ClassicMusic: {fileID: 0}
+    m_FluteMusic: {fileID: 8300000, guid: b8141e15b039796439b3160da1c38c8c, type: 3}
+    m_ViolinMusic: {fileID: 8300000, guid: fcf740e557b468b46a3b5bfa7f7c860d, type: 3}
+    m_TrumpetMusic: {fileID: 8300000, guid: f5f3cd9c50002794b9bfd2826be0a836, type: 3}
+    m_CornemuseMusic: {fileID: 8300000, guid: 686faeb99466825468b9df64474b21f1, type: 3}
+--- !u!82 &6575329825922220631
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532349213747222613}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
