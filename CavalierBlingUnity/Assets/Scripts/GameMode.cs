@@ -50,6 +50,8 @@ public class GameMode : AbstractSingleton<GameMode>
 		
         if (_mGameState != GameState.Ending)
         {
+            Shop.Instance.InitializeShopOfTheDay();
+
             _mGameState = GameState.InShop;
             Camera.main.enabled = false;
             ShopSceneManager.Instance.StartShoppingLoop();
