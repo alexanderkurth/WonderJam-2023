@@ -133,7 +133,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
             toReturn.Add(selectIndex);
 
             int valueToAdd = Random.Range(0, 2) > 0 ? 1 : -1;
-            selectIndex = (selectIndex + valueToAdd) % objectCount;
+            selectIndex = (selectIndex + valueToAdd) <= 0 ? (selectIndex + 1) : (selectIndex + valueToAdd) % objectCount;
         }
 
         if(toReturn[toReturn.Count-1] != selectedItemIndex)
