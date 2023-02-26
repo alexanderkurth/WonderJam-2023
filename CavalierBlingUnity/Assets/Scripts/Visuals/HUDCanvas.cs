@@ -25,6 +25,7 @@ public struct MessageDatas
 {
     public MessageEnum MessageName;
     public List<string> Messages;
+    public List<AudioClip> AudioClip;
 }
 
 public class HUDCanvas : AbstractSingleton<HUDCanvas>
@@ -44,13 +45,16 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     [SerializeField]
     private List<MessageDatas> _mMessageDatas = new List<MessageDatas>();
 
+    [SerializeField]
+    private AudioSource _mVocalAudioSource = new AudioSource();
+
     private Coroutine _mMessageCoroutine = null;
 
     public bool DisplayMessage(MessageEnum messageToDisplay, float delayBeforeDisplay = 0f)
     {
         if (_mMessageCoroutine == null)
         {
-            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageToDisplay), delayBeforeDisplay));
+            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageToDisplay, out AudioClip audioClip), delayBeforeDisplay, audioClip));
             
             return true;
         }
@@ -62,7 +66,7 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
     {
         if (_mMessageCoroutine == null)
         {
-            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum, objectName), 0f));
+            _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum, objectName, out AudioClip audioClip), 0f, audioClip));
         }
     }
 
@@ -72,7 +76,7 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         {
             StopCoroutine(_mMessageCoroutine);
         }
-        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(MessageEnum.Victory), 0f));
+        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(MessageEnum.Victory, out AudioClip audioClip), 0f, audioClip));
     }
 
     public void SendGameOverMessage(GameOverCondition gameOverCondition)
@@ -104,10 +108,10 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
                 break;
         }
 
-        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum), 0f));
+        _mMessageCoroutine = StartCoroutine(DisplayMessageCoroutine(GetMessageForEnum(messageEnum, out AudioClip audioClip), 0f, audioClip));
     }
 
-    private IEnumerator DisplayMessageCoroutine(string text, float delayBeforeDisplay)
+    private IEnumerator DisplayMessageCoroutine(string text, float delayBeforeDisplay, AudioClip audio = null)
     {
         if(text == string.Empty)
         {
@@ -119,7 +123,14 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         float lerp = 0f;
 
         _mMessageObject.SetActive(true);
-        
+
+        if(_mVocalAudioSource != null && audio != null)
+        {
+            _mVocalAudioSource.Stop();
+            _mVocalAudioSource.clip = audio;
+            _mVocalAudioSource.Play();
+        }
+
         while (lerp < 1f)
         {
             lerp += Time.unscaledDeltaTime / 0.5f;
@@ -138,49 +149,65 @@ public class HUDCanvas : AbstractSingleton<HUDCanvas>
         yield break;
     }
 
-    private string GetMessageForEnum(MessageEnum messageToDisplay)
+    private string GetMessageForEnum(MessageEnum messageToDisplay, out AudioClip audioClip)
     {
+        audioClip = null;
         foreach (MessageDatas item in _mMessageDatas)
         {
             if (item.MessageName == messageToDisplay)
             {
-                return item.Messages[Random.Range(0, item.Messages.Count)];
+                int random = Random.Range(0, item.Messages.Count);
+
+                if(item.AudioClip.Count > random)
+                {
+                    audioClip = item.AudioClip[random];
+                }
+
+                return item.Messages[random];
             }
         }
 
         return string.Empty;
     }
 
-    private string GetMessageForEnum(MessageEnum messageEnum, AvailableObject objectName)
+    private string GetMessageForEnum(MessageEnum messageEnum, AvailableObject objectName, out AudioClip audioClip)
     {
         string stringToReturn = string.Empty;
-        List<string> messages = new List<string>();
+        MessageDatas messages = new MessageDatas();
+        audioClip = null;
 
         foreach (MessageDatas item in _mMessageDatas)
         {
             if (item.MessageName == messageEnum)
             {
-                messages = item.Messages;
+                messages = item;
             }
         }
 
+        int index = 0;
         switch (messageEnum)
         {
             case MessageEnum.BuyRandomPiece:
                 {
-                    stringToReturn = messages[(int)objectName - (int)AvailableObject.Wine];
+                    index = (int)objectName - (int)AvailableObject.Wine;
                 }
                 break;
             case MessageEnum.BuyArmorPiece:
                 {
-                    stringToReturn = messages[(int)objectName];
+                    index = (int)objectName;
                 }
                 break;
             case MessageEnum.BuyAnInstrument:
                 {
-                    stringToReturn = messages[(int)objectName - (int)AvailableObject.Flute];
+                    index = (int)objectName - (int)AvailableObject.Flute;
                 }
                 break;
+        }
+
+        stringToReturn = messages.Messages[index];
+        if (messages.AudioClip.Count > index)
+        {
+            audioClip = messages.AudioClip[index];
         }
 
         return stringToReturn;
