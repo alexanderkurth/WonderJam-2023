@@ -146,7 +146,6 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         {
             float breathBeatScale = (float)(m_MadnessCurrentLevel - m_MadnessAudio.m_StartBreathLevel) / (float)(m_MadnessMaxLevel - m_MadnessAudio.m_StartBreathLevel);
 
-
             // Plays a random breath sound effect with a exponentially increase chance of playing
             if (Random.Range(0, 100) < (breathBeatScale * 100))
             {
@@ -205,6 +204,8 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     {
         m_MadnessCurrentLevel = m_StartShakingLevel / 2;
         mCurrentShakingIntensity = 1;
+        m_MadnessAudio.m_HeartBeatAudioSource.volume = 0f;
+
     }
 
     private IEnumerator LerpMadness(float amount)

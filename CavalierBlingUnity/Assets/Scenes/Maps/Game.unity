@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
       propertyPath: m_StartShakingLevel
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
@@ -246,7 +246,12 @@ PrefabInstance:
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
       propertyPath: m_MaxShakingIntensity
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
+        type: 3}
+      propertyPath: mCurrentShakingIntensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2532349213747222616, guid: 1af847696353c6244a47a11e2f85cdf6,
         type: 3}
@@ -317,6 +322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532349213747222619, guid: 1af847696353c6244a47a11e2f85cdf6,
+        type: 3}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af847696353c6244a47a11e2f85cdf6, type: 3}
@@ -1047,13 +1057,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0af9f5c75d43f2443a748b3a6c53c3e0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1703,8 +1713,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.1
+  m_Pitch: 0
   Loop: 0
   Mute: 0
   Spatialize: 0
