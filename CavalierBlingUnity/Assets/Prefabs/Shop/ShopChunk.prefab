@@ -595,6 +595,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4899644973144763593, guid: d496fc796e1742648875dffe51f15476,
+        type: 3}
+      propertyPath: m_Depth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8653182203080386296, guid: d496fc796e1742648875dffe51f15476,
         type: 3}
       propertyPath: m_Name

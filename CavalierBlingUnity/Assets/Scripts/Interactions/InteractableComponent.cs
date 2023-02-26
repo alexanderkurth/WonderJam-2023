@@ -39,6 +39,8 @@ public class InteractableComponent : MonoBehaviour
     [SerializeField]
     private GameObject m_BloodFX;
 
+    public AllyBehavior AllyCompIfAlly;
+
     public void Start()
     {
         foreach(var sprite in m_Sprites)
@@ -122,6 +124,10 @@ public class InteractableComponent : MonoBehaviour
         else
         {
             mMadnessManager.Instance.ReduceCurrentLevel(mMadnessManager.Instance.GetIncrease() / 2);
+            if(AllyCompIfAlly != null)
+            {
+                AllyCompIfAlly.ChangeState();
+            }
         }
     }
 
