@@ -27,7 +27,7 @@ public class ChangeChevalierVisual : MonoBehaviour
     [SerializeField] 
     private Image _legUImage;
     
-    private void OnEnable()
+    private void Start()
     {
         if (Inventory.itemAddedToInventory == null)
         {
@@ -85,7 +85,7 @@ public class ChangeChevalierVisual : MonoBehaviour
             
             case AvailableObject.Flute:
                 break;
-            case AvailableObject.Violin:
+            case AvailableObject.Trumpet:
                 break;
             case AvailableObject.Luth:
                 break;

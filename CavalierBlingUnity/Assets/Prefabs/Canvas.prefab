@@ -401,6 +401,29 @@ MonoBehaviour:
     - "Tu les ach\xE8veras plus rapidement Billy, tu es d'une lenteeeeeeeur."
     - "Tu te balades comme un petit rat en qu\xEAte de fromage."
     - Requiescat in Pace
+  - MessageName: 3
+    Messages:
+    - "Attention \xE0 toi Billy, tu es tout p\xE2le. Tu ne me sers \xE0 rien mort
+      !"
+  - MessageName: 4
+    Messages:
+    - "Ah ! Une bonne bi\xE8re ! Rien de tel pour se rafraichir !"
+    - Du jambon... Le Gras ! C'est la Vie !
+    - Du jambon... Le Gras ! C'est la Vie !
+    - Du jambon... Le Gras ! C'est la Vie !
+    - Du jambon... Le Gras ! C'est la Vie !
+  - MessageName: 5
+    Messages:
+    - "Un bouclier, vu comme tu m'es utile il me faudra bien \xE7a..."
+    - "Que ces jambi\xE8res me vont bien! Regarde comment elles me moulent p.a.r.f.a.i.t.e.m.e.n.t!"
+    - "Ah ! Un beau plastron pour prot\xE9ger mon beau torse velu !"
+    - "Le probl\xE8me de ces heaumes, c'est qu'ils applatissent mon brushing !"
+  - MessageName: 6
+    Messages:
+    - "Tu sais jouer de la trompette Billy ? Regarde celle l\xE0 comme elle est belle
+      !"
+    - "Fl\xFBte !.. Oui, une fl\xFBte !"
+    - "Fl\xFBte !.. Oui, une fl\xFBte !"
 --- !u!1001 &4942666316936053020
 PrefabInstance:
   m_ObjectHideFlags: 0
