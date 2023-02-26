@@ -9,8 +9,8 @@ public class Inventory : AbstractSingleton<Inventory>
     private float _baseValue;
     
     private float _currentCurrency;
-    private Dictionary<ObjectType, List<AvailableObject>> _inventory = new Dictionary<ObjectType, List<AvailableObject>>();
-    private const int MAX_ARMOR_COUNT = 3;
+    private Dictionary<ObjectType, List<ObjectData>> _inventory = new Dictionary<ObjectType, List<ObjectData>>();
+    private const int MAX_ARMOR_COUNT = 4;
 
     public static UnityEvent<ObjectData> itemAddedToInventory;
     
@@ -47,11 +47,11 @@ public class Inventory : AbstractSingleton<Inventory>
     {
         if (_inventory.ContainsKey(objectData.ObjectType))
         {
-            _inventory[objectData.ObjectType].Add(objectData.ObjectName);
+            _inventory[objectData.ObjectType].Add(objectData);
         }
         else
         {
-            List<AvailableObject> availableObjects = new List<AvailableObject> { objectData.ObjectName };
+            List<ObjectData> availableObjects = new List<ObjectData> { objectData };
             _inventory.Add(objectData.ObjectType, availableObjects);
         }
         
@@ -63,14 +63,24 @@ public class Inventory : AbstractSingleton<Inventory>
         }
     }
 
-    public bool IsInInventory(ObjectType objectType, AvailableObject availableObject)
+    public bool IsInInventory(ObjectData objectData)
     {
-        if (_inventory.ContainsKey(objectType))
+        if (_inventory.ContainsKey(objectData.ObjectType))
         {
-            return _inventory[objectType].Contains(availableObject);
+            return _inventory[objectData.ObjectType].Contains(objectData);
         }
 
         return false; 
+    }
+
+    public List<ObjectData> GetCurrentObjectListForType(ObjectType objectType)
+    {
+        if (_inventory.ContainsKey(objectType))
+        {
+            return _inventory[objectType];
+        }
+
+        return new List<ObjectData>();
     }
 
     public bool IsFullArmor()

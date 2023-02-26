@@ -18,9 +18,16 @@ public class ChangeChevalierVisual : MonoBehaviour
     private void OnEnable()
     {
         if (Inventory.itemAddedToInventory == null)
+        {
             Inventory.itemAddedToInventory = new UnityEvent<ObjectData>();
+        }
 
         Inventory.itemAddedToInventory.AddListener(ChangeSprite);
+
+        foreach (ObjectData item in Inventory.Instance.GetCurrentObjectListForType(ObjectType.BlingArmorPart))
+        {
+            ChangeSprite(item);
+        }
     }
 
     private void ChangeSprite(ObjectData item)
