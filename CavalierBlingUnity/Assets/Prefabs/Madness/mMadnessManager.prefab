@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duplicationHandling: 3
   DoNotDestroyOnLoad: 0
-  increaseAmount: 4
+  m_IncreaseShakingAmount: 4
   increaseMadnessLevel: 2
   m_MadnessCurrentLevel: 0
   m_MadnessMaxLevel: 100
@@ -346,7 +346,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
