@@ -112,6 +112,8 @@ public class InteractableComponent : MonoBehaviour
 
     private void OnInteractionSucessfull()
     {
+        RemoveInteractable();
+
         m_BloodFX.SetActive(false);
 
         m_InteractionDone = true;
@@ -133,15 +135,15 @@ public class InteractableComponent : MonoBehaviour
             {
                 AllyCompIfAlly.ChangeState();
             }
-
-            ForceRemoveInteractable();
         }
 
-        RemoveInteractable();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag != "Player")
+            return;
+
         if (m_InteractionDone)
             return;
 
@@ -155,6 +157,9 @@ public class InteractableComponent : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.tag != "Player")
+            return;
+
         m_tempInteractor = other.GetComponent<InteractorComponent>();
         RemoveInteractable();
     }

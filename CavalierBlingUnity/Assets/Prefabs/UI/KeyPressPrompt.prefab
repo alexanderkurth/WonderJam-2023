@@ -93,7 +93,8 @@ MonoBehaviour:
   m_InputImageDisplayer: {fileID: 526970962278746399}
   m_KeyboardInputSprite: {fileID: 21300000, guid: f9caeaed024d0494ea1b5f4a2817ee63,
     type: 3}
-  m_ControllerInputSprite: {fileID: 0}
+  m_ControllerInputSprite: {fileID: 21300000, guid: ea15aeb291381654c8374db464e12429,
+    type: 3}
   m_InputDeviceManager: {fileID: 526970962278746401}
   m_InteractorComponent: {fileID: 0}
   m_Camera: {fileID: 0}
