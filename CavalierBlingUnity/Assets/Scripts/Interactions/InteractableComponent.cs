@@ -135,6 +135,8 @@ public class InteractableComponent : MonoBehaviour
             {
                 AllyCompIfAlly.ChangeState();
             }
+
+            ForceRemoveInteractable();
         }
 
         RemoveInteractable();
@@ -167,6 +169,13 @@ public class InteractableComponent : MonoBehaviour
             {
                 m_tempInteractor.RemoveInteractable(this);
             }
+        }
+    }
+    private void ForceRemoveInteractable()
+    {
+        if (m_tempInteractor)
+        {
+            m_tempInteractor.RemoveInteractable(this);
         }
     }
 }

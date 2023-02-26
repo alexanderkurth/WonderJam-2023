@@ -57,7 +57,7 @@ public class KeyPessPrompt : MonoBehaviour
             m_InteractorComponent = FindObjectOfType<InteractorComponent>();
         }
 
-        m_Distortion = new Vector3(0.8f, 0.8f, 0.8f);
+        ResetPressButtonEffect();
     }
 
     // Update is called once per frame
@@ -103,16 +103,14 @@ public class KeyPessPrompt : MonoBehaviour
 
     public void PressButtonEffect()
     {
-        //m_InputImageDisplayer.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-        //Change image color for green
         m_InputImageDisplayer.color = Color.green;
         Debug.Log("Button Pressed");
-        m_Distortion = new Vector3(1.0f, 1.0f, 1.0f);
+        m_Distortion = new Vector3(0.6f, 0.6f, 0.6f);
     }
 
     public void ResetPressButtonEffect()
     {
-        m_Distortion = new Vector3(0.8f, 0.8f, 0.8f);
+        m_Distortion = new Vector3(0.4f, 0.4f, 0.4f);
         m_InputImageDisplayer.color = Color.white;
     }
 }

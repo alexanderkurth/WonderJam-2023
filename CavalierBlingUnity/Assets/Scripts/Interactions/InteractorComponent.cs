@@ -60,8 +60,8 @@ public class InteractorComponent : MonoBehaviour
 
     public void RemoveInteractable(InteractableComponent target)
     {
-        target.OnInteractionRemoved();
         m_Target = null;
+        target.OnInteractionRemoved();
     }
 
     public void TriggerInteraction()
