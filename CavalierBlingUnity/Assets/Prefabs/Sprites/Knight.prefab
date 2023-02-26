@@ -54,6 +54,10 @@ MonoBehaviour:
   _armSprite: {fileID: 7846700311264842898}
   _legRightSprite: {fileID: 7950811344854748486}
   _legLeftSprite: {fileID: 3943529015825763975}
+  _torsoUImage: {fileID: 0}
+  _headUImage: {fileID: 0}
+  _armUImage: {fileID: 0}
+  _legUImage: {fileID: 0}
 --- !u!1 &720640736431232028
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +344,21 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
         type: 3}
+      propertyPath: m_Color.b
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -442,6 +461,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
         type: 3}
+      propertyPath: m_Color.g
+      value: 0.6335552
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -536,6 +565,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 84925de978b8c4143996323bde55aaf8,
         type: 3}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.509434
+      objectReference: {fileID: 0}
     - target: {fileID: 7212569427058660835, guid: d5ff78af36f6288429883009221abdc2,
         type: 3}
       propertyPath: m_WasSpriteAssigned
