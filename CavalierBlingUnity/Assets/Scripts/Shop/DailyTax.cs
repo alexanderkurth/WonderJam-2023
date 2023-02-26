@@ -24,7 +24,6 @@ public class DailyTax : AbstractSingleton<DailyTax>
 
     public void DisplayTax()
     {
-        float tax = GetDailyTax() * -1f;
-        _currentTaxText.text = tax.ToString();
+        _currentTaxText.text = GetDailyTax().ToString();
     }
 }

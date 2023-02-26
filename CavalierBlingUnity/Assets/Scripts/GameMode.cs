@@ -33,20 +33,21 @@ public class GameMode : AbstractSingleton<GameMode>
     [SerializeField]
     private GameObject _chevalier;
 
-    public int dayCount = 0;
+    public int dayCount { get => GlobalDataHolder.Instance.CurrentDay; }
     public bool isGameOver = false; 
 
     private void Start()
     {
         Time.timeScale = 1f;
+        DailyTax.Instance.DisplayTax();
+
         SpawnEnnemies();
         _mGameState = GameState.InProgress;
-        DailyTax.Instance.DisplayTax();
     }
 
     public void DayEnd()
     {
-        dayCount++;
+        GlobalDataHolder.Instance.IncreaseDayCount();
         DailyTax.Instance.DeductTax();
 		
         if (_mGameState != GameState.Ending)
