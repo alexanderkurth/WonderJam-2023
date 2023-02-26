@@ -9,6 +9,8 @@ public class DailyTax : AbstractSingleton<DailyTax>
 
     [SerializeField] 
     private TextMeshProUGUI _currentTaxText;
+    [SerializeField]
+    private AudioSource _mAudioTaxPay = null;
     
     private float GetDailyTax()
     {
@@ -20,6 +22,7 @@ public class DailyTax : AbstractSingleton<DailyTax>
     {
         float currentTax = GetDailyTax();
         Inventory.Instance.ChangeCurrencyValue(-currentTax);
+        _mAudioTaxPay.Play();
     }
 
     public void DisplayTax()
