@@ -1,5 +1,3 @@
-// Make an instrument manager that can be used to play sounds
-
 using UnityEngine;
 
 public class InstrumentEffectManager : MonoBehaviour
@@ -25,6 +23,20 @@ public class InstrumentEffectManager : MonoBehaviour
     [SerializeField]
     private AvailableObject currentInstrument = AvailableObject.None;
 
+    [System.Serializable]
+    class InstrumentMusics
+    {
+        public AudioSource m_MusicAudioSource;
+        public AudioClip m_ClassicMusic;
+        public AudioClip m_FluteMusic;
+        public AudioClip m_ViolinMusic;
+        public AudioClip m_TrumpetMusic;
+        public AudioClip m_CornemuseMusic;
+    }
+
+    [SerializeField]
+    private InstrumentMusics m_InstrumentMusics;
+
     private void Start()
     {
         if (m_MadnessManager == null)
@@ -35,6 +47,9 @@ public class InstrumentEffectManager : MonoBehaviour
 
         if (m_Ecuyer == null)
             m_Ecuyer = GameObject.Find("PlayerArmature");
+
+        if (m_InstrumentMusics.m_MusicAudioSource == null)
+            m_InstrumentMusics.m_MusicAudioSource = GetComponents<AudioSource>()[2];
 
         SetCurrentInstrument();
     }
@@ -50,28 +65,38 @@ public class InstrumentEffectManager : MonoBehaviour
             case AvailableObject.Flute:
                 m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
                 // Play flute sound
+                m_InstrumentMusics.m_MusicAudioSource.clip = m_InstrumentMusics.m_FluteMusic;
                 break;
             case AvailableObject.Violin:
                 m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
                 // Play violin sound
+                m_InstrumentMusics.m_MusicAudioSource.clip = m_InstrumentMusics.m_ViolinMusic;
                 break;
             case AvailableObject.Trumpet:
                 m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
-                // Play luth sound
+                // Play trumpet sound
+                m_InstrumentMusics.m_MusicAudioSource.clip = m_InstrumentMusics.m_TrumpetMusic;
                 break;
             case AvailableObject.Cornemuse:
                 m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
                 // Play cornemuse sound
+                m_InstrumentMusics.m_MusicAudioSource.clip = m_InstrumentMusics.m_CornemuseMusic;
                 break;
+            case AvailableObject.None:
             default:
-                Debug.LogError("No instrument selected");
+                // Play classic sound
+                //m_InstrumentMusics.m_MusicAudioSource.clip = m_InstrumentMusics.m_ClassicMusic;
                 break;
         }
+        m_InstrumentMusics.m_MusicAudioSource.Play();
     }
 
     private void Update()
     {
         if (m_MadnessManager == null || currentInstrument == AvailableObject.None) return;
+
+        GameMode gameMode = GameMode.Instance;
+        if (gameMode == null || gameMode.GameState == GameState.InShop) return;
 
         if (Time.time > m_NextActionTime)
         {
