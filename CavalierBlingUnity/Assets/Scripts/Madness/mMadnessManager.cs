@@ -8,6 +8,9 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     public int increaseAmount = 4;
 
     [SerializeField]
+    int increaseMadnessLevel = 2;
+
+    [SerializeField]
     private int m_MadnessCurrentLevel = 0;
     
     [SerializeField]
@@ -24,6 +27,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     [SerializeField]
     private int mCurrentShakingIntensity = 1;
 
+    public int GetIncrease() { return increaseMadnessLevel; }
 
     [System.Serializable]
     public class MadnessAudio{
@@ -56,7 +60,6 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         m_MadnessCurrentLevel += amount;
         if (m_MadnessCurrentLevel > m_MadnessMaxLevel)
         {
-            // TODO : ADD GAME OVER
             GameMode.Instance.GameOver(GameMode.GameOverCondition.Madness);
             Debug.Log("GAME OVER");
         }
