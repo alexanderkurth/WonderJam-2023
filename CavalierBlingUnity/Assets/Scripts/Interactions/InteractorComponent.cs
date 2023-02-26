@@ -13,10 +13,16 @@ public class InteractorComponent : MonoBehaviour
 
     private Coroutine _isOffScreenCo = null; 
 
+    [SerializeField]
+    KeyPessPrompt m_KeyPressPrompt;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(m_KeyPressPrompt == null)
+        {
+            m_KeyPressPrompt = FindObjectOfType<KeyPessPrompt>();
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +43,21 @@ public class InteractorComponent : MonoBehaviour
         target.OnInteractionAdded();
     }
 
+    public bool IsTargetFilled()
+    {
+        return m_Target != null;
+    }
+
+    public Vector3 GetTargetPosition()
+    {
+        if(m_Target != null)
+        {
+            return m_Target.transform.position;
+        }
+        Debug.LogError("Target is null");
+        return Vector3.zero;
+    }
+
     public void RemoveInteractable(InteractableComponent target)
     {
         target.OnInteractionRemoved();
@@ -50,6 +71,8 @@ public class InteractorComponent : MonoBehaviour
         {
             m_Target.TriggerInteraction();
         }
+        
+        m_KeyPressPrompt.PressButtonEffect();
     }
 
     public void OnInteractionChanged(InputAction.CallbackContext context)
