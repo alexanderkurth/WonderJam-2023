@@ -15,25 +15,25 @@ MonoBehaviour:
   ObjectsDatas:
   - ObjectName: 0
     ObjectType: 0
-    ObjectPrices: c8000000
+    ObjectPrices: af000000
     ObjectSprite: {fileID: 21300000, guid: a62b835b5a624384495b9d4ae155140d, type: 3}
     ObjectSpriteShop: {fileID: 21300000, guid: f17c6dbffdebec141b84a9f6720dcacb, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 1
     ObjectType: 0
-    ObjectPrices: c8000000
+    ObjectPrices: af000000
     ObjectSprite: {fileID: 21300000, guid: f3e09e7784ed35c4dbb608fab7f3a43c, type: 3}
     ObjectSpriteShop: {fileID: 21300000, guid: 81e72e1ef1aa7be4d86b0e78ae5fe005, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 2
     ObjectType: 0
-    ObjectPrices: c8000000
+    ObjectPrices: af000000
     ObjectSprite: {fileID: 21300000, guid: 27ba8c2b5aecc1c43bcee182ec20713e, type: 3}
     ObjectSpriteShop: {fileID: 21300000, guid: cdb756a81bc2b6f458e7ef2d0c44e229, type: 3}
     CanBeBoughtMultipleTime: 0
   - ObjectName: 3
     ObjectType: 0
-    ObjectPrices: c8000000
+    ObjectPrices: af000000
     ObjectSprite: {fileID: 21300000, guid: 37b19b7a833bf5a49bee2b01f642eb41, type: 3}
     ObjectSpriteShop: {fileID: 21300000, guid: 77eeceb033564054da8d2a1c460342ee, type: 3}
     CanBeBoughtMultipleTime: 0

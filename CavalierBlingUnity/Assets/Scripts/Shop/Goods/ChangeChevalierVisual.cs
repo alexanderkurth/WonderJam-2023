@@ -72,7 +72,7 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _armUImage.color;
                     tempColor.a = 1f;
                     _armUImage.color = tempColor;
-                    _armUImage.sprite = item.ObjectSprite;
+                    _armUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
@@ -84,7 +84,7 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _legUImage.color;
                     tempColor.a = 1f;
                     _legUImage.color = tempColor;
-                    _legUImage.sprite = item.ObjectSprite;
+                    _legUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
@@ -95,7 +95,7 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _torsoUImage.color;
                     tempColor.a = 1f;
                     _torsoUImage.color = tempColor;
-                    _torsoUImage.sprite = item.ObjectSprite;
+                    _torsoUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
@@ -106,7 +106,7 @@ public class ChangeChevalierVisual : MonoBehaviour
                     Color tempColor = _headUImage.color;
                     tempColor.a = 1f;
                     _headUImage.color = tempColor;
-                    _headUImage.sprite = item.ObjectSprite;
+                    _headUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 

@@ -129,10 +129,10 @@ public class GameMode : AbstractSingleton<GameMode>
         
         lastChild.SetAsLastSibling();
         _mGameState = GameState.Ending;
-        
+
         // Destroy Inventory
-        Inventory inventory = FindObjectOfType<Inventory>();
-        Destroy(inventory.gameObject);
+        Destroy(Inventory.Instance.gameObject);
+        Destroy(GlobalDataHolder.Instance.gameObject);
     }
     
     public void GameOver(GameOverCondition gameOverCondition)
@@ -160,8 +160,8 @@ public class GameMode : AbstractSingleton<GameMode>
         }
         
         // Destroy Inventory
-        Inventory inventory = FindObjectOfType<Inventory>();
-        Destroy(inventory.gameObject);
+        Destroy(Inventory.Instance.gameObject);
+        Destroy(GlobalDataHolder.Instance.gameObject);
     }
 
     public void SpawnEnnemies()

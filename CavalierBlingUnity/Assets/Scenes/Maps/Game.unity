@@ -1860,6 +1860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 4440586579237658486, guid: 47ee2231ef9fc484e89433bf48c6a1fb,
+        type: 3}
+      propertyPath: _baseValue
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4440586579237658487, guid: 47ee2231ef9fc484e89433bf48c6a1fb,
         type: 3}
       propertyPath: m_RootOrder

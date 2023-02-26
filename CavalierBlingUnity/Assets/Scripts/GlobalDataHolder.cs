@@ -11,4 +11,5 @@ public class GlobalDataHolder : AbstractSingleton<GlobalDataHolder>
     {
         _mCurrentDay++;
     }
+
 }
