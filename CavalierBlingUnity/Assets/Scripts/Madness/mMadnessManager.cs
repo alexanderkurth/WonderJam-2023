@@ -5,13 +5,13 @@ using UnityEngine;
 class mMadnessManager : AbstractSingleton<mMadnessManager>
 {
     [SerializeField]
-    public int increaseAmount = 4;
+    public int m_IncreaseShakingAmount = 4;
 
     [SerializeField]
     int increaseMadnessLevel = 2;
 
     [SerializeField]
-    private int m_MadnessCurrentLevel = 0;
+    private float m_MadnessCurrentLevel = 0;
 
     [SerializeField]
     private int m_MadnessMaxLevel = 100;
@@ -47,8 +47,10 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     [SerializeField]
     private MadnessAudio m_MadnessAudio;
 
+    private Coroutine coroutine;
 
-    public int GetCurrentMadnessLevel()
+
+    public float GetCurrentMadnessLevel()
     {
         return m_MadnessCurrentLevel;
     }
@@ -59,22 +61,25 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
 
     public void IncreaseMadnessLevel(int amount = 1)
     {
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
 
-        float ratio =(float)m_MadnessCurrentLevel / (float)m_MadnessMaxLevel;
+        float ratio = (float)m_MadnessCurrentLevel / (float)m_MadnessMaxLevel;
 
         if(ratio > 0.80)
         {
-            m_MadnessCurrentLevel += 1;
+            coroutine = StartCoroutine(LerpMadness(1));
         }
         else
         {
-            m_MadnessCurrentLevel += amount;
+            coroutine = StartCoroutine(LerpMadness(amount));
         }
 
         if (m_MadnessCurrentLevel > m_MadnessMaxLevel)
         {
             GameMode.Instance.GameOver(GameMode.GameOverCondition.Madness);
-            Debug.Log("GAME OVER");
         }
     }
 
@@ -149,7 +154,9 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
 
     public IEnumerator PeakMadness()
     {
-        int targetIntensity = (mCurrentShakingIntensity + increaseAmount < m_MaxShakingIntensity + 1) ? mCurrentShakingIntensity + 4 : m_MaxShakingIntensity;
+        float lerp = 0f;
+
+        int targetIntensity = (mCurrentShakingIntensity + m_IncreaseShakingAmount < m_MaxShakingIntensity + 1) ? mCurrentShakingIntensity + m_IncreaseShakingAmount : m_MaxShakingIntensity;
         int baseIntensity = mCurrentShakingIntensity;
 
         bool active = true;
@@ -180,5 +187,23 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
     {
         m_MadnessCurrentLevel = m_StartShakingLevel / 2;
         mCurrentShakingIntensity = 1;
+    }
+
+    private IEnumerator LerpMadness(float amount)
+    {
+        float lerp = 0f;
+        float currentLevel = m_MadnessCurrentLevel;
+
+        while (lerp < 1f)
+        {
+            lerp += Time.unscaledDeltaTime / 1.0f;
+
+            m_MadnessCurrentLevel = Mathf.Lerp(currentLevel, currentLevel+ amount, lerp);
+
+            yield return null;
+        }
+        coroutine = null;
+
+        yield break;
     }
 }
