@@ -184,6 +184,7 @@ MonoBehaviour:
   m_LerpDuration: 3
   m_TargetPivot: {fileID: 8296375036879350384}
   m_VisualizeRoot: {fileID: 3011819734582009845}
+  m_Animator: {fileID: 2339257118163984200}
 --- !u!95 &2339257118163984200
 Animator:
   serializedVersion: 4

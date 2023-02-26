@@ -20,6 +20,9 @@ public class ChevalierMove : MonoBehaviour
     private Vector3 m_Direction;
     private float m_TimeElapsed;
 
+    [SerializeField]
+    private Animator m_Animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,7 @@ public class ChevalierMove : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            m_Animator.SetTrigger("Attack");
             EnemyMove enemy = other.GetComponent<EnemyMove>();
             enemy.m_IsOnGround = true;
             enemy.FallToGround();
