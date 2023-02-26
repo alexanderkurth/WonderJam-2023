@@ -38,7 +38,7 @@ public class InteractableComponent : MonoBehaviour
 
     public void Start()
     {
-        foreach(var sprite in m_Sprites)
+        foreach (var sprite in m_Sprites)
         {
             sprite.color = m_IsAlly ? m_AllyColor : m_EnnemiColor;
         }
@@ -54,7 +54,7 @@ public class InteractableComponent : MonoBehaviour
             m_MashTimer += Time.deltaTime;
             m_TimeSinceLastInput += Time.deltaTime;
 
-            if(m_TimeSinceLastInput >= m_MaxTimeBewteenMash)
+            if (m_TimeSinceLastInput >= m_MaxTimeBewteenMash)
             {
                 OnInteractionFailed();
                 return;
@@ -111,7 +111,7 @@ public class InteractableComponent : MonoBehaviour
         }
         else
         {
-            mMadnessManager.Instance.ReduceCurrentLevel(mMadnessManager.Instance.GetIncrease() / 2);
+            mMadnessManager.Instance.ReduceMadnessLevel(mMadnessManager.Instance.GetIncrease() / 2);
         }
     }
 
@@ -122,7 +122,7 @@ public class InteractableComponent : MonoBehaviour
 
         InteractorComponent interactor = other.GetComponent<InteractorComponent>();
 
-        if(interactor)
+        if (interactor)
         {
             interactor.RegisterInteractable(this);
         }
@@ -134,7 +134,7 @@ public class InteractableComponent : MonoBehaviour
 
         if (interactor)
         {
-            if(interactor.Target == this)
+            if (interactor.Target == this)
             {
                 interactor.RemoveInteractable(this);
             }

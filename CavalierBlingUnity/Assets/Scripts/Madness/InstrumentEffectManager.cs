@@ -29,7 +29,7 @@ public class InstrumentEffectManager : MonoBehaviour
     private void Start()
     {
         if (m_MadnessManager == null)
-            m_MadnessManager = FindObjectOfType<mMadnessManager>();
+            m_MadnessManager = mMadnessManager.Instance;
 
         if (m_Chevalier == null)
             m_Chevalier = GameObject.Find("Chevalier");
@@ -44,7 +44,7 @@ public class InstrumentEffectManager : MonoBehaviour
     {
         Inventory inventory = Inventory.Instance;
         currentInstrument = inventory.GetCurrentInstruments();
-        if (currentInstrument == AvailableObject.None || currentInstrument == null) return;
+        if (currentInstrument == AvailableObject.None) return;
 
         switch (currentInstrument)
         {
@@ -72,7 +72,7 @@ public class InstrumentEffectManager : MonoBehaviour
 
     private void Update()
     {
-        if (m_MadnessManager == null || currentInstrument == AvailableObject.None || currentInstrument == null) return;
+        if (m_MadnessManager == null || currentInstrument == AvailableObject.None) return;
 
         if (Time.time > m_NextActionTime)
         {

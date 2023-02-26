@@ -5,19 +5,19 @@ using UnityEngine.Events;
 
 public class Inventory : AbstractSingleton<Inventory>
 {
-    [SerializeField] 
+    [SerializeField]
     private float _baseValue;
-    
+
     private float _currentCurrency;
     private Dictionary<ObjectType, List<ObjectData>> _inventory = new Dictionary<ObjectType, List<ObjectData>>();
     private const int MAX_ARMOR_COUNT = 4;
 
     public static UnityEvent<ObjectData> itemAddedToInventory;
-    
+
     protected override void Awake()
     {
         base.Awake();
-        
+
         // Init currenCurrency
         _currentCurrency = _baseValue;
     }
@@ -37,7 +37,7 @@ public class Inventory : AbstractSingleton<Inventory>
             GameMode.Instance.GameOver(GameMode.GameOverCondition.NotEnoughMoney);
         }
     }
-    
+
     public float GetCurrentCurrency()
     {
         return _currentCurrency;
@@ -54,7 +54,7 @@ public class Inventory : AbstractSingleton<Inventory>
             List<ObjectData> availableObjects = new List<ObjectData> { objectData };
             _inventory.Add(objectData.ObjectType, availableObjects);
         }
-        
+
         itemAddedToInventory?.Invoke(objectData);
 
         if (IsFullArmor())
@@ -70,7 +70,7 @@ public class Inventory : AbstractSingleton<Inventory>
             return _inventory[objectData.ObjectType].Contains(objectData);
         }
 
-        return false; 
+        return false;
     }
 
     public List<ObjectData> GetCurrentObjectListForType(ObjectType objectType)
@@ -88,10 +88,10 @@ public class Inventory : AbstractSingleton<Inventory>
         ObjectType objectType = ObjectType.BlingArmorPart;
         if (_inventory.ContainsKey(objectType))
         {
-            return _inventory[objectType].Count == MAX_ARMOR_COUNT; 
+            return _inventory[objectType].Count == MAX_ARMOR_COUNT;
         }
 
-        return false; 
+        return false;
     }
 
     public AvailableObject GetCurrentInstruments()
@@ -99,7 +99,7 @@ public class Inventory : AbstractSingleton<Inventory>
         ObjectType objectType = ObjectType.MusicalInstrument;
         if (_inventory.ContainsKey(objectType))
         {
-            return _inventory[objectType][0];
+            return _inventory[objectType][0].ObjectName;
         }
         return AvailableObject.None;
     }
