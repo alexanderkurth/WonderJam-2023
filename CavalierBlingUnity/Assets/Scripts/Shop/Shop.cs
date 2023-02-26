@@ -43,11 +43,18 @@ public class Shop : AbstractSingleton<Shop>
     {
         foreach (KeyValuePair<BuyableItem, ShopItemSelection> item in _mBuyableItems)
         {
-            item.Key.IntializeObject(SelectBuyableItem(item.Value.ItemObjectType));
+            if (SelectBuyableItem(item.Value.ItemObjectType, out ObjectData objectData))
+            {
+                item.Key.IntializeObject(objectData);
+            }
+            else
+            {
+                item.Key.gameObject.SetActive(false);
+            }
         }
     }
 
-    public ObjectData SelectBuyableItem(ObjectType objectType)
+    public bool SelectBuyableItem(ObjectType objectType, out ObjectData objectDataToReturn)
     {
         List<ObjectData> objectSelection = _mObjectsDefinition.GetObjectsFromType(objectType);
         int selectionCount = objectSelection.Count - 1;
@@ -65,7 +72,15 @@ public class Shop : AbstractSingleton<Shop>
 
         selectionCount = objectSelection.Count;
 
-        return objectSelection[Random.Range(0, selectionCount)];
+        if(selectionCount <= 0)
+        {
+            objectDataToReturn = new ObjectData();
+            return false;
+        }
+
+        objectDataToReturn = objectSelection[Random.Range(0, selectionCount)];
+
+        return true;
     }
 
     public List<BuyableItem> GetBuyableObjects()

@@ -31,7 +31,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         if (_mPlayOnStart)
         {
             Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
-            rotation.y = 180f;
+            rotation.y = 0f;
             _mKnightTransform.rotation = Quaternion.Euler(rotation);
             StartCoroutine(ShoppingLoop());
         }
@@ -40,7 +40,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
     public void StartShoppingLoop()
     {
         Vector3 rotation = _mKnightTransform.rotation.eulerAngles;
-        rotation.y = 180f;
+        rotation.y = 0f;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
         StartCoroutine(ShoppingLoop());
     }
@@ -112,7 +112,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
 
         rotation = _mKnightTransform.rotation.eulerAngles;
-        rotation.y = 0;
+        rotation.y = 180f;
         _mKnightTransform.rotation = Quaternion.Euler(rotation);
 
         if (selectedItem != null)

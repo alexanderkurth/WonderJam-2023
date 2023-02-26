@@ -47,7 +47,7 @@ public class BuyableItem : MonoBehaviour
     [SerializeField]
     private TextMeshPro _mTmpPrice = null;
 
-    private int _mObjectPrice = 1;
+    private int _mObjectPrice = 1500000000;
     public int ObjectPrice { get => _mObjectPrice; }
     private ObjectData _objectData; 
 
