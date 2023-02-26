@@ -437,6 +437,11 @@ MonoBehaviour:
     Messages:
     - "Vu que tu ne m'as pas ramen\xE9 d'argent, je vais te vendre pour payer la
       taxe. Au revoir Billy!"
+  - MessageName: 11
+    Messages:
+    - "Sois heureux Billy! Tu auras particip\xE9 \xE0 mon succ\xE8s."
+    - Je suis bon prince Billy, je parlerai de toi quand je rencontrerai mes fans!
+    - "Victoire! Enfin, un peu plus et je t'aurai mis ma lance dans la t\xEAte Billy. "
 --- !u!1001 &4942666316936053020
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -118,9 +118,15 @@ public class GameMode : AbstractSingleton<GameMode>
     public void WinGame()
     {
         Time.timeScale = 0f;
+        
+        HUDCanvas.Instance.SendVictoryMessage();
+        Transform lastChild = _canvas.transform.GetChild(_canvas.transform.childCount - 1);
+        
         GameObject winScreen = Instantiate(_winScreen, _canvas.transform);
         Button firstButton = winScreen.GetComponentInChildren<Button>();
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+        
+        lastChild.SetAsLastSibling();
         _mGameState = GameState.Ending;
         
         // Destroy Inventory
