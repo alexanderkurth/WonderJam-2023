@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7980639918192652437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82426, y: 2.4658604, z: 1.9941673}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -133,7 +133,7 @@ BoxCollider:
   m_GameObject: {fileID: 7980639918192652437}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -151,7 +151,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &1800492161
 SphereCollider:
@@ -178,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44ffc6ea8e933e4288cb31f05933cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 2
-  m_LearpMin: -50
-  m_LearpMax: 50
-  m_LerpDuration: 3
+  m_Speed: 3
+  m_LearpMin: -10
+  m_LearpMax: 10
+  m_LerpDuration: 5
   m_TargetPivot: {fileID: 8296375036879350384}
   m_VisualizeRoot: {fileID: 3011819734582009845}
   m_Animator: {fileID: 2339257118163984200}
@@ -305,24 +305,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
         type: 3}
-      propertyPath: m_DeltaTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
-      propertyPath: m_SpawnAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
       propertyPath: m_TargetPrefab
       value: 
       objectReference: {fileID: 7980639918192652437}
-    - target: {fileID: 5218163233647288710, guid: 05a194682bf746d41992f22d68b9c1ba,
-        type: 3}
-      propertyPath: m_nbSpawnedPosition
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5489147544579930428, guid: 05a194682bf746d41992f22d68b9c1ba,
         type: 3}
       propertyPath: m_Name

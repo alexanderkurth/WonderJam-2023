@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8407203523477172361}
   m_Layer: 0
-  m_Name: SpriteBody - TODO PLACEHOLDER
+  m_Name: SpriteBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6229843769982724488}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4959,7 +4959,7 @@ PrefabInstance:
     - target: {fileID: 4400069683507107371, guid: 71c5e79956eea8041b57bce5868ad20b,
         type: 3}
       propertyPath: m_Name
-      value: Ecuyer
+      value: EnemiSprite
       objectReference: {fileID: 0}
     - target: {fileID: 5252253745943229306, guid: 71c5e79956eea8041b57bce5868ad20b,
         type: 3}
@@ -5044,7 +5044,7 @@ PrefabInstance:
     - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}
       propertyPath: m_LootableMoney
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3001617783661312805, guid: 46665b4b650c39145892ae1bcd0aa131,
         type: 3}

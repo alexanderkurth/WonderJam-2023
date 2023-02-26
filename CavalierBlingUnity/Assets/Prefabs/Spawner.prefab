@@ -45,12 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9eba554fcd29248abb3943947e4c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duplicationHandling: 1
+  DoNotDestroyOnLoad: 1
   m_EnemyPrefab: {fileID: 6229843769982724488, guid: 58f25769e7d7c0247a7c91051c6feb1e,
     type: 3}
   m_TargetPrefab: {fileID: 0}
   m_PivotTransform: {fileID: 2816346633461622664}
-  m_nbEnemy: 11
-  m_DeltaTime: 1
+  m_DeltaTime: {x: 3, y: 5}
+  m_SpawnAngle: 45
+  m_nbSpawnedPosition: 5
 --- !u!1 &8704634239308376452
 GameObject:
   m_ObjectHideFlags: 0
