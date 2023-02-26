@@ -17,7 +17,9 @@ public class GameMode : AbstractSingleton<GameMode>
     private GameObject _winScreen;
     [SerializeField] 
     private int _ennemyCount = 10;
-  
+    [SerializeField]
+    private GameObject _chevalier;
+
     public int dayCount = 0;
     public bool isGameOver = false; 
 
@@ -32,6 +34,8 @@ public class GameMode : AbstractSingleton<GameMode>
         dayCount++;
         DailyTax.Instance.DeductTax();
         // Call shop 
+
+        IncreaseDifficulty(dayCount);
     }
     
     public void WinGame()
@@ -59,5 +63,21 @@ public class GameMode : AbstractSingleton<GameMode>
     public void SpawnEnnemies()
     {
         EnemySpawner.Instance.StartSpawn(_ennemyCount);
+    }
+
+
+    public void IncreaseDifficulty(int level)
+    {
+        ChevalierMove chevalier = _chevalier.GetComponent<ChevalierMove>();
+        if(chevalier.m_Speed + level >= 10.0f)
+        {
+            chevalier.m_Speed = 10.0f;
+        }
+        else
+        {
+            chevalier.m_Speed += level;
+        }
+
+        // TODO : Impact on the Madness
     }
 }
