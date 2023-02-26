@@ -21,6 +21,8 @@ public class EnemyMove : MonoBehaviour
 
     public bool m_IsOnGround = false;
 
+    public AudioSource ourge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +50,13 @@ public class EnemyMove : MonoBehaviour
 
     public void FallToGround()
     {
-        m_ParticleSystem.Play();
         m_EnemySpriteBody.SetActive(false);
         Vector3 rotation = m_Interactable.transform.rotation.eulerAngles;
         rotation.y = Random.Range(0, 360f);
         m_Interactable.transform.rotation = Quaternion.Euler(rotation);
         m_Interactable.SetActive(true);
         m_AliveCollider.enabled = false;
+
+        ourge.Play();
     }
 }
