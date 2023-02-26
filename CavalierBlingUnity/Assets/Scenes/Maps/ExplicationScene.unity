@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab48d264fc3f82468c31f76ea22510f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ReadingTime: 10
+  m_ReadingTime: 20
   m_TextPanel: {fileID: 1190003494}
   m_MainCamera: {fileID: 498677538}
   m_ZoomDuration: 5
