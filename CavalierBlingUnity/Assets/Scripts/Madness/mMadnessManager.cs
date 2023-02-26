@@ -162,6 +162,7 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         else
         {
             StopCoroutine(coroutine2);
+            coroutine2 = null;
         }
     }
 
@@ -191,7 +192,6 @@ class mMadnessManager : AbstractSingleton<mMadnessManager>
         }
         mCurrentShakingIntensity += 1;
         coroutine2 = null;
-
 
         yield break;
     }
