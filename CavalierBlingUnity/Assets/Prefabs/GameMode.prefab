@@ -52,4 +52,6 @@ MonoBehaviour:
   _winScreen: {fileID: 4289119930094072479, guid: ff9e2832a18dac748bec6d208da304ed,
     type: 3}
   _ennemyCount: 10
+  _chevalier: {fileID: 0}
   dayCount: 0
+  isGameOver: 0

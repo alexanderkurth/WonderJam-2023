@@ -1,6 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-class mMadnessManager : MonoBehaviour
+
+class mMadnessManager : AbstractSingleton<mMadnessManager>
 {
+    [SerializeField]
+    public int increaseAmount = 4;
+
     [SerializeField]
     private int m_MadnessCurrentLevel = 0;
     
@@ -12,8 +18,13 @@ class mMadnessManager : MonoBehaviour
 
     [Range(0, 10)] 
     [SerializeField]
-    private int m_MaxShakingIntensity = 4;
-    
+    private int m_MaxShakingIntensity = 10;
+
+    [Range(0, 10)]
+    [SerializeField]
+    private int mCurrentShakingIntensity = 1;
+
+
     [System.Serializable]
     public class MadnessAudio{
         [Header("HeartBeat")]
@@ -79,8 +90,8 @@ class mMadnessManager : MonoBehaviour
 
         if (m_MadnessCurrentLevel > m_StartShakingLevel)
         {
-            // Should be between 0 and m_MaxShakingIntensity
-            float cameraShakingIntensity = ((float)(m_MadnessCurrentLevel - m_StartShakingLevel) / (float)(m_MadnessMaxLevel - m_StartShakingLevel)) * (float)m_MaxShakingIntensity;
+            // Should be between 0 and mCurrentShakingIntensity
+            float cameraShakingIntensity = ((float)(m_MadnessCurrentLevel - m_StartShakingLevel) / (float)(m_MadnessMaxLevel - m_StartShakingLevel)) * (float)mCurrentShakingIntensity;
             CameraShake cameraShake = GetComponent<CameraShake>();
             cameraShake.SetShakeFrequency(cameraShakingIntensity);
 
@@ -106,6 +117,33 @@ class mMadnessManager : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    public IEnumerator PeakMadness()
+    {
+        int targetIntensity = (mCurrentShakingIntensity + increaseAmount < m_MaxShakingIntensity + 1) ? mCurrentShakingIntensity + 4 : m_MaxShakingIntensity;
+        int baseIntensity = mCurrentShakingIntensity;
+
+        bool active = true;
+
+        while (active)
+        {
+            if(mCurrentShakingIntensity >= targetIntensity)
+            {
+                mCurrentShakingIntensity = baseIntensity;
+
+                active = false;
+                yield return null;
+            }
+
+            if(active)
+                mCurrentShakingIntensity += 1;
+            else
+            {
+                mCurrentShakingIntensity += 1;
+            }
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }

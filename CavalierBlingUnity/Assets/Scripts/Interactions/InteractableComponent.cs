@@ -63,6 +63,10 @@ public class InteractableComponent : MonoBehaviour
 
         m_IsInteractionStarted = true;
         m_TimeSinceLastInput = 0.0f;
+
+        //pressed
+        mMadnessManager.Instance.IncreaseMadnessLevel(1);
+//        Debug.Log(mMadnessManager.Instance.GetCurrentMadnessLevel());
     }
 
     private void OnInteractionFailed()
@@ -75,12 +79,12 @@ public class InteractableComponent : MonoBehaviour
 
     private void OnInteractionSucessfull()
     {
-        Debug.Log("OnInteractionSucessfull");
         m_InteractionDone = true;
         m_OnInteractionSucessEvent.Invoke();
 
-        Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
-
+        IEnumerator coroutine;
+        coroutine = mMadnessManager.Instance.PeakMadness();
+        mMadnessManager.Instance.StartCoroutine(coroutine);
     }
 
     private void OnTriggerEnter(Collider other)

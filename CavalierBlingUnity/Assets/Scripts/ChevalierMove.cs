@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChevalierMove : MonoBehaviour
 {
     [SerializeField, Range(0, 10)]
-    private float m_Speed = 1.0f;
+    public float m_Speed = 1.0f;
     [SerializeField]
     private float m_LearpMin = -50.0f;
     [SerializeField]
@@ -19,6 +19,9 @@ public class ChevalierMove : MonoBehaviour
 
     private Vector3 m_Direction;
     private float m_TimeElapsed;
+
+    [SerializeField]
+    private Animator m_Animator;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,7 @@ public class ChevalierMove : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            m_Animator.SetTrigger("Attack");
             EnemyMove enemy = other.GetComponent<EnemyMove>();
             enemy.m_IsOnGround = true;
             enemy.FallToGround();

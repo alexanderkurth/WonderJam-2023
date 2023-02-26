@@ -29,6 +29,9 @@ public class GameMode : AbstractSingleton<GameMode>
     [SerializeField]
     private GameState _mGameState = GameState.InProgress;
     public GameState GameState { get => _mGameState; }
+	
+    [SerializeField]
+    private GameObject _chevalier;
 
     public int dayCount = 0;
     public bool isGameOver = false; 
@@ -44,7 +47,7 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         dayCount++;
         DailyTax.Instance.DeductTax();
-
+		
         if (_mGameState != GameState.Ending)
         {
             _mGameState = GameState.InShop;
@@ -56,6 +59,7 @@ public class GameMode : AbstractSingleton<GameMode>
     public void StartNewDay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        IncreaseDifficulty(dayCount);
     }
     
     public void WinGame()
@@ -86,5 +90,21 @@ public class GameMode : AbstractSingleton<GameMode>
     public void SpawnEnnemies()
     {
         EnemySpawner.Instance.StartSpawn(_ennemyCount);
+    }
+
+
+    public void IncreaseDifficulty(int level)
+    {
+        ChevalierMove chevalier = _chevalier.GetComponent<ChevalierMove>();
+        if(chevalier.m_Speed + level >= 10.0f)
+        {
+            chevalier.m_Speed = 10.0f;
+        }
+        else
+        {
+            chevalier.m_Speed += level;
+        }
+
+        // TODO : Impact on the Madness
     }
 }

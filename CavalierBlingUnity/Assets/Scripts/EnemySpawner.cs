@@ -11,11 +11,12 @@ public class EnemySpawner : AbstractSingleton<EnemySpawner>
     [SerializeField]
     private Transform m_PivotTransform;
     [SerializeField]
-    private float m_DeltaTime;
+    public float m_DeltaTime;
     [SerializeField]
     private float m_SpawnAngle = 45.0f;
     [SerializeField]
     private int m_nbSpawnedPosition = 5;
+
     private int m_nbEnemy;
 
     // To be called by GameMode
