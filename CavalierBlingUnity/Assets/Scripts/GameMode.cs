@@ -38,7 +38,11 @@ public class GameMode : AbstractSingleton<GameMode>
     private GameObject _chevalier;
 
     public int dayCount { get => GlobalDataHolder.Instance.CurrentDay; }
-    public bool isGameOver = false; 
+    public bool isGameOver = false;
+
+    [SerializeField]
+    private Vector2 _mTimeBetweenPlayerMessages = new Vector2(10f, 20f);
+    private float _mTimeSinceLastMessageDisplayed = 0f;
 
     private void Start()
     {
@@ -52,12 +56,43 @@ public class GameMode : AbstractSingleton<GameMode>
 
     }
 
-    void StartChevalierAndEnemies()
+    private void Update()
+    {
+        if (_mGameState == GameState.InProgress)
+        {
+            if (Time.timeSinceLevelLoad - _mTimeSinceLastMessageDisplayed >= Random.Range(_mTimeBetweenPlayerMessages.x, _mTimeBetweenPlayerMessages.y))
+            {
+                DisplayMessage(MessageEnum.RandomSentenceInGame);
+            }
+        }
+    }
+
+    private void StartChevalierAndEnemies()
     {
         _chevalier.GetComponent<ChevalierMove>().SetStartTimer(_TimeBeforeStart);
         _chevalier.GetComponentInChildren<EnemySpawner>().SetStartTimer(_TimeBeforeStart);
+
+        DisplayMessage(MessageEnum.DelayStartGame, 0.5f, true);
     }
 
+    public void OnEnemyKilled()
+    {
+        if (Random.Range(0, 2) > 0)
+        {
+            DisplayMessage(MessageEnum.FinishingAnEnemy, 0f, true);
+        }
+    }
+
+    public void DisplayMessage(MessageEnum messageEnum, float delayStartTime = 0f, bool forceMessage = false)
+    {
+        if (Time.timeSinceLevelLoad - _mTimeSinceLastMessageDisplayed >= Random.Range(_mTimeBetweenPlayerMessages.x, _mTimeBetweenPlayerMessages.y) || forceMessage)
+        {
+            if(HUDCanvas.Instance.DisplayMessage(messageEnum, delayStartTime))
+            {
+                _mTimeSinceLastMessageDisplayed = Time.timeSinceLevelLoad;
+            }
+        }
+    }
 
     public void DayEnd()
     {
@@ -87,6 +122,10 @@ public class GameMode : AbstractSingleton<GameMode>
         Button firstButton = winScreen.GetComponentInChildren<Button>();
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         _mGameState = GameState.Ending;
+        
+        // Destroy Inventory
+        Inventory inventory = FindObjectOfType<Inventory>();
+        Destroy(inventory.gameObject);
     }
     
     public void GameOver(GameOverCondition gameOverCondition)
@@ -115,6 +154,10 @@ public class GameMode : AbstractSingleton<GameMode>
         {
             listener.enabled = false;
         }
+        
+        // Destroy Inventory
+        Inventory inventory = FindObjectOfType<Inventory>();
+        Destroy(inventory.gameObject);
     }
 
     public void SpawnEnnemies()

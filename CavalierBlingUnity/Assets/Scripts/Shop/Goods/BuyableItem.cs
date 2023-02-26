@@ -12,7 +12,7 @@ public enum AvailableObject
     ArmorChest = 2,
     ArmorHead = 3,
     Flute = 50,
-    Violin,
+    Trumpet,
     Luth,
     Wine = 100,
     Cheese,
@@ -47,7 +47,7 @@ public class BuyableItem : MonoBehaviour
     [SerializeField]
     private TextMeshPro _mTmpPrice = null;
 
-    private int _mObjectPrice = 1;
+    private int _mObjectPrice = 1500000000;
     public int ObjectPrice { get => _mObjectPrice; }
     private ObjectData _objectData; 
 
@@ -91,5 +91,29 @@ public class BuyableItem : MonoBehaviour
         _mObjectBuyPS.Play(true);
         _mObjectBuySound.Play();
         ToggleVisual(false);
+        SendMessageFromType();
     }
+
+    private void SendMessageFromType()
+    {
+        switch (_objectData.ObjectType)
+        {
+            case ObjectType.BlingArmorPart:
+                {
+                    HUDCanvas.Instance.DisplayMessage(MessageEnum.BuyArmorPiece, _objectData.ObjectName);
+                }
+                break;
+            case ObjectType.MusicalInstrument:
+                {
+                    HUDCanvas.Instance.DisplayMessage(MessageEnum.BuyAnInstrument, _objectData.ObjectName);
+                }
+                break;
+            case ObjectType.Miscellaneous:
+                {
+                    HUDCanvas.Instance.DisplayMessage(MessageEnum.BuyRandomPiece, _objectData.ObjectName);
+                }
+                break;
+        }
+    }
+
 }
