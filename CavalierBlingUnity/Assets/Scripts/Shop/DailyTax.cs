@@ -4,7 +4,7 @@ using UnityEngine;
 public class DailyTax : AbstractSingleton<DailyTax>
 {
     private const float DAILY_TAX = 20f;
-    private const float TAX_MULTIPLIER = 0.05f;
+    private const float TAX_MULTIPLIER = 0.20f;
     private float _currentTax = 0f;
 
     [SerializeField] 
@@ -14,7 +14,7 @@ public class DailyTax : AbstractSingleton<DailyTax>
     
     private float GetDailyTax()
     {
-        _currentTax = DAILY_TAX + (DAILY_TAX * TAX_MULTIPLIER * GameMode.Instance.dayCount);
+        _currentTax = Mathf.Round(DAILY_TAX + (DAILY_TAX * TAX_MULTIPLIER * GameMode.Instance.dayCount));
         return _currentTax;
     }
 
