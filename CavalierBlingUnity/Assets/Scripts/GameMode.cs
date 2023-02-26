@@ -42,14 +42,15 @@ public class GameMode : AbstractSingleton<GameMode>
         DailyTax.Instance.DisplayTax();
 
         SpawnEnnemies();
+        Inventory.Instance.ChangeCurrencyValue(0);
         _mGameState = GameState.InProgress;
     }
 
     public void DayEnd()
     {
-        GlobalDataHolder.Instance.IncreaseDayCount();
         DailyTax.Instance.DeductTax();
-		
+        GlobalDataHolder.Instance.IncreaseDayCount();
+
         if (_mGameState != GameState.Ending)
         {
             Shop.Instance.InitializeShopOfTheDay();
