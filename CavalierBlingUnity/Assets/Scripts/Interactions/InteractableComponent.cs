@@ -24,6 +24,26 @@ public class InteractableComponent : MonoBehaviour
     private bool m_InteractionDone = false;
     private float m_TimeSinceLastInput = 0.0f;
 
+    [SerializeField]
+    private Color m_AllyColor;
+
+    [SerializeField]
+    private Color m_EnnemiColor;
+
+    [SerializeField]
+    private bool m_IsAlly = false;
+
+    [SerializeField]
+    private SpriteRenderer[] m_Sprites;
+
+    public void Start()
+    {
+        foreach(var sprite in m_Sprites)
+        {
+            sprite.color = m_IsAlly ? m_AllyColor : m_EnnemiColor;
+        }
+    }
+
     public void Update()
     {
         if (m_InteractionDone)
@@ -58,7 +78,7 @@ public class InteractableComponent : MonoBehaviour
 
     public void TriggerInteraction()
     {
-        if (m_InteractionDone || m_IsInteractionStarted)
+        if (m_InteractionDone)
             return;
 
         m_IsInteractionStarted = true;
@@ -78,13 +98,19 @@ public class InteractableComponent : MonoBehaviour
         m_InteractionDone = true;
         m_OnInteractionSucessEvent.Invoke();
 
-        IEnumerator coroutine;
-        coroutine = mMadnessManager.Instance.PeakMadness();
-        mMadnessManager.Instance.StartCoroutine(coroutine);
+        if (!m_IsAlly)
+        {
+            IEnumerator coroutine;
+            coroutine = mMadnessManager.Instance.PeakMadness();
+            mMadnessManager.Instance.StartCoroutine(coroutine);
 
-        mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
-
-        Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
+            mMadnessManager.Instance.IncreaseMadnessLevel(mMadnessManager.Instance.GetIncrease());
+            Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
+        }
+        else
+        {
+            mMadnessManager.Instance.ReduceCurrentLevel(mMadnessManager.Instance.GetIncrease() / 2);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -122,6 +122,12 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_LootableMoney: 15
+  m_AllyColor: {r: 0, g: 0.4072253, b: 0.6981132, a: 1}
+  m_EnnemiColor: {r: 0.6132076, g: 0, b: 0, a: 1}
+  m_IsAlly: 0
+  m_Sprites:
+  - {fileID: 2428142581526878221}
+  - {fileID: 3205202859103350235}
 --- !u!1001 &2148547044202094835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -203,6 +209,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2148547044202094835}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &2428142581526878221 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4351412886234036478, guid: 6cdea8eb1b98d9b4090d9bedf7493cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148547044202094835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3205202859103350235 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3578680702969466152, guid: 6cdea8eb1b98d9b4090d9bedf7493cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148547044202094835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4822551416240151337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +292,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423447389404893989, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423447389404893989, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423447389404893989, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199954161459308275, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199954161459308275, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.09875117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199954161459308275, guid: 59651e08af2ec744a91e4beabbdb0150,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9150943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59651e08af2ec744a91e4beabbdb0150, type: 3}
