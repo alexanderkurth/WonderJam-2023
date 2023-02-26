@@ -48,19 +48,19 @@ public class InstrumentEffectManager : MonoBehaviour
         switch (currentInstrument)
         {
             case AvailableObject.Flute:
-                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
+                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
                 // Play flute sound
                 break;
             case AvailableObject.Violin:
-                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
+                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
                 // Play violin sound
                 break;
             case AvailableObject.Trumpet:
-                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
+                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
                 // Play luth sound
                 break;
             case AvailableObject.Cornemuse:
-                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond) * -1;
+                m_MadnessMaxAmountPerSecond = Mathf.Abs(m_MadnessMaxAmountPerSecond);
                 // Play cornemuse sound
                 break;
             default:
