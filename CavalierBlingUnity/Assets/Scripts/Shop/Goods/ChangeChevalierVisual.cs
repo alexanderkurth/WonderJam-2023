@@ -54,6 +54,11 @@ public class ChangeChevalierVisual : MonoBehaviour
         {
             ChangeSprite(item);
         }
+        
+        foreach (ObjectData item in Inventory.Instance.GetCurrentObjectListForType(ObjectType.MusicalInstrument))
+        {
+            ChangeSprite(item);
+        }
     }
 
     private void ChangeSprite(ObjectData item)
