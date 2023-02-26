@@ -36,6 +36,9 @@ public class InteractableComponent : MonoBehaviour
     [SerializeField]
     private SpriteRenderer[] m_Sprites;
 
+    [SerializeField]
+    private GameObject m_BloodFX;
+
     public AllyBehavior AllyCompIfAlly;
 
     public void Start()
@@ -85,6 +88,11 @@ public class InteractableComponent : MonoBehaviour
 
         m_IsInteractionStarted = true;
         m_TimeSinceLastInput = 0.0f;
+
+        if (!m_BloodFX.active)
+        {
+            m_BloodFX.SetActive(true);
+        }
     }
 
     private void OnInteractionFailed()
@@ -97,6 +105,8 @@ public class InteractableComponent : MonoBehaviour
 
     private void OnInteractionSucessfull()
     {
+        m_BloodFX.SetActive(false);
+
         m_InteractionDone = true;
         m_OnInteractionSucessEvent.Invoke();
 
