@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ChangeChevalierVisual : MonoBehaviour
 {
+    [Header("Sprite Renderer")]
     [SerializeField] 
     private SpriteRenderer _torsoSprite;
     [SerializeField] 
@@ -14,7 +16,17 @@ public class ChangeChevalierVisual : MonoBehaviour
     private SpriteRenderer _legRightSprite;
     [SerializeField] 
     private SpriteRenderer _legLeftSprite;
-
+    
+    [Header("Images")]
+    [SerializeField] 
+    private Image _torsoUImage;
+    [SerializeField] 
+    private Image _headUImage;
+    [SerializeField] 
+    private Image _armUImage;
+    [SerializeField] 
+    private Image _legUImage;
+    
     private void OnEnable()
     {
         if (Inventory.itemAddedToInventory == null)
@@ -36,19 +48,39 @@ public class ChangeChevalierVisual : MonoBehaviour
         {
             case AvailableObject.ArmorArm:
                 _armSprite.sprite = item.ObjectSprite;
+                if (_armUImage)
+                {
+                    _armUImage.gameObject.SetActive(true);
+                    _armUImage.sprite =  item.ObjectSprite;
+                }
                 break;
             
             case AvailableObject.ArmorLegs:
                 _legRightSprite.sprite = item.ObjectSprite;
                 _legLeftSprite.sprite = item.ObjectSprite;
+                if (_legUImage)
+                {
+                    _legUImage.gameObject.SetActive(true);
+                    _legUImage.sprite =  item.ObjectSprite;
+                }
                 break;
             
             case AvailableObject.ArmorChest:
                 _torsoSprite.sprite = item.ObjectSprite;
+                if (_torsoUImage)
+                {
+                    _torsoUImage.gameObject.SetActive(true);
+                    _torsoUImage.sprite = item.ObjectSprite;
+                }
                 break;
             
             case AvailableObject.ArmorHead:
                 _headSprite.sprite = item.ObjectSprite;
+                if (_headUImage)
+                {
+                    _headUImage.gameObject.SetActive(true);
+                    _headUImage.sprite = item.ObjectSprite;
+                }
                 break;
             
             case AvailableObject.Flute:
