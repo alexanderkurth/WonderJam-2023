@@ -83,6 +83,8 @@ public class InteractableComponent : MonoBehaviour
         IEnumerator coroutine;
         coroutine = mMadnessManager.Instance.PeakMadness();
         mMadnessManager.Instance.StartCoroutine(coroutine);
+
+        Inventory.Instance.ChangeCurrencyValue(m_LootableMoney);
     }
 
     private void OnTriggerEnter(Collider other)
