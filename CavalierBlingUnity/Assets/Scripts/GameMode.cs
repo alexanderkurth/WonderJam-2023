@@ -87,6 +87,10 @@ public class GameMode : AbstractSingleton<GameMode>
         Button firstButton = winScreen.GetComponentInChildren<Button>();
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         _mGameState = GameState.Ending;
+        
+        // Destroy Inventory
+        Inventory inventory = FindObjectOfType<Inventory>();
+        Destroy(inventory.gameObject);
     }
     
     public void GameOver(GameOverCondition gameOverCondition)
@@ -115,6 +119,10 @@ public class GameMode : AbstractSingleton<GameMode>
         {
             listener.enabled = false;
         }
+        
+        // Destroy Inventory
+        Inventory inventory = FindObjectOfType<Inventory>();
+        Destroy(inventory.gameObject);
     }
 
     public void SpawnEnnemies()
