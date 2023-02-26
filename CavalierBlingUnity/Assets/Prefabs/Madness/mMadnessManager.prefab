@@ -49,10 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3685407487400ac48a1ccbfddbc5101f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duplicationHandling: 3
+  DoNotDestroyOnLoad: 1
+  increaseAmount: 4
   m_MadnessCurrentLevel: 0
   m_MadnessMaxLevel: 100
   m_StartShakingLevel: 50
   m_MaxShakingIntensity: 4
+  mCurrentShakingIntensity: 1
   m_MadnessAudio:
     m_StartHeartBeatLevel: 50
     m_HeartBeatAudioSource: {fileID: 2532349213747222619}
@@ -282,6 +286,9 @@ MonoBehaviour:
   max: 1
   m_FilmGrain: {fileID: 0}
   m_Target: {fileID: 0}
+  DeisredR: 192
+  DeisredG: 112
+  DeisredB: 112
   m_Camera: {fileID: 0}
 --- !u!114 &-8812952631220862760
 MonoBehaviour:

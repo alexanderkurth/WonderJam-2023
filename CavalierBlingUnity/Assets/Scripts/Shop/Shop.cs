@@ -26,7 +26,6 @@ public class Shop : AbstractSingleton<Shop>
     private void Start()
     {
         CreateShopItems(); 
-        InitializeShopOfTheDay();
     }
 
     private void CreateShopItems()

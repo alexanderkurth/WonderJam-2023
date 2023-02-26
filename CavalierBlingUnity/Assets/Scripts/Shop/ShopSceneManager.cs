@@ -51,7 +51,11 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
 
         List<BuyableItem> buyableObjects = Shop.Instance.GetBuyableObjects();
 
-        StartCoroutine(HesitationFlow(buyableObjects));
+        yield return StartCoroutine(HesitationFlow(buyableObjects));
+
+        GameMode.Instance.StartNewDay();
+
+        yield break;
     }
 
     private IEnumerator MoveKnightToPointCoroutine(Vector3 point, float duration)
@@ -112,11 +116,11 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
         if (selectedItem != null)
         {
             selectedItem.BuyItem();
-            StartCoroutine(MoveKnightToPointCoroutine(_mKnightStartPivot.position, _mSpendingMoveToStartTime));
+            yield return StartCoroutine(MoveKnightToPointCoroutine(_mKnightStartPivot.position, _mSpendingMoveToStartTime));
         }
         else
         {
-            StartCoroutine(MoveKnightToPointCoroutine(_mKnightStartPivot.position, _mNoSpendingMoveToStartTime));
+            yield return StartCoroutine(MoveKnightToPointCoroutine(_mKnightStartPivot.position, _mNoSpendingMoveToStartTime));
         }
 
         yield break;
@@ -133,7 +137,7 @@ public class ShopSceneManager : AbstractSingleton<ShopSceneManager>
             toReturn.Add(selectIndex);
 
             int valueToAdd = Random.Range(0, 2) > 0 ? 1 : -1;
-            selectIndex = (selectIndex + valueToAdd) <= 0 ? (selectIndex + 1) : (selectIndex + valueToAdd) % objectCount;
+            selectIndex = (selectIndex + valueToAdd) < 0 ? (selectIndex + 1) : (selectIndex + valueToAdd) % objectCount;
         }
 
         if(toReturn[toReturn.Count-1] != selectedItemIndex)

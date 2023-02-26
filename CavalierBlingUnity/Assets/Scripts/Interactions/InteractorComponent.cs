@@ -89,6 +89,11 @@ public class InteractorComponent : MonoBehaviour
 
     public void CheckOffScreen()
     {
+        if(GameMode.Instance.GameState != GameState.InProgress)
+        {
+            return;
+        }
+
         Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
         bool isOffScreen = !Screen.safeArea.Contains(pos);
         if (isOffScreen)

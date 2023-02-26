@@ -6,9 +6,6 @@ using UnityEngine.Events;
 public class Inventory : AbstractSingleton<Inventory>
 {
     [SerializeField] 
-    private TextMeshProUGUI _currentCurrencyText;
-
-    [SerializeField] 
     private float _baseValue;
     
     private float _currentCurrency;
@@ -23,13 +20,17 @@ public class Inventory : AbstractSingleton<Inventory>
         
         // Init currenCurrency
         _currentCurrency = _baseValue;
+    }
+
+    private void Start()
+    {
         ChangeCurrencyValue(0);
     }
 
     public void ChangeCurrencyValue(float value)
     {
         _currentCurrency += value;
-        _currentCurrencyText.text = _currentCurrency.ToString();
+        CurrencyInformations.Instance.SetCurrencyValue(_currentCurrency);
 
         if (_currentCurrency < 0)
         {

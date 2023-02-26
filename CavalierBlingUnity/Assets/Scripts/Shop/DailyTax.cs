@@ -8,13 +8,13 @@ public class DailyTax : AbstractSingleton<DailyTax>
     
     private float GetDailyTax()
     {
-        _currentTax = DAILY_TAX * TAX_MULTIPLIER * GameMode.Instance.dayCount;
+        _currentTax = DAILY_TAX + (DAILY_TAX * TAX_MULTIPLIER * GameMode.Instance.dayCount);
         return _currentTax;
     }
 
     public void DeductTax()
     {
         float currentTax = GetDailyTax();
-        Inventory.Instance.ChangeCurrencyValue(currentTax);
+        Inventory.Instance.ChangeCurrencyValue(-currentTax);
     }
 }

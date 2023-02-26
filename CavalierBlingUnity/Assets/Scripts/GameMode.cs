@@ -1,4 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum GameState
+{
+    InProgress = 1,
+    InShop = 2,
+    Ending = 3
+}
 
 public class GameMode : AbstractSingleton<GameMode>
 {
@@ -17,6 +25,11 @@ public class GameMode : AbstractSingleton<GameMode>
     private GameObject _winScreen;
     [SerializeField] 
     private int _ennemyCount = 10;
+
+    [SerializeField]
+    private GameState _mGameState = GameState.InProgress;
+    public GameState GameState { get => _mGameState; }
+	
     [SerializeField]
     private GameObject _chevalier;
 
@@ -27,14 +40,27 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         Time.timeScale = 1f;
         SpawnEnnemies();
+        _mGameState = GameState.InProgress;
     }
 
     public void DayEnd()
     {
         dayCount++;
         DailyTax.Instance.DeductTax();
-        // Call shop 
+		
+        if (_mGameState != GameState.Ending)
+        {
+            Shop.Instance.InitializeShopOfTheDay();
 
+            _mGameState = GameState.InShop;
+            Camera.main.enabled = false;
+            ShopSceneManager.Instance.StartShoppingLoop();
+        }
+    }
+
+    public void StartNewDay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         IncreaseDifficulty(dayCount);
     }
     
@@ -42,6 +68,7 @@ public class GameMode : AbstractSingleton<GameMode>
     {
         Time.timeScale = 0f;
         Instantiate(_winScreen, _canvas.transform);
+        _mGameState = GameState.Ending;
     }
     
     public void GameOver(GameOverCondition gameOverCondition)
@@ -58,6 +85,8 @@ public class GameMode : AbstractSingleton<GameMode>
             case GameOverCondition.NotEnoughMoney:
                 break;
         }
+
+        _mGameState = GameState.Ending;
     }
 
     public void SpawnEnnemies()
