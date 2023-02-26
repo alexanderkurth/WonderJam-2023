@@ -41,6 +41,8 @@ public class EnemyMove : MonoBehaviour
             }
 
             transform.Translate(m_Direction * Time.fixedDeltaTime * m_Speed);
+
+            m_EnemySpriteBody.transform.forward = m_Direction;
         }
     }
 
