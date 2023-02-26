@@ -618,12 +618,17 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 48df7d84663e1814cbfd846d80ce5854, type: 3}
   - MessageName: 5
     Messages:
+    - "Fl\xFBte !.. Oui, une fl\xFBte !"
+    - Les sanglots longs des violons de l'automne blessent mon coeur d'un langueur
+      monotone.. oui, prenons ce violon.
     - "Tu sais jouer de la trompette Billy ? Regarde celle l\xE0 comme elle est belle
       !"
-    - "Fl\xFBte !.. Oui, une fl\xFBte !"
-    - "Fl\xFBte !.. Oui, une fl\xFBte !"
-    - "Fl\xFBte !.. Oui, une fl\xFBte !"
-    AudioClip: []
+    - "FREEEDOOOM =, pardon, cette cornemuse m'a d\xE9clench\xE9 des sentiments inexplicables"
+    AudioClip:
+    - {fileID: 8300000, guid: 6f8c55bbb3a384f41b574e6f91c0b11b, type: 3}
+    - {fileID: 8300000, guid: 774f0db57a7cbc64fa55cfbc48efda32, type: 3}
+    - {fileID: 8300000, guid: 3fb6e744fe036c64a82336f21c51535b, type: 3}
+    - {fileID: 8300000, guid: c5589891153589d48b6d61b53833a656, type: 3}
   - MessageName: 6
     Messages:
     - Tu vas trop loin Billy, je vais te mettre une laisse !
@@ -675,7 +680,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.9
   m_Pitch: 1
   Loop: 0
   Mute: 0
