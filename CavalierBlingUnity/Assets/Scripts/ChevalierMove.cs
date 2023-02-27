@@ -69,7 +69,7 @@ public class ChevalierMove : MonoBehaviour
             m_LearpMax = -m_LearpMax;
         }
 
-        m_Direction = new Vector3(m_TargetPivot.transform.position.x + lerpValue, m_TargetPivot.transform.position.y, m_TargetPivot.transform.position.z).normalized;
+        m_Direction = new Vector3(m_TargetPivot.transform.localPosition.x + lerpValue, m_TargetPivot.transform.localPosition.y, m_TargetPivot.transform.localPosition.z).normalized;
         transform.Translate(m_Direction * Time.fixedDeltaTime * m_Speed);
         m_VisualizeRoot.transform.forward = m_Direction;
     }
