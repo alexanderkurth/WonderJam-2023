@@ -110,9 +110,13 @@ public class InstrumentEffectManager : MonoBehaviour
                 float scalar = Mathf.Round((1.0f - (distance / m_MaxDistanceToTrigger)) * 100.0f) / 100.0f;
                 int madnessAmount = Mathf.RoundToInt(Mathf.Abs(m_MadnessMaxAmountPerSecond * scalar));
                 if (m_MadnessMaxAmountPerSecond < 0)
+                {
                     m_MadnessManager.ReduceMadnessLevel(Mathf.RoundToInt(madnessAmount));
+                }
                 else
+                {
                     m_MadnessManager.IncreaseMadnessLevel(Mathf.RoundToInt(madnessAmount));
+                }
             }
 
         }
