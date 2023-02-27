@@ -60,7 +60,7 @@ public class BuyableItem : MonoBehaviour
         _objectData = objectData;
         _mObjectPrice = SetObjectPrice(objectData.ObjectPrices);
         _mTmpPrice.text = _mObjectPrice.ToString();
-        _mTmpPrice.color = IsBuyable() ? Color.green : Color.red;
+        _mTmpPrice.color = IsBuyable() ? new Color(0f,70f,16f) : Color.red;
     
         ToggleVisual(true);
     }
