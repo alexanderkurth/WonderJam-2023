@@ -814,6 +814,26 @@ PrefabInstance:
       propertyPath: _cornemuseSprite
       value: 
       objectReference: {fileID: 4191276087128697979}
+    - target: {fileID: 6141469671112665663, guid: 24211d0028104024c8766a4da5cddd91,
+        type: 3}
+      propertyPath: _armoredModularColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141469671112665663, guid: 24211d0028104024c8766a4da5cddd91,
+        type: 3}
+      propertyPath: _armoredModularColor.b
+      value: 0.3443396
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141469671112665663, guid: 24211d0028104024c8766a4da5cddd91,
+        type: 3}
+      propertyPath: _armoredModularColor.g
+      value: 0.82772845
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141469671112665663, guid: 24211d0028104024c8766a4da5cddd91,
+        type: 3}
+      propertyPath: _armoredModularColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6710427994534072773, guid: 24211d0028104024c8766a4da5cddd91,
         type: 3}
       propertyPath: m_RootOrder

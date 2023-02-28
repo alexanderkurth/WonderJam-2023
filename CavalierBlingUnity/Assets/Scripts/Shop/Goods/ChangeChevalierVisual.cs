@@ -41,6 +41,10 @@ public class ChangeChevalierVisual : MonoBehaviour
     [SerializeField]
     private Image _legUImage;
 
+    [Header("Color")]
+    [SerializeField]
+    Color _armoredModularColor;
+
     private void Start()
     {
         if (Inventory.itemAddedToInventory == null)
@@ -67,45 +71,40 @@ public class ChangeChevalierVisual : MonoBehaviour
         {
             case AvailableObject.ArmorArm:
                 _armSprite.sprite = item.ObjectSprite;
+                _armSprite.color = _armoredModularColor;
                 if (_armUImage)
                 {
-                    Color tempColor = _armUImage.color;
-                    tempColor.a = 1f;
-                    _armUImage.color = tempColor;
+                    _armUImage.color = _armoredModularColor;
                     _armUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
             case AvailableObject.ArmorLegs:
                 _legRightSprite.sprite = item.ObjectSprite;
-                _legLeftSprite.sprite = item.ObjectSprite;
+                _legLeftSprite.color = _armoredModularColor;
                 if (_legUImage)
                 {
-                    Color tempColor = _legUImage.color;
-                    tempColor.a = 1f;
-                    _legUImage.color = tempColor;
+                    _legUImage.color = _armoredModularColor;
                     _legUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
             case AvailableObject.ArmorChest:
                 _torsoSprite.sprite = item.ObjectSprite;
+                _torsoSprite.color = _armoredModularColor;
                 if (_torsoUImage)
                 {
-                    Color tempColor = _torsoUImage.color;
-                    tempColor.a = 1f;
-                    _torsoUImage.color = tempColor;
+                    _torsoUImage.color = _armoredModularColor;
                     _torsoUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
 
             case AvailableObject.ArmorHead:
                 _headSprite.sprite = item.ObjectSprite;
+                _headSprite.color = _armoredModularColor;
                 if (_headUImage)
                 {
-                    Color tempColor = _headUImage.color;
-                    tempColor.a = 1f;
-                    _headUImage.color = tempColor;
+                    _headUImage.color = _armoredModularColor;
                     _headUImage.sprite = item.ObjectSpriteShop;
                 }
                 break;
